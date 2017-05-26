@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7914F81ED7C923001DE08C /* AppDelegate.swift */; };
-		ED7914FB1ED7C923001DE08C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7914FA1ED7C923001DE08C /* ViewController.swift */; };
-		ED7914FE1ED7C924001DE08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7914FC1ED7C924001DE08C /* Main.storyboard */; };
 		ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7914FF1ED7C924001DE08C /* Assets.xcassets */; };
 		ED7915031ED7C924001DE08C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7915011ED7C924001DE08C /* LaunchScreen.storyboard */; };
 		ED79150E1ED7C924001DE08C /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79150D1ED7C924001DE08C /* __Tests.swift */; };
 		ED7915191ED7C924001DE08C /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7915181ED7C924001DE08C /* __UITests.swift */; };
+		ED7915311ED7D615001DE08C /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7915301ED7D615001DE08C /* WBMainViewController.swift */; };
+		ED7915331ED7D649001DE08C /* WBNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7915321ED7D649001DE08C /* WBNavigationViewController.swift */; };
+		ED7915351ED7D68D001DE08C /* WBBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7915341ED7D68D001DE08C /* WBBaseController.swift */; };
+		ED7915371ED7D6EA001DE08C /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7915361ED7D6EA001DE08C /* WBHomeViewController.swift */; };
+		ED7915391ED7D745001DE08C /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7915381ED7D745001DE08C /* WBMessageViewController.swift */; };
+		ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */; };
+		ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +41,6 @@
 /* Begin PBXFileReference section */
 		ED7914F51ED7C923001DE08C /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7914F81ED7C923001DE08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED7914FA1ED7C923001DE08C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ED7914FD1ED7C924001DE08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED7914FF1ED7C924001DE08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED7915021ED7C924001DE08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7915041ED7C924001DE08C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +50,13 @@
 		ED7915141ED7C924001DE08C /* 微博UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "微博UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7915181ED7C924001DE08C /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
 		ED79151A1ED7C924001DE08C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED7915301ED7D615001DE08C /* WBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
+		ED7915321ED7D649001DE08C /* WBNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationViewController.swift; sourceTree = "<group>"; };
+		ED7915341ED7D68D001DE08C /* WBBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseController.swift; sourceTree = "<group>"; };
+		ED7915361ED7D6EA001DE08C /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		ED7915381ED7D745001DE08C /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
+		ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +107,8 @@
 		ED7914F71ED7C923001DE08C /* 微博 */ = {
 			isa = PBXGroup;
 			children = (
+				ED7915261ED7D59F001DE08C /* Classes */,
 				ED7914F81ED7C923001DE08C /* AppDelegate.swift */,
-				ED7914FA1ED7C923001DE08C /* ViewController.swift */,
-				ED7914FC1ED7C924001DE08C /* Main.storyboard */,
 				ED7914FF1ED7C924001DE08C /* Assets.xcassets */,
 				ED7915011ED7C924001DE08C /* LaunchScreen.storyboard */,
 				ED7915041ED7C924001DE08C /* Info.plist */,
@@ -123,6 +132,92 @@
 				ED79151A1ED7C924001DE08C /* Info.plist */,
 			);
 			path = "微博UITests";
+			sourceTree = "<group>";
+		};
+		ED7915261ED7D59F001DE08C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ED7915291ED7D59F001DE08C /* View(视图和控制器) */,
+				ED79152F1ED7D59F001DE08C /* ViewModel(视图模型) */,
+				ED7915271ED7D59F001DE08C /* Model（模型） */,
+				ED7915281ED7D59F001DE08C /* Tools(工具) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		ED7915271ED7D59F001DE08C /* Model（模型） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model（模型）";
+			sourceTree = "<group>";
+		};
+		ED7915281ED7D59F001DE08C /* Tools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tools(工具)";
+			sourceTree = "<group>";
+		};
+		ED7915291ED7D59F001DE08C /* View(视图和控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				ED79152C1ED7D59F001DE08C /* Main */,
+				ED79152B1ED7D59F001DE08C /* Home */,
+				ED79152D1ED7D59F001DE08C /* Message */,
+				ED79152A1ED7D59F001DE08C /* Discover */,
+				ED79152E1ED7D59F001DE08C /* Profile */,
+			);
+			path = "View(视图和控制器)";
+			sourceTree = "<group>";
+		};
+		ED79152A1ED7D59F001DE08C /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		ED79152B1ED7D59F001DE08C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ED7915361ED7D6EA001DE08C /* WBHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ED79152C1ED7D59F001DE08C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				ED7915301ED7D615001DE08C /* WBMainViewController.swift */,
+				ED7915321ED7D649001DE08C /* WBNavigationViewController.swift */,
+				ED7915341ED7D68D001DE08C /* WBBaseController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		ED79152D1ED7D59F001DE08C /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				ED7915381ED7D745001DE08C /* WBMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		ED79152E1ED7D59F001DE08C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		ED79152F1ED7D59F001DE08C /* ViewModel(视图模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +282,7 @@
 		ED7914ED1ED7C923001DE08C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WB;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "张海昌";
@@ -237,7 +333,6 @@
 			files = (
 				ED7915031ED7C924001DE08C /* LaunchScreen.storyboard in Resources */,
 				ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */,
-				ED7914FE1ED7C924001DE08C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +357,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED7914FB1ED7C923001DE08C /* ViewController.swift in Sources */,
+				ED7915311ED7D615001DE08C /* WBMainViewController.swift in Sources */,
+				ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */,
+				ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */,
+				ED7915351ED7D68D001DE08C /* WBBaseController.swift in Sources */,
+				ED7915371ED7D6EA001DE08C /* WBHomeViewController.swift in Sources */,
+				ED7915331ED7D649001DE08C /* WBNavigationViewController.swift in Sources */,
 				ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */,
+				ED7915391ED7D745001DE08C /* WBMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +400,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ED7914FC1ED7C924001DE08C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED7914FD1ED7C924001DE08C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ED7915011ED7C924001DE08C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -417,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WA9VRUVC47;
 				INFOPLIST_FILE = "微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haiChang.InternationalEdition.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,6 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WA9VRUVC47;
 				INFOPLIST_FILE = "微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haiChang.InternationalEdition.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +609,7 @@
 				ED79151F1ED7C924001DE08C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED7915201ED7C924001DE08C /* Build configuration list for PBXNativeTarget "微博Tests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +618,7 @@
 				ED7915221ED7C924001DE08C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED7915231ED7C924001DE08C /* Build configuration list for PBXNativeTarget "微博UITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +627,7 @@
 				ED7915251ED7C924001DE08C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
