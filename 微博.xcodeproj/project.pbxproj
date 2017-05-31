@@ -31,6 +31,7 @@
 		EDCFCC9B1EDE5EAB00689F5D /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC8D1EDE5EAB00689F5D /* UIScreen+CZAddition.m */; };
 		EDCFCC9C1EDE5EAB00689F5D /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC8F1EDE5EAB00689F5D /* UIView+CZAddition.m */; };
 		EDCFCC9D1EDE5EAB00689F5D /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC911EDE5EAB00689F5D /* UIViewController+CZAddition.m */; };
+		EDCFCCA11EDE65DA00689F5D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCCA01EDE65DA00689F5D /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		EDCFCC901EDE5EAB00689F5D /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
 		EDCFCC911EDE5EAB00689F5D /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		EDCFCC9E1EDE5EEE00689F5D /* WeiBo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeiBo-Bridge.h"; sourceTree = "<group>"; };
+		EDCFCCA01EDE65DA00689F5D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		ED7915281ED7D59F001DE08C /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				EDCFCC9F1EDE659900689F5D /* Extensions */,
 				EDCFCC781EDE5EAB00689F5D /* Additions */,
 			);
 			path = "Tools(工具)";
@@ -290,6 +293,14 @@
 				EDCFCC911EDE5EAB00689F5D /* UIViewController+CZAddition.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		EDCFCC9F1EDE659900689F5D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EDCFCCA01EDE65DA00689F5D /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +446,7 @@
 				EDCFCC9A1EDE5EAB00689F5D /* UILabel+CZAddition.m in Sources */,
 				EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */,
 				EDCFCC9D1EDE5EAB00689F5D /* UIViewController+CZAddition.m in Sources */,
+				EDCFCCA11EDE65DA00689F5D /* Bundle+Extensions.swift in Sources */,
 				EDCFCC951EDE5EAB00689F5D /* NSString+CZBase64.m in Sources */,
 				ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */,
 				ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */,
