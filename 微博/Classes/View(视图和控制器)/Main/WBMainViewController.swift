@@ -16,7 +16,17 @@ class WBMainViewController: UITabBarController {
         setupChildControllers()
         setupComposeButton()
     }
-    //MARK - 私有控件
+    
+    //MARK: - 监听方法
+    /// 撰写微博
+    //FIXME:没有实现
+    //peivate 能保证方法私有，仅在当前对象被访问
+    //@objc 允许这个函数在运行时通过 OC 的消息机制被调用
+    func composeStatus() -> () {
+        print("撰写微博")
+    }
+    
+    //MARK: - 私有控件
     /// 撰写按钮
     lazy var composeButton:UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 
@@ -36,7 +46,7 @@ extension WBMainViewController {
         let w = tabBar.bounds.width / count - 1
         //CGRectInset 正数向内缩进 负数向外扩展
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
-        
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
         
     }
     
@@ -86,6 +96,7 @@ extension WBMainViewController {
         //系统默认的是 12 号字体，修改字体大小，要设置 Normal 的字体大小（设置为 .highlighted 无效）
 //        vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 24)], for: UIControlState(rawValue:0))
         
+        //实例化导航控制器的时候，会调用 push 方法，将 rootVC 压栈
         let nav = WBNavigationViewController(rootViewController: vc)
         return nav
     }
