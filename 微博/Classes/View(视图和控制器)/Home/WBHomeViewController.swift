@@ -31,6 +31,7 @@ extension WBHomeViewController {
         super.setupUI()
         
         //测试导航栏按钮
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+        
     }
 }
