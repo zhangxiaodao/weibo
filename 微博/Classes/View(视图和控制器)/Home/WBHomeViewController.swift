@@ -17,9 +17,22 @@ class WBHomeViewController: WBBaseController {
     lazy var statusList = [String]()
     
     override func loadData() {
-        for i in 0..<15 {
-            //将数据插入到数组的顶部
-            statusList.insert(i.description, at: 0)
+        
+        print("开始在家数据")
+        
+        //模拟 ‘延时’ 建在数据 -> dispatch_after
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5.0) {
+            for i in 0..<15 {
+                //将数据插入到数组的顶部
+                self.statusList.insert(i.description, at: 0)
+            }
+            
+            print("刷新表格")
+            
+            //结束刷新控件
+            self.refreshControl?.endRefreshing()
+            //刷新表格
+            self.tableView?.reloadData()
         }
     }
      
