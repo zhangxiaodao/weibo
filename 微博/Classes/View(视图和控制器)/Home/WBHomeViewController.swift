@@ -22,15 +22,24 @@ class WBHomeViewController: WBBaseController {
         
         //模拟 ‘延时’ 建在数据 -> dispatch_after
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
-            for i in 0..<15 {
-                //将数据插入到数组的顶部
-                self.statusList.insert(i.description, at: 0)
+            for i in 0..<20 {
+                
+                if self.isPullUp {
+                    //将数据追加到底部
+                    self.statusList.append("上拉 \(i)")
+                } else {
+                    //将数据插入到数组的顶部
+                    self.statusList.insert(i.description, at: 0)
+                }
             }
             
             print("刷新表格")
             
             //结束刷新控件
             self.refreshControl?.endRefreshing()
+            
+            //恢复上拉刷新标志
+            self.isPullUp = false
             //刷新表格
             self.tableView?.reloadData()
         }

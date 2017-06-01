@@ -116,16 +116,21 @@ extension WBBaseController:UITableViewDelegate , UITableViewDataSource{
         let row = indexPath.row
         let section = tableView.numberOfSections - 1
         
-        if row < 0 || section < 0{
+        if row < 0 || section < 0 {
             return
         }
         
         //行数
         let count = tableView.numberOfRows(inSection: section)
+        
         //如果是最后一行，同时没有上拉刷新 -> 开始上拉刷新
-        if row == (count - 1) && isPullUp{
+        if row == (count - 1) && !isPullUp{
             print("上拉刷新")
+            isPullUp = true
+            //开始刷新
+            loadData()
         }
+        
         
     }
 }
