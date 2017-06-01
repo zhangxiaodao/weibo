@@ -21,7 +21,7 @@ class WBHomeViewController: WBBaseController {
         print("开始在家数据")
         
         //模拟 ‘延时’ 建在数据 -> dispatch_after
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
             for i in 0..<15 {
                 //将数据插入到数组的顶部
                 self.statusList.insert(i.description, at: 0)

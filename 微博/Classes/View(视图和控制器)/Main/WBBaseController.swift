@@ -19,6 +19,8 @@ class WBBaseController: UIViewController {
     var tableView:UITableView?
     //刷新控件
     var refreshControl:UIRefreshControl?
+    //上拉刷新标记
+    var isPullUp = false
     
     
     override func viewDidLoad() {
@@ -106,5 +108,24 @@ extension WBBaseController:UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 基类的返回只是保证 没有语法的错误
         return UITableViewCell()
+    }
+    
+    ///在最后一行的时候做上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //1.判断 indexPath 是否是最后一行 (indexPath.section / indexPath.row)
+        let row = indexPath.row
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0{
+            return
+        }
+        
+        //行数
+        let count = tableView.numberOfRows(inSection: section)
+        //如果是最后一行，同时没有上拉刷新 -> 开始上拉刷新
+        if row == (count - 1) && isPullUp{
+            print("上拉刷新")
+        }
+        
     }
 }
