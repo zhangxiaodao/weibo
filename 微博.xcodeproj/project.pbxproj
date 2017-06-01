@@ -235,8 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				EDCFCCA21EDEA28C00689F5D /* 测试 */,
-				ED7915301ED7D615001DE08C /* WBMainViewController.swift */,
-				ED7915321ED7D649001DE08C /* WBNavigationViewController.swift */,
+				EDAD86E81EDFF1C0005AE3E4 /* 主控制器 */,
 				ED7915341ED7D68D001DE08C /* WBBaseController.swift */,
 			);
 			path = Main;
@@ -263,6 +262,15 @@
 			children = (
 			);
 			path = "ViewModel(视图模型)";
+			sourceTree = "<group>";
+		};
+		EDAD86E81EDFF1C0005AE3E4 /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				ED7915301ED7D615001DE08C /* WBMainViewController.swift */,
+				ED7915321ED7D649001DE08C /* WBNavigationViewController.swift */,
+			);
+			name = "主控制器";
 			sourceTree = "<group>";
 		};
 		EDCFCC781EDE5EAB00689F5D /* Additions */ = {
