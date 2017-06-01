@@ -17,6 +17,8 @@ import UIKit
 
 class WBBaseController: UIViewController {
     var tableView:UITableView?
+    //刷新控件
+    var refreshControl:UIRefreshControl?
     
     
     override func viewDidLoad() {
@@ -68,7 +70,16 @@ extension WBBaseController {
         tableView?.dataSource = self
         
         //设置内容缩进
-        tableView?.contentInset = UIEdgeInsetsMake(navigationBar.bounds.height, 0, (tabBarController?.tabBar.bounds.height)!, 0)
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: (tabBarController?.tabBar.bounds.height)!, right: 0)
+        
+        //设置刷新控件
+        refreshControl = UIRefreshControl()
+        
+        //添加到视图
+        tableView?.addSubview(refreshControl!)
+        
+        //添加监听方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     private func setUpNav() {
