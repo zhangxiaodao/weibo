@@ -31,6 +31,8 @@ class WBVisitorView: UIView {
             }
             
             iconView.image = UIImage(named: imageName)
+            houseIconView.isHidden = true
+            maskIconView.isHidden = true
         }
     }
     
@@ -85,6 +87,9 @@ extension WBVisitorView {
         addSubview(tipLabel)
         addSubview(registerButton)
         addSubview(loginButton)
+        
+        //文本剧中
+        tipLabel.textAlignment = .center
         
         //2. 原生的自动布局需要 取消 autoresizing , autoresizing 和 autoLayout 不能共存 ， 使用纯代码自动布局使用的是 autoresizing ,使用 xib 自动布局使用的是 autoLayout
         for v in subviews {

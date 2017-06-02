@@ -65,11 +65,11 @@ extension WBMainViewController {
     /// 设置所有子控制器
      func setupChildControllers() {
         let array = [
-            ["clsName":"WBHomeViewController" , "title":"首页" , "imageName":"home" , "visitorInfo":["imageNmae":"" , "message":"关注一些人，回着里看看有什么惊喜"]],
-            ["clsName":"WBMessageViewController" , "title":"消息" , "imageName":"message_center" , "visitorInfo":["imageNmae":"visitordiscover_image_profile" , "message":"登陆后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
+            ["clsName":"WBHomeViewController" , "title":"首页" , "imageName":"home" , "visitorInfo":["imageName":"" , "message":"关注一些人，回着里看看有什么惊喜"]],
+            ["clsName":"WBMessageViewController" , "title":"消息" , "imageName":"message_center" , "visitorInfo":["imageName":"visitordiscover_image_profile" , "message":"登陆后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
             ["clsName":"ViewController"],
-            ["clsName":"WBDiscoverViewController" , "title":"发现" , "imageName":"discover" , "visitorInfo":["imageNmae":"visitordiscover_image_message" , "message":"登陆后，最新鲜、最热的微博尽在掌握，不再会与事实潮流擦肩而过"]],
-            ["clsName":"WBProfileViewController" , "title":"我的" , "imageName":"profile" , "visitorInfo":["imageNmae":"visitordiscover_image_profile" , "message":"登陆后，你的微博、相册、个人资料都会在这里显示，展示给别人"]],
+            ["clsName":"WBDiscoverViewController" , "title":"发现" , "imageName":"discover" , "visitorInfo":["imageName":"visitordiscover_image_message" , "message":"登陆后，最新鲜、最热的微博尽在掌握，不再会与事实潮流擦肩而过"]],
+            ["clsName":"WBProfileViewController" , "title":"我的" , "imageName":"profile" , "visitorInfo":["imageName":"visitordiscover_image_profile" , "message":"登陆后，你的微博、相册、个人资料都会在这里显示，展示给别人"]],
         ]
         
         ///测试数据格式是否正确 -> 转换成plist 数据更加直观
@@ -93,7 +93,9 @@ extension WBMainViewController {
         guard let clsName = dict["clsName"] as? String,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
-            let cls = NSClassFromString(Bundle.main.namespace + "." + (clsName)) as? UIViewController.Type
+            let cls = NSClassFromString(Bundle.main.namespace + "." + (clsName)) as? WBBaseController.Type,
+        let visitorInfo = dict["visitorInfo"] as? [String:String]
+        
         else {
             return UIViewController()
         }
@@ -101,6 +103,9 @@ extension WBMainViewController {
         //2.创建视图控制器
         let vc = cls.init()
         vc.title = title
+        
+        //设置控制器的访客信息字典
+        vc.visitorInfoDict = visitorInfo
         
         //3.设置图像
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
