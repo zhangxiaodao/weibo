@@ -1,0 +1,41 @@
+[
+  {
+    "clsName" : "WBHomeViewController",
+    "title" : "首页",
+    "visitorInfo" : {
+      "imageName" : "",
+      "message" : "关注一些人，回着里看看有什么惊喜"
+    },
+    "imageName" : "home"
+  },
+  {
+    "clsName" : "WBMessageViewController",
+    "title" : "消息",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_profile",
+      "message" : "登陆后，别人评论你的微博，发给你的消息，都会在这里收到通知"
+    },
+    "imageName" : "message_center"
+  },
+  {
+    "clsName" : "ViewController"
+  },
+  {
+    "clsName" : "WBDiscoverViewController",
+    "title" : "发现",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_message",
+      "message" : "登陆后，最新鲜、最热的微博尽在掌握，不再会与事实潮流擦肩而过"
+    },
+    "imageName" : "discover"
+  },
+  {
+    "clsName" : "WBProfileViewController",
+    "title" : "我的",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_profile",
+      "message" : "登陆后，你的微博、相册、个人资料都会在这里显示，展示给别人"
+    },
+    "imageName" : "profile"
+  }
+]

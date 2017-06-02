@@ -27,6 +27,7 @@ class WBVisitorView: UIView {
             tipLabel.text = message
             //3> 设置图像，首页不需要设置
             if imageName == "" {
+                startAnimation()
                 return
             }
             
@@ -47,6 +48,20 @@ class WBVisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    /// 旋转动画
+    func startAnimation() {
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = 2 * M_PI
+        anim.repeatCount = MAXFLOAT
+        anim.duration = 15
+        //动画执行完不移除，如果 iconView 被释放，动画会一起销毁
+        // isRemovedOnCompletion  在设置连续播放动画的时候，非常有用
+        anim.isRemovedOnCompletion = false
+        
+        iconView.layer.add(anim, forKey: nil)
+        
+    }
+    
     //MARK: -私有控件
     //懒加载属性值有调用 UIKit 控件的指定构造函数，在不需要加类型，其他的都需要加(每次定义懒加载的时候，都加了就可以了)
     //图像视图
