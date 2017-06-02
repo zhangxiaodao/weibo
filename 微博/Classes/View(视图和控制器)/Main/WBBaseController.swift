@@ -16,6 +16,10 @@ import UIKit
 //2. extension 不能重写父类方法!重写弗雷的方法，是子类的职责，扩展是对类的扩展
 
 class WBBaseController: UIViewController {
+    //用户登录的标识
+    var userLogin = false
+    
+    //表格视图 - 如果用户没有登录，就不创建
     var tableView:UITableView?
     //刷新控件
     var refreshControl:UIRefreshControl?
@@ -53,7 +57,7 @@ class WBBaseController: UIViewController {
 
 extension WBBaseController {
     func setupUI() -> () {
-        view.backgroundColor = UIColor.cz_random()
+        view.backgroundColor = UIColor.white
         
         //当出现 tableView 和 nav 的UI 时，需要考虑缩进的问题
         //取消缩进 -> 如果取消了缩进，会缩进 20 个点
@@ -61,6 +65,8 @@ extension WBBaseController {
         
         setUpNav()
         setUpTableView()
+        
+        userLogin ? setUpTableView() : setupVisitorView()
     }
     
     /// 设置表歌视图
@@ -83,6 +89,12 @@ extension WBBaseController {
         
         //添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
+    /// 设置访客视图
+    func setupVisitorView() -> () {
+        let visitorView = WBVisitorView(frame: view.bounds)
+        view.insertSubview(visitorView, belowSubview: navigationBar)
     }
     
     private func setUpNav() {

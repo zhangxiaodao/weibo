@@ -18,6 +18,7 @@
 		ED7915391ED7D745001DE08C /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7915381ED7D745001DE08C /* WBMessageViewController.swift */; };
 		ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */; };
 		ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */; };
+		EDAD86ED1EE103C1005AE3E4 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */; };
 		EDCFCC921EDE5EAB00689F5D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */; };
 		EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7D1EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m */; };
 		EDCFCC941EDE5EAB00689F5D /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7F1EDE5EAB00689F5D /* NSObject+CZRuntime.m */; };
@@ -70,6 +71,7 @@
 		ED7915381ED7D745001DE08C /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		EDCFCC791EDE5EAB00689F5D /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		EDCFCC7A1EDE5EAB00689F5D /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				EDCFCCA21EDEA28C00689F5D /* 测试 */,
 				EDAD86E81EDFF1C0005AE3E4 /* 主控制器 */,
+				EDAD86E91EE10368005AE3E4 /* VisitorView */,
 				ED7915341ED7D68D001DE08C /* WBBaseController.swift */,
 			);
 			path = Main;
@@ -271,6 +274,14 @@
 				ED7915321ED7D649001DE08C /* WBNavigationViewController.swift */,
 			);
 			name = "主控制器";
+			sourceTree = "<group>";
+		};
+		EDAD86E91EE10368005AE3E4 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */,
+			);
+			name = VisitorView;
 			sourceTree = "<group>";
 		};
 		EDCFCC781EDE5EAB00689F5D /* Additions */ = {
@@ -460,6 +471,7 @@
 			files = (
 				EDCFCC991EDE5EAB00689F5D /* UIColor+CZAddition.m in Sources */,
 				EDCFCC921EDE5EAB00689F5D /* NSArray+Log.m in Sources */,
+				EDAD86ED1EE103C1005AE3E4 /* WBVisitorView.swift in Sources */,
 				ED7915311ED7D615001DE08C /* WBMainViewController.swift in Sources */,
 				EDCFCC9A1EDE5EAB00689F5D /* UILabel+CZAddition.m in Sources */,
 				EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */,
