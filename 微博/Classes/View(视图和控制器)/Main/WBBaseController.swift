@@ -19,6 +19,10 @@ class WBBaseController: UIViewController {
     //用户登录的标识
     var userLogin = false
     
+    //访客试图信息字典
+    var visitorInfoDict:[String:String]?
+    
+    
     //表格视图 - 如果用户没有登录，就不创建
     var tableView:UITableView?
     //刷新控件
@@ -95,6 +99,8 @@ extension WBBaseController {
     func setupVisitorView() -> () {
         let visitorView = WBVisitorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
+        //设置访客视图的信息
+        visitorView.visitorInfo = visitorInfoDict
     }
     
     private func setUpNav() {

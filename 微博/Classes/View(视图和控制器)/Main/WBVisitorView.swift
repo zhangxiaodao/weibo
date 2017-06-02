@@ -11,6 +11,31 @@ import UIKit
 /// 访客视图
 class WBVisitorView: UIView {
 
+    //MARK: - 设置访客试图信息
+    /// 使用字典设置方可视图的信息 [imageName / message]
+    /// 提示：如果是首页 imageName = ""
+    var visitorInfo:[String:String]? {
+        didSet{
+            //1>去字典信息
+            guard let imageName = visitorInfo?["imageName"] ,
+                let message = visitorInfo?["message"]
+                else {
+                    return
+            }
+            
+            //2>设置信息
+            tipLabel.text = message
+            //3> 设置图像，首页不需要设置
+            if imageName == "" {
+                return
+            }
+            
+            iconView.image = UIImage(named: imageName)
+        }
+    }
+    
+    
+    //MARK: - 构造函数
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -24,6 +49,8 @@ class WBVisitorView: UIView {
     //懒加载属性值有调用 UIKit 控件的指定构造函数，在不需要加类型，其他的都需要加(每次定义懒加载的时候，都加了就可以了)
     //图像视图
     lazy var iconView:UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
+    //遮罩图像
+    lazy var maskIconView:UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     //小房子
     lazy var houseIconView:UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     //提示标签
@@ -49,10 +76,11 @@ class WBVisitorView: UIView {
 
 extension WBVisitorView {
     func setupUI() -> () {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.cz_color(withHex: 0xededed)
         
         //1.添加控件
         addSubview(iconView)
+        addSubview(maskIconView)
         addSubview(houseIconView)
         addSubview(tipLabel)
         addSubview(registerButton)
@@ -181,6 +209,23 @@ extension WBVisitorView {
             attribute: .notAnAttribute,
             multiplier: 1.0,
             constant: 100))
+        
+        //6>遮罩图像
+        let viewDict = ["maskIconView":maskIconView,
+                        "registerButton":registerButton] as [String : Any]
+        let metrics = ["spacing":-20]
+        
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[maskIconView]-0-|",
+            options: [],
+            metrics: nil,
+            views: viewDict
+        ))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[maskIconView]-(spacing)-[registerButton]",
+            options: [],
+            metrics: metrics,
+            views: viewDict))
         
     }
 }
