@@ -17,7 +17,7 @@ import UIKit
 
 class WBBaseController: UIViewController {
     //用户登录的标识
-    var userLogin = false
+    var userLogin = true
     
     //访客试图信息字典
     var visitorInfoDict:[String:String]?

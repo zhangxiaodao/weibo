@@ -18,7 +18,7 @@ class WBHomeViewController: WBBaseController {
     
     override func loadData() {
         
-        print("开始在家数据")
+        print("开始加载数据\(WBNetworkManager.shared)")
         
         //模拟 ‘延时’ 建在数据 -> dispatch_after
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {

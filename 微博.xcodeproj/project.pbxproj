@@ -19,6 +19,7 @@
 		ED7915391ED7D745001DE08C /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7915381ED7D745001DE08C /* WBMessageViewController.swift */; };
 		ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */; };
 		ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */; };
+		ED89D8641EE548AD00DB7B21 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89D8631EE548AD00DB7B21 /* WBNetworkManager.swift */; };
 		EDAD86ED1EE103C1005AE3E4 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */; };
 		EDAD86EF1EE15EF9005AE3E4 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = EDAD86EE1EE15EF9005AE3E4 /* main.json */; };
 		EDCFCC921EDE5EAB00689F5D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */; };
@@ -56,10 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		053BE41C5C63FF393BFE9B46 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		053BE41C5C63FF393BFE9B46 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F51A374CD3A05C48684D256 /* Pods-微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.release.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.release.xcconfig"; sourceTree = "<group>"; };
 		406BE7EE8B8D6B786741D3B7 /* Pods-微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.debug.xcconfig"; sourceTree = "<group>"; };
-		A819F04F00BED17D36545A82 /* Pods___UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A819F04F00BED17D36545A82 /* Pods___UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7914F51ED7C923001DE08C /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7914F81ED7C923001DE08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7914FF1ED7C924001DE08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		ED7915381ED7D745001DE08C /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		ED89D8631EE548AD00DB7B21 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		EDAD86EE1EE15EF9005AE3E4 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		EDCFCC791EDE5EAB00689F5D /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 		EDCFCCA01EDE65DA00689F5D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		EDCFCCA31EDEA2A000689F5D /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		EDCFCCA51EDEAB6400689F5D /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
-		FE5CBF3A9C8948E8D6020C26 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods___Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE5CBF3A9C8948E8D6020C26 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 		ED7915281ED7D59F001DE08C /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				ED89D8601EE547E000DB7B21 /* Network */,
 				EDCFCC9F1EDE659900689F5D /* Extensions */,
 				EDCFCC781EDE5EAB00689F5D /* Additions */,
 			);
@@ -295,6 +298,14 @@
 			children = (
 			);
 			path = "ViewModel(视图模型)";
+			sourceTree = "<group>";
+		};
+		ED89D8601EE547E000DB7B21 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				ED89D8631EE548AD00DB7B21 /* WBNetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		EDAD86E81EDFF1C0005AE3E4 /* 主控制器 */ = {
@@ -565,6 +576,7 @@
 				EDCFCCA61EDEAB6400689F5D /* UIBarButtonItem+Extension.swift in Sources */,
 				ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */,
 				ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */,
+				ED89D8641EE548AD00DB7B21 /* WBNetworkManager.swift in Sources */,
 				ED7915351ED7D68D001DE08C /* WBBaseController.swift in Sources */,
 				EDCFCC981EDE5EAB00689F5D /* UIButton+CZAddition.m in Sources */,
 				EDCFCC9B1EDE5EAB00689F5D /* UIScreen+CZAddition.m in Sources */,
