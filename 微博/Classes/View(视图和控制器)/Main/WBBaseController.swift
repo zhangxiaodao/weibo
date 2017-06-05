@@ -59,8 +59,19 @@ class WBBaseController: UIViewController {
 
 }
 
+// MARK: - 访客视图监听事件
 extension WBBaseController {
-    func setupUI() -> () {
+    @objc func login() {
+        print("用户登录")
+    }
+    
+    @objc func register() {
+        print("用户注册")
+    }
+}
+
+extension WBBaseController {
+    fileprivate func setupUI() -> () {
         view.backgroundColor = UIColor.white
         
         //当出现 tableView 和 nav 的UI 时，需要考虑缩进的问题
@@ -74,7 +85,7 @@ extension WBBaseController {
     }
     
     /// 设置表歌视图
-    private func setUpTableView() {
+    func setUpTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
@@ -101,6 +112,12 @@ extension WBBaseController {
         view.insertSubview(visitorView, belowSubview: navigationBar)
         //设置访客视图的信息
         visitorView.visitorInfo = visitorInfoDict
+        visitorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        //3.设置导航栏按钮
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(login))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(register))
     }
     
     private func setUpNav() {
@@ -113,6 +130,7 @@ extension WBBaseController {
         //设置 navBar 的字体颜色
         //        navigationBar.tintColor = UIColor.darkGray
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.darkGray]
+        navigationBar.tintColor = UIColor.orange
     }
 }
 

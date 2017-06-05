@@ -27,8 +27,8 @@ class WBDemoViewController: WBBaseController {
 extension WBDemoViewController {
     
     /// 重写父类方法
-    override func setupUI() {
-        super.setupUI()
+    override func setUpTableView() {
+        super.setUpTableView()
         //设置右侧的控制器
         navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNex))
     }
