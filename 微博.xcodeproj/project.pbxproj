@@ -23,6 +23,7 @@
 		EDAD86ED1EE103C1005AE3E4 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */; };
 		EDAD86EF1EE15EF9005AE3E4 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = EDAD86EE1EE15EF9005AE3E4 /* main.json */; };
 		EDBA17D91EE64D3700F3041B /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17D81EE64D3700F3041B /* WBNetworkManager+Extension.swift */; };
+		EDBA17DB1EE6A5B000F3041B /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17DA1EE6A5B000F3041B /* WBStatus.swift */; };
 		EDCFCC921EDE5EAB00689F5D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */; };
 		EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7D1EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m */; };
 		EDCFCC941EDE5EAB00689F5D /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7F1EDE5EAB00689F5D /* NSObject+CZRuntime.m */; };
@@ -83,6 +84,7 @@
 		EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		EDAD86EE1EE15EF9005AE3E4 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		EDBA17D81EE64D3700F3041B /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
+		EDBA17DA1EE6A5B000F3041B /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		EDCFCC791EDE5EAB00689F5D /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		EDCFCC7A1EDE5EAB00689F5D /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		ED7915271ED7D59F001DE08C /* Model（模型） */ = {
 			isa = PBXGroup;
 			children = (
+				EDBA17DA1EE6A5B000F3041B /* WBStatus.swift */,
 			);
 			path = "Model（模型）";
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				EDAD86ED1EE103C1005AE3E4 /* WBVisitorView.swift in Sources */,
 				ED7915311ED7D615001DE08C /* WBMainViewController.swift in Sources */,
 				EDCFCC9A1EDE5EAB00689F5D /* UILabel+CZAddition.m in Sources */,
+				EDBA17DB1EE6A5B000F3041B /* WBStatus.swift in Sources */,
 				EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */,
 				EDCFCC9D1EDE5EAB00689F5D /* UIViewController+CZAddition.m in Sources */,
 				EDCFCCA11EDE65DA00689F5D /* Bundle+Extensions.swift in Sources */,

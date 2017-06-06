@@ -23,7 +23,8 @@ class WBNetworkManager: AFHTTPSessionManager {
     static let shared = WBNetworkManager()
     
     /// 访问令牌，所有网络请求，都基于此令牌（登陆除外）
-    var accessToken:String? = "2.00Al89qG2psegC2c9998b281RfNnNB"
+    //为了保护用户安全，token 是有事限的，默认是三天
+    var accessToken:String? = "2.00Al89qG2psegC2c9998b281RfNnNB模拟token过期"
     
     /// 专门负责拼接 token 的网络请求的方法
     func tokenRequest(method: WBHTTPMethod = .GET , URLString:String , parameters:[String:AnyObject]? , completion:@escaping ( _ json:Any?,_ isSuccess:Bool)->()) -> () {
@@ -31,6 +32,8 @@ class WBNetworkManager: AFHTTPSessionManager {
         //处理 token 字典
         //0> 判断 token 是否为 nil ,为 nil 直接返回
         guard let token = accessToken else {
+            
+            //FIXM:发送通知（本方法不知道被谁调用，提示用户登录）
             print("没有 token! 请登录")
             completion(nil, false)
             return
@@ -67,6 +70,13 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         //失败回调
         let failure:((URLSessionDataTask? , Error)->Void) = { (task,error) in
+            
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("Token 过期了")
+                
+                //FIXM:发送通知（本方法不知道被谁调用，谁收到通知，谁处理）
+            }
+            
             print("网络请求错误\(error)")
             completion(nil, false)
         }
