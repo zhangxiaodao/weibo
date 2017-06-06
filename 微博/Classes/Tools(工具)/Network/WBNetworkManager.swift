@@ -22,6 +22,35 @@ class WBNetworkManager: AFHTTPSessionManager {
     //在第一次访问时，执行闭包，并且将结果保存在 shared 常量中
     static let shared = WBNetworkManager()
     
+    /// 访问令牌，所有网络请求，都基于此令牌（登陆除外）
+    var accessToken:String? = "2.00Al89qG2psegC2c9998b281RfNnNB"
+    
+    /// 专门负责拼接 token 的网络请求的方法
+    func tokenRequest(method: WBHTTPMethod = .GET , URLString:String , parameters:[String:AnyObject]? , completion:@escaping ( _ json:Any?,_ isSuccess:Bool)->()) -> () {
+        
+        //处理 token 字典
+        //0> 判断 token 是否为 nil ,为 nil 直接返回
+        guard let token = accessToken else {
+            print("没有 token! 请登录")
+            completion(nil, false)
+            return
+        }
+        
+        //1> 判断参数字典是否存在 , 如果为 nil ，应该新建一个字典
+        var parameters = parameters
+        if parameters == nil {
+            //实例化字典
+            parameters = [String:AnyObject]()
+        }
+        
+        //2> 设置参数字典 ，代码在此处，一定有值
+        parameters!["access_token"] = token as AnyObject
+        
+        //调用  request 发起真正网络请求方法
+        request(URLString: URLString, parameters: parameters, completion: completion)
+    }
+    
+    
     /// 封装 AFN 的 GET / POST 请求
     ///
     /// - Parameters:
