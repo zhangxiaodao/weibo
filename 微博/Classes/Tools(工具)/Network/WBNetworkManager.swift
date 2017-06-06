@@ -24,7 +24,7 @@ class WBNetworkManager: AFHTTPSessionManager {
     
     /// 访问令牌，所有网络请求，都基于此令牌（登陆除外）
     //为了保护用户安全，token 是有事限的，默认是三天
-    var accessToken:String? = "2.00Al89qG2psegC2c9998b281RfNnNB模拟token过期"
+    var accessToken:String? = "2.00Al89qG2psegC2c9998b281RfNnNB"
     
     /// 专门负责拼接 token 的网络请求的方法
     func tokenRequest(method: WBHTTPMethod = .GET , URLString:String , parameters:[String:AnyObject]? , completion:@escaping ( _ json:Any?,_ isSuccess:Bool)->()) -> () {

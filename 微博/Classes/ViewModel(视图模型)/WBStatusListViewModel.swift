@@ -40,7 +40,6 @@ class WBStatusListViewModel {
             //3.完成回调
             completion(isSuccess)
             
-            print(array)
         }
     }
     

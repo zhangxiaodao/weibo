@@ -13,36 +13,14 @@ private let cellId = "cellId"
 
 class WBHomeViewController: WBBaseController {
 
-    //微博数据数组
-    lazy var statusList = [String]()
+    /// 列表视图模型
+    fileprivate lazy var listViewModel = WBStatusListViewModel()
     
     override func loadData() {
         
-        WBNetworkManager.shared.statusList { (json, isSuccess) in
-            print(json ?? "未获得数据")
-        }
-        
-        
-        print("开始加载数据")
-        
-        //模拟 ‘延时’ 建在数据 -> dispatch_after
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
-            for i in 0..<20 {
-                
-                if self.isPullUp {
-                    //将数据追加到底部
-                    self.statusList.append("上拉 \(i)")
-                } else {
-                    //将数据插入到数组的顶部
-                    self.statusList.insert(i.description, at: 0)
-                }
-            }
-            
-            print("刷新表格")
-            
+        listViewModel.loadStatus { (isSuccess) in
             //结束刷新控件
             self.refreshControl?.endRefreshing()
-            
             //恢复上拉刷新标志
             self.isPullUp = false
             //刷新表格
@@ -63,7 +41,7 @@ class WBHomeViewController: WBBaseController {
 //MARK: - 表格数据源方法
 extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +49,7 @@ extension WBHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         //2. 设置 cell
-        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         //3. 返回 cell
         return cell
     }
