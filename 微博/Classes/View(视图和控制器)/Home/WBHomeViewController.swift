@@ -19,13 +19,17 @@ class WBHomeViewController: WBBaseController {
     override func loadData() {
         
         print("加载数据结束 \(String(describing: listViewModel.statusList.last?.text))")
-        listViewModel.loadStatus(pullup: self.isPullUp) { (isSuccess) in
+        listViewModel.loadStatus(pullup: self.isPullUp) { (isSuccess , shouldRefresh) in
             //结束刷新控件
             self.refreshControl?.endRefreshing()
             //恢复上拉刷新标志
             self.isPullUp = false
-            //刷新表格
-            self.tableView?.reloadData()
+            
+            if shouldRefresh {
+                //刷新表格
+                self.tableView?.reloadData()
+
+            }
         }
     }
      

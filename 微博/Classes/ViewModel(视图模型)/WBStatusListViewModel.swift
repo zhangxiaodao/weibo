@@ -20,14 +20,26 @@ import Foundation
  1.字典转模型
  2.下拉、上拉刷新数据处理
  */
+
+/// 上拉刷新最大尝试次数
+private let maxPullupTryTime = 3
+
 class WBStatusListViewModel {
     /// 微博模型懒加载
     lazy var statusList = [WBStatus]()
+    /// 上拉刷新错误次数
+    private var pullupErrorTime = 0
     
     /// 加载微博列表
     /// - Parameter pullup: 是否是上拉刷新标记
-    /// - Parameter completion: 完成回调（网络请求是否成功）
-    func loadStatus(pullup:Bool , completion:@escaping (_ isSuccess:Bool)->()) -> () {
+    /// - Parameter completion: 完成回调（网络请求是否成功 , 是否有更多的上拉刷新）
+    func loadStatus(pullup:Bool , completion:@escaping (_ isSuccess:Bool ,_ shouldRefresh:Bool)->()) -> () {
+        
+        //判断是否是上拉刷新，同时检查 刷新错误
+        if pullup && pullupErrorTime > maxPullupTryTime {
+            completion(false , false)
+            return
+        }
         
         //since_id 取出数组中第一条微博的 id
         let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
@@ -37,7 +49,7 @@ class WBStatusListViewModel {
         WBNetworkManager.shared.statusList(since_id:since_id , max_id: max_id) { (json, isSuccess) in
             //1.字典转模型
             guard let array = NSArray.yy_modelArray(with: WBStatus.self, json: json ?? []) as? [WBStatus] else {
-                completion(isSuccess)
+                completion(false , false)
                 return
             }
             
@@ -52,8 +64,16 @@ class WBStatusListViewModel {
                 self.statusList = array + self.statusList
             }
             
-            //3.完成回调
-            completion(isSuccess)
+            //3.判断上拉刷新的数据量
+            if pullup && array.count == 0 {
+                self.pullupErrorTime += 1
+                completion(false , false)
+            } else {
+                //3.完成回调
+                completion(isSuccess , true)
+
+            }
+            
             
         }
     }
