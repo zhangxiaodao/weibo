@@ -19,7 +19,7 @@ extension WBNetworkManager{
         //用 网络工具 加载微博数据
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         // Swift 中 Int 可以转换成 AnyObject / 但是 Int64 不行
-        let parames = ["since_id":"\(since_id)" , "max_id":"\(max_id)"]
+        let parames = ["since_id":"\(since_id)" , "max_id":"\(max_id > 0 ? max_id - 1 : 0)"]
         
         
         tokenRequest(URLString: urlString, parameters: parames as [String : AnyObject]) { (json, isSuccess) in
