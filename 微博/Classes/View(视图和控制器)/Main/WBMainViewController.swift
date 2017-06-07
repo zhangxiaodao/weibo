@@ -19,6 +19,8 @@ class WBMainViewController: UITabBarController {
         setupChildControllers()
         setupComposeButton()
         setupTimr()
+        
+        delegate = self
     }
     
     deinit {
@@ -51,6 +53,25 @@ class WBMainViewController: UITabBarController {
     /// 撰写按钮
     lazy var composeButton:UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 
+}
+
+// MARK: - UITabBarControllerDelegate
+extension WBMainViewController: UITabBarControllerDelegate {
+    
+    /// 将要选择 TabbarItem
+    ///
+    /// - Parameters:
+    ///   - tabBarController: tabBarController
+    ///   - viewController: 目标控制器
+    /// - Returns: 是否切换到目标控制器
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        print("将要切换到\(viewController)")
+        
+        //判断目标控制器 是否是 UIViewController 
+        
+        
+        return !viewController.isMember(of: UIViewController.self)
+    }
 }
 
 // MARK: - 时钟相关方法
