@@ -69,6 +69,8 @@ extension WBMainViewController {
             self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
             
             print("检测到\(count)条新微博")
+            //设置 App 的 badgeNumber , 从 ios8.0之后，需要用户授权才可以显示
+            UIApplication.shared.applicationIconBadgeNumber = count
         }
         
     }
