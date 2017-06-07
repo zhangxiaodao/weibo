@@ -70,6 +70,31 @@ extension WBMainViewController: UITabBarControllerDelegate {
         //判断目标控制器 是否是 UIViewController 
         
         
+        //1>获取控制器在数组中的索引
+        let idx = (childViewControllers as NSArray).index(of: viewController)
+        
+        //2>判断当前控制器是首页，同时 idx 也是首页 ，重复点击首页按钮
+        if selectedIndex == 0 && idx == selectedIndex {
+            print("点击首页")
+            
+            //3> 让表格滚动到顶部
+            //a)获取到控制器
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! WBHomeViewController
+            
+            //b) 滚动到顶部
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+            
+            //4>刷新数据 - 增加延迟，是保证表格线滚动到顶部再刷新
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                vc.loadData()
+            })
+            
+            
+        }
+        
+        
+        
         return !viewController.isMember(of: UIViewController.self)
     }
 }
