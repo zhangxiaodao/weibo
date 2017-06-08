@@ -16,8 +16,6 @@ import UIKit
 //2. extension 不能重写父类方法!重写弗雷的方法，是子类的职责，扩展是对类的扩展
 
 class WBBaseController: UIViewController {
-    //用户登录的标识
-    var userLogin = true
     
     //访客试图信息字典
     var visitorInfoDict:[String:String]?
@@ -36,7 +34,8 @@ class WBBaseController: UIViewController {
 
         setupUI()
         
-        loadData()
+        WBNetworkManager.shared.userLogon ? loadData() : ()
+
     }
     
     /// 自定义导航条
@@ -81,7 +80,7 @@ extension WBBaseController {
         setUpNav()
         setUpTableView()
         
-        userLogin ? setUpTableView() : setupVisitorView()
+        WBNetworkManager.shared.userLogon ? setUpTableView() : setupVisitorView()
     }
     
     /// 设置表歌视图

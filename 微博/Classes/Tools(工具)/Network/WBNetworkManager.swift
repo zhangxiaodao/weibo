@@ -24,9 +24,15 @@ class WBNetworkManager: AFHTTPSessionManager {
     
     /// 访问令牌，所有网络请求，都基于此令牌（登陆除外）
     //为了保护用户安全，token 是有事限的，默认是三天
-    var accessToken:String? = "2.00ml8IrFA_iCgDbfe53f17c08uLjAD"
+    var accessToken:String? //= "2.00Al89qG2psegC60040b050eeBTPWD"
     ///用户的微博 id
     var uid:String? = "5365823342"
+    
+    /// 用户登录标记 [计算型属性]
+    var userLogon:Bool {
+        return accessToken != nil
+    }
+    
     
     /// 专门负责拼接 token 的网络请求的方法
     func tokenRequest(method: WBHTTPMethod = .GET , URLString:String , parameters:[String:AnyObject]? , completion:@escaping ( _ json:Any?,_ isSuccess:Bool)->()) -> () {

@@ -103,12 +103,15 @@ extension WBMainViewController: UITabBarControllerDelegate {
 extension WBMainViewController {
     //定义时钟
     fileprivate func setupTimr() -> () {
-        timr = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateTimr), userInfo: nil, repeats: true)
+        timr = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateTimr), userInfo: nil, repeats: true)
     }
     
     //时钟触发方法
     @objc private func updateTimr() {
-        print(updateTimr)
+        
+        if !WBNetworkManager.shared.userLogon {
+            return
+        }
         
         WBNetworkManager.shared.unreadCount { (count) in
             //设置 首页 tabBarItem 的badge
