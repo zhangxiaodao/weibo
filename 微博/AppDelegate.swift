@@ -53,6 +53,7 @@ extension AppDelegate {
             let url = Bundle.main.url(forResource: "main.json", withExtension: nil)
             //2> data
             let data = NSData(contentsOf: url!)
+            
             //3>写入磁盘
             let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
             let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
