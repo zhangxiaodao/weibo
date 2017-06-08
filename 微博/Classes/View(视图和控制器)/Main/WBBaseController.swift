@@ -60,8 +60,9 @@ class WBBaseController: UIViewController {
 
 // MARK: - 访客视图监听事件
 extension WBBaseController {
-    @objc func login() {
-        print("用户登录")
+    @objc func login() {        
+        //发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     
     @objc func register() {

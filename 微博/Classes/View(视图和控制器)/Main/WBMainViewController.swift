@@ -20,12 +20,18 @@ class WBMainViewController: UITabBarController {
         setupComposeButton()
         setupTimr()
         
+        //设置代理
         delegate = self
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     
     deinit {
         //销毁时钟
         timr?.invalidate()
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
     }
     
     /**
@@ -38,6 +44,10 @@ class WBMainViewController: UITabBarController {
      */
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
         return .portrait
+    }
+    
+    @objc fileprivate func userLogin(n:Notification) -> () {
+        print("发送通知\(n)")
     }
     
     //MARK: - 监听方法

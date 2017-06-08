@@ -25,6 +25,7 @@
 		EDBA17D91EE64D3700F3041B /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17D81EE64D3700F3041B /* WBNetworkManager+Extension.swift */; };
 		EDBA17DB1EE6A5B000F3041B /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17DA1EE6A5B000F3041B /* WBStatus.swift */; };
 		EDBA17DD1EE6A88C00F3041B /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17DC1EE6A88C00F3041B /* WBStatusListViewModel.swift */; };
+		EDBA17DF1EE8F35F00F3041B /* WBCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */; };
 		EDCFCC921EDE5EAB00689F5D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */; };
 		EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7D1EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m */; };
 		EDCFCC941EDE5EAB00689F5D /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7F1EDE5EAB00689F5D /* NSObject+CZRuntime.m */; };
@@ -87,6 +88,7 @@
 		EDBA17D81EE64D3700F3041B /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		EDBA17DA1EE6A5B000F3041B /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		EDBA17DC1EE6A88C00F3041B /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
+		EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBCommon.swift; path = Additions/WBCommon.swift; sourceTree = "<group>"; };
 		EDCFCC791EDE5EAB00689F5D /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		EDCFCC7A1EDE5EAB00689F5D /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		ED7915281ED7D59F001DE08C /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */,
 				ED89D8601EE547E000DB7B21 /* Network */,
 				EDCFCC9F1EDE659900689F5D /* Extensions */,
 				EDCFCC781EDE5EAB00689F5D /* Additions */,
@@ -580,6 +583,7 @@
 				EDBA17DB1EE6A5B000F3041B /* WBStatus.swift in Sources */,
 				EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */,
 				EDCFCC9D1EDE5EAB00689F5D /* UIViewController+CZAddition.m in Sources */,
+				EDBA17DF1EE8F35F00F3041B /* WBCommon.swift in Sources */,
 				EDCFCCA11EDE65DA00689F5D /* Bundle+Extensions.swift in Sources */,
 				EDCFCC951EDE5EAB00689F5D /* NSString+CZBase64.m in Sources */,
 				EDCFCCA41EDEA2A000689F5D /* WBDemoViewController.swift in Sources */,
