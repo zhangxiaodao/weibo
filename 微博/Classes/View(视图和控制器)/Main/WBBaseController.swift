@@ -116,8 +116,8 @@ extension WBBaseController {
         visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
         
         //3.设置导航栏按钮
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(login))
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(register))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
     
     private func setUpNav() {
