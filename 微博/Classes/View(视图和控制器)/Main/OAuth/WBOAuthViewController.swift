@@ -17,6 +17,8 @@ class WBOAuthViewController: UIViewController {
         view = webView
         view.backgroundColor = UIColor.white
         
+        webView.delegate = self as? UIWebViewDelegate
+        
         //设置导航栏
         title = "登录新浪微博"
         //导航栏按钮
@@ -29,7 +31,6 @@ class WBOAuthViewController: UIViewController {
         
         //加载授权页面
         let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppKey)&redirect_uri=\(WBRedirectURL)"
-        
         
         //1> URL确定要访问的资源
         guard let url = URL(string: urlString) else { return  }
@@ -53,5 +54,35 @@ class WBOAuthViewController: UIViewController {
         //让 webView 执行 js 
         webView.stringByEvaluatingJavaScript(from: js)
     }
+}
 
+extension WBOAuthViewController:UIWebViewDelegate {
+    
+    /// webView 将要加载请求
+    ///
+    /// - Parameters:
+    ///   - webView: webView
+    ///   - request: 要加载的请求
+    ///   - navigationType: 导航栏类型
+    /// - Returns: 是否加载 request
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        //确认思路：
+        //1. 如果请求地址包含 http://baidu.com 不加载页面 /否则加载页面
+        
+        //2. 从 http://baidu.com 回调地址中查询字符串的查找 'code='
+        //如果有，授权成功，否则，授权失败
+        
+        
+        print("加载请求---\(String(describing: request.url?.absoluteString))")
+        
+        return true
+        
+        
+        
+        
+        
+    }
+    
+    
 }
