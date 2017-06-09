@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 /// 通过 webVIew 加载新浪微博 授权页面控制器
 class WBOAuthViewController: UIViewController {
@@ -16,8 +18,8 @@ class WBOAuthViewController: UIViewController {
     override func loadView() {
         view = webView
         view.backgroundColor = UIColor.white
-        
-        webView.delegate = self as? UIWebViewDelegate
+        webView.scrollView.isScrollEnabled = false
+        webView.delegate = self
         
         //设置导航栏
         title = "登录新浪微博"
@@ -42,7 +44,10 @@ class WBOAuthViewController: UIViewController {
                 
     }
     
+    /// MARK: - 监听方法
+    /// 关闭定时器
     @objc fileprivate func close() -> () {
+        SVProgressHUD.dismiss()
         dismiss(animated: true, completion: nil)
     }
     
@@ -92,14 +97,15 @@ extension WBOAuthViewController:UIWebViewDelegate {
         // 代码走到吃醋， url 中一定有 查询字符串，并且包含了 'code='
         let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
         print("获取授权码\(code)")
-        
         return false
-        
-        
-        
-        
-        
     }
     
+    func webViewDidStartLoad(_ webView: UIWebView) {
+         SVProgressHUD.show()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
     
 }
