@@ -20,13 +20,22 @@ enum WBHTTPMethod {
 class WBNetworkManager: AFHTTPSessionManager {
     //单利   static  静态区/常量
     //在第一次访问时，执行闭包，并且将结果保存在 shared 常量中
-    static let shared = WBNetworkManager()
+    static let shared:WBNetworkManager = {
+        //实例化对象
+        let instance = WBNetworkManager()
+        
+        //设置响应的反序列化支持的数据类型
+    instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        //返回对象
+        return instance
+    }()
     
     /// 访问令牌，所有网络请求，都基于此令牌（登陆除外）
     //为了保护用户安全，token 是有事限的，默认是三天
-    var accessToken:String? //= "2.00Al89qG2psegC60040b050eeBTPWD"
+    var accessToken:String? //= "2.00Al89qG2psegCf703339f019ZeHRD"
     ///用户的微博 id
-    var uid:String? = "5365823342"
+    var uid:String? = "6271946350"
     
     /// 用户登录标记 [计算型属性]
     var userLogon:Bool {

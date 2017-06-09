@@ -47,11 +47,24 @@ extension WBNetworkManager{
             let count = dict?["status"] as? Int
             completion(count ?? 0)
         }
-        
+    }
+}
+
+extension WBNetworkManager {
+    
+    func loadAccesstoken(code:String) -> () {
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        let parames = ["client_id" : WBAppKey , "client_secret" : WBAppSecret , "grant_type" : "authorization_code" , "code" : code , "redirect_uri" : WBRedirectURL]
+        request(method: .POST, URLString: urlString, parameters: parames as [String : AnyObject]) { (json, isSuccess) in
+            print(json ?? "未获得数据")
+        }
     }
     
     
     
     
     
+    
 }
+
+
