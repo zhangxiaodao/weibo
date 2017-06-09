@@ -27,6 +27,7 @@
 		EDBA17DD1EE6A88C00F3041B /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17DC1EE6A88C00F3041B /* WBStatusListViewModel.swift */; };
 		EDBA17DF1EE8F35F00F3041B /* WBCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */; };
 		EDBA17E21EE8F65100F3041B /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17E11EE8F65100F3041B /* WBOAuthViewController.swift */; };
+		EDBA17E51EEA521000F3041B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBA17E41EEA521000F3041B /* Launch Screen.storyboard */; };
 		EDCFCC921EDE5EAB00689F5D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */; };
 		EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7D1EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m */; };
 		EDCFCC941EDE5EAB00689F5D /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7F1EDE5EAB00689F5D /* NSObject+CZRuntime.m */; };
@@ -91,6 +92,7 @@
 		EDBA17DC1EE6A88C00F3041B /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBCommon.swift; path = Additions/WBCommon.swift; sourceTree = "<group>"; };
 		EDBA17E11EE8F65100F3041B /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
+		EDBA17E41EEA521000F3041B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EDCFCC791EDE5EAB00689F5D /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		EDCFCC7A1EDE5EAB00689F5D /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				ED7915261ED7D59F001DE08C /* Classes */,
 				ED7914F81ED7C923001DE08C /* AppDelegate.swift */,
 				EDCFCC9E1EDE5EEE00689F5D /* WeiBo-Bridge.h */,
+				EDBA17E41EEA521000F3041B /* Launch Screen.storyboard */,
 				ED7914FF1ED7C924001DE08C /* Assets.xcassets */,
 				ED7915041ED7C924001DE08C /* Info.plist */,
 			);
@@ -512,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBA17E51EEA521000F3041B /* Launch Screen.storyboard in Resources */,
 				EDAD86EF1EE15EF9005AE3E4 /* main.json in Resources */,
 				ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */,
 			);
@@ -692,7 +696,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -736,7 +740,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -749,7 +753,6 @@
 			baseConfigurationReference = 406BE7EE8B8D6B786741D3B7 /* Pods-微博.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WA9VRUVC47;
 				INFOPLIST_FILE = "微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -766,7 +769,6 @@
 			baseConfigurationReference = 2F51A374CD3A05C48684D256 /* Pods-微博.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WA9VRUVC47;
 				INFOPLIST_FILE = "微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

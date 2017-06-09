@@ -69,14 +69,31 @@ extension WBOAuthViewController:UIWebViewDelegate {
         
         //确认思路：
         //1. 如果请求地址包含 http://baidu.com 不加载页面 /否则加载页面
+        // -(BOOL) hasPrefix:(NSString *) //astring;检查字符串是否以astring开头；
+        // -(BOOL) hasSuffix:(NSString *) //astring;检查字符串是否以astring结尾；
+        if request.url?.absoluteString.hasPrefix(WBRedirectURL) == false {
+            return true
+        }
         
         //2. 从 http://baidu.com 回调地址中查询字符串的查找 'code='
         //如果有，授权成功，否则，授权失败
         
+        //print("加载请求---\(String(describing: request.url))")
+        // query 就是 URL 中 '?' 后面的所有部分
+        //print("加载请求--\(String(describing: request.url?.query))")
         
-        print("加载请求---\(String(describing: request.url?.absoluteString))")
+        if request.url?.query?.hasPrefix("code=") == false {
+            print("取消授权")
+            close()
+            return false
+        }
         
-        return true
+        //3. 从 query 字符串中获取授权码
+        // 代码走到吃醋， url 中一定有 查询字符串，并且包含了 'code='
+        let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
+        print("获取授权码\(code)")
+        
+        return false
         
         
         
