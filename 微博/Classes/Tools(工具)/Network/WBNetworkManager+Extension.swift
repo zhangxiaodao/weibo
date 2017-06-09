@@ -28,9 +28,8 @@ extension WBNetworkManager{
             
             //从 json 中获取到 statuses 字典数据
             //如果 as? 失败， result = nil
-            let result = data["statuses"]
-            
-            completion(result as? [[String : AnyObject]], isSuccess)
+            let result = data["statuses"] as? [[String : AnyObject]]
+            completion(result, isSuccess)
         }
     }
     
