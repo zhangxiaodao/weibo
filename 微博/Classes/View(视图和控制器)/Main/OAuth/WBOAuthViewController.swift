@@ -21,6 +21,7 @@ class WBOAuthViewController: UIViewController {
         title = "登录新浪微博"
         //导航栏按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", fontSize: 16, target: self, action: #selector(close), isback: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "自动填充", target: self, action: #selector(autoFill))
     }
     
     override func viewDidLoad() {
@@ -42,6 +43,15 @@ class WBOAuthViewController: UIViewController {
     
     @objc fileprivate func close() -> () {
         dismiss(animated: true, completion: nil)
+    }
+    
+    /// 自动填充 - WebView的注入，直接通过 js 修改 ‘本地浏览器中’ 缓存的页面内容
+    //点击 登陆按钮 ，执行 submit() 将 本地数据提交给服务器
+    @objc fileprivate func autoFill() -> () {
+        //准备 js
+        let js = "document.getElementById('userId').value = '18767112313';" + "document.getElementById('passwd').value = 'azhc1212';"
+        //让 webView 执行 js 
+        webView.stringByEvaluatingJavaScript(from: js)
     }
 
 }
