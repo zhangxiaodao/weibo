@@ -36,6 +36,12 @@ class WBBaseController: UIViewController {
         
         WBNetworkManager.shared.userLogon ? loadData() : ()
 
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: WBUserLoginSuccessNottification), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     /// 自定义导航条
@@ -60,6 +66,20 @@ class WBBaseController: UIViewController {
 
 // MARK: - 访客视图监听事件
 extension WBBaseController {
+    
+    /// 登陆成功处理
+    @objc fileprivate func loginSuccess(n:Notification) -> () {
+        print("登陆成功\(n)")
+        
+        //更新 UI -> 将访客视图 更改为 表格视图
+        //在访问 view 的 getter 方法时，如果 view == nil ，会调用 loadView ，然后调用 viewDidLoad (代码中没有重写 loadView ，重写了 viewDidLoad,所以 设置 view = nil,会重新加载 viewDidLoad)
+        view = nil
+        
+        //注销通知 -> 重新执行 viewDidLoad 会再次注册! 避免通知重复注册
+        NotificationCenter.default.removeObserver(self)
+        
+    }
+    
     @objc func login() {        
         //发送通知
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
