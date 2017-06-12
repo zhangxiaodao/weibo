@@ -57,6 +57,12 @@ extension WBNetworkManager {
         let parames = ["client_id" : WBAppKey , "client_secret" : WBAppSecret , "grant_type" : "authorization_code" , "code" : code , "redirect_uri" : WBRedirectURL]
         request(method: .POST, URLString: urlString, parameters: parames as [String : AnyObject]) { (json, isSuccess) in
             print(json ?? "未获得数据")
+            
+            self.userAccount.yy_modelSet(with: json as? [String:AnyObject] ?? [:])
+            print(self.userAccount)
+            //保存模型
+            self.userAccount.saveAccount()
+            
         }
     }
     
