@@ -36,7 +36,7 @@ extension WBNetworkManager{
     /// 返回 微博 的未读数量
     func unreadCount(completion:@escaping (_ count: Int)->()) -> () {
         
-        guard let uid = uid else { return  }
+        guard let uid = userAccount.uid else { return  }
         
         let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
         let parames = ["uid":uid]
