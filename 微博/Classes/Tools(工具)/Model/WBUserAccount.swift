@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let accountFile:NSString = "useracount.json"
+
 /// 用户账户信息
 class WBUserAccount: NSObject {
     var access_token:String? //= "2.00Al89qG2psegCf703339f019ZeHRD"
@@ -24,13 +26,38 @@ class WBUserAccount: NSObject {
     
     //过期日期
     var expireData:Date?
-    
-    
-    
     override var description: String{
         return yy_modelDescription()
     }
     
+     override init() {
+        
+        super.init()
+        //1.从磁盘中加载保存的文件 -> 字典
+        guard let path = accountFile.cz_appendDocumentDir(),
+            let data = NSData(contentsOfFile: path),
+        let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:AnyObject] else {
+                return
+        }
+        
+        //2.使用字典设置属性值
+        yy_modelSet(with: dict ?? [:])
+        
+        //3. 判断 token 是否过期
+        
+        expireData = Date(timeIntervalSinceNow: -3600 * 24)
+        
+        if expireData?.compare(Date()) != .orderedDescending {
+            print("账户过期")
+            
+            //清空 token 
+            access_token = nil
+            uid = nil
+            //删除账户文件
+            try? FileManager.default.removeItem(atPath: path)
+        }
+        
+    }
     
     /**
      存储方式：
@@ -51,7 +78,7 @@ class WBUserAccount: NSObject {
         
         //2.字典序列化 data
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
-            let filePath = ("useracount.json" as NSString).cz_appendDocumentDir()
+            let filePath = accountFile.cz_appendDocumentDir()
             else { return  }
         
         //3.写入磁盘
