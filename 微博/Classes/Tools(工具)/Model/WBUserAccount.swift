@@ -32,6 +32,20 @@ class WBUserAccount: NSObject {
     }
     
     
+    /**
+     存储方式：
+     1.偏好设置 (存储小的内容)
+     2.存入沙盒 -> 
+        2.1 使用归档存入沙盒
+        2.2 使用 writeTo (writeTo 不能存储自定义类型的数据，需要先转化为 pilst 或 json 数据类型  在存储)
+     3.数据库 (FMDB / CoreData)
+     4.钥匙串访问 (存储小的内容 / 并且存入进去后，自动加密，OC没法使用代码直接写，只能使用框架 SSKeychain 存储)
+     */
+    
+    /// 保存用户 token
+    func saveAccount() -> () {
+        
+    }
     
     
     
