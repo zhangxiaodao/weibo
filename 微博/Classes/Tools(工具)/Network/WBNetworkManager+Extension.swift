@@ -52,17 +52,25 @@ extension WBNetworkManager{
 
 extension WBNetworkManager {
     
-    func loadAccesstoken(code:String) -> () {
+    /// 加载token
+    ///
+    /// - Parameters:
+    ///   - code: 授权码
+    ///   - completion: 完成回调[是否成功]
+    func loadAccesstoken(code:String , completion: @escaping (_ isSuccess:Bool)->()) -> () {
         let urlString = "https://api.weibo.com/oauth2/access_token"
         let parames = ["client_id" : WBAppKey , "client_secret" : WBAppSecret , "grant_type" : "authorization_code" , "code" : code , "redirect_uri" : WBRedirectURL]
         request(method: .POST, URLString: urlString, parameters: parames as [String : AnyObject]) { (json, isSuccess) in
             print(json ?? "未获得数据")
             
+            //如果请求失败，对用户账户数据不会有任何影响
+            //直接用字典设置 userAAccount 的属性
             self.userAccount.yy_modelSet(with: json as? [String:AnyObject] ?? [:])
             print(self.userAccount)
             //保存模型
             self.userAccount.saveAccount()
-            
+            //完成回调
+            completion(isSuccess)
         }
     }
     

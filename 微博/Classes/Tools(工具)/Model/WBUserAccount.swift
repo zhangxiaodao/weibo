@@ -45,7 +45,7 @@ class WBUserAccount: NSObject {
         
         //3. 判断 token 是否过期
         
-        expireData = Date(timeIntervalSinceNow: -3600 * 24)
+        //expireData = Date(timeIntervalSinceNow: -3600 * 24)
         
         if expireData?.compare(Date()) != .orderedDescending {
             print("账户过期")
