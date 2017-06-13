@@ -13,6 +13,6 @@ class WBDiscoverViewController: WBBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("token 过期了")
-        //WBNetworkManager.shared.userAccount.access_token = nil
+        WBNetworkManager.shared.userAccount.access_token = nil
     }
 }
