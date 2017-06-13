@@ -70,6 +70,25 @@ extension WBHomeViewController {
         
         //注册原型 cell
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        setupNavTitle()
+    }
+    
+    /// 设置导航栏标题
+    fileprivate func setupNavTitle() -> () {
+        
+        let title = WBNetworkManager.shared.userAccount.screen_name
+        
+        let button = WBTitleButton(title: title)
+        
+        
+        navItem.titleView = button
+        
+        button.addTarget(self, action: #selector(clickBtn), for: .touchUpInside)
+    }
+    
+    @objc fileprivate func clickBtn(btn:UIButton) -> () {
+        //设置选中状态
+        btn.isSelected = !btn.isSelected
     }
     
 }
