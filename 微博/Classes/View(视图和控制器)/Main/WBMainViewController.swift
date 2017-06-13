@@ -118,6 +118,15 @@ extension WBMainViewController {
      */
     
     private var isNewVersion:Bool {
+        //1.去当前的版本号
+        
+        //2.取保存在 'document' 目录中的之前的版本号
+        
+        //3.将当前版本号保存在沙盒
+        
+        //4.返回两个版本是否一致
+        
+        
         return false
     }
     
