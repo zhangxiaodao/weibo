@@ -103,7 +103,6 @@ extension WBBaseController {
         automaticallyAdjustsScrollViewInsets = false
         
         setUpNav()
-        setUpTableView()
         
         WBNetworkManager.shared.userLogon ? setUpTableView() : setupVisitorView()
     }

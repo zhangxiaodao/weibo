@@ -121,7 +121,7 @@ extension WBMainViewController: UITabBarControllerDelegate {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
                 vc.loadData()
             })
-            
+            self.tabBar.items?[0].badgeValue = nil
             
         }
         
