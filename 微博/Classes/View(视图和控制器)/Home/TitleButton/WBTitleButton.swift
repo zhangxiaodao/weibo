@@ -22,7 +22,7 @@ class WBTitleButton: UIButton {
             setTitle("首页", for: [])
         } else {
             setTitle(title! + " ", for: [])
-            setImage(UIImage(named: "navigationbar_arrow_down"), for: .normal)
+            setImage(UIImage(named: "navigationbar_arrow_down"), for: [])
             setImage(UIImage(named: "navigationbar_arrow_up"), for: .selected)
         }
         
@@ -51,11 +51,9 @@ class WBTitleButton: UIButton {
                 return
         }
         //将 label 的 x 向左移动 iamgeView 的宽度
-        titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width, dy: 0)
+        titleLabel.frame.origin.x = 0
         //将 imageView 的 x 方向向右移动 label 的宽度
-        imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width, dy: 0)
-        
-        
+        imageView.frame.origin.x = titleLabel.bounds.width
     }
     
     

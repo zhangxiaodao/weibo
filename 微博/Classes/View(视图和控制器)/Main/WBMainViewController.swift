@@ -50,7 +50,7 @@ class WBMainViewController: UITabBarController {
     @objc fileprivate func userLogin(n:Notification) -> () {
         print("发送通知\(n)")
         
-        var when = DispatchTime.now()
+        _ = DispatchTime.now()
         
         
         //判断 n.object 是否有值，如果有值，提示用户重新登录

@@ -290,6 +290,7 @@
 		ED79152C1ED7D59F001DE08C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				EDD2C0D21EEFC5970021F7BE /* NewFeature */,
 				EDBA17E01EE8F63100F3041B /* OAuth */,
 				EDCFCCA21EDEA28C00689F5D /* 测试 */,
 				EDAD86E81EDFF1C0005AE3E4 /* 主控制器 */,
@@ -421,6 +422,13 @@
 				EDD2C0D01EEF8F510021F7BE /* WBTitleButton.swift */,
 			);
 			path = TitleButton;
+			sourceTree = "<group>";
+		};
+		EDD2C0D21EEFC5970021F7BE /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
