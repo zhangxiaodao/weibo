@@ -43,11 +43,12 @@ class WBNetworkManager: AFHTTPSessionManager {
     func tokenRequest(method: WBHTTPMethod = .GET , URLString:String , parameters:[String:AnyObject]? , completion:@escaping ( _ json:Any?,_ isSuccess:Bool)->()) -> () {
         
         //处理 token 字典
-        //0> 判断 token 是否为 nil ,为 nil 直接返回
+        //0> 判断 token 是否为 nil ,为 nil 直接返回 , 程序在执行过程中,token 一般不会为 nil
         guard let token = userAccount.access_token else {
             
-            //FIXM:发送通知（本方法不知道被谁调用，提示用户登录）
-            print("没有 token! 请登录")
+            //FIXM: 发送通知（本方法不知道被谁调用，提示用户登录）
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: "bad token")
+            
             completion(nil, false)
             return
         }
@@ -88,6 +89,7 @@ class WBNetworkManager: AFHTTPSessionManager {
                 print("Token 过期了")
                 
                 //FIXM:发送通知（本方法不知道被谁调用，谁收到通知，谁处理）
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object:"bad token")
             }
             
             print("网络请求错误\(error)")

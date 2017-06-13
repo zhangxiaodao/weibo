@@ -104,7 +104,6 @@ extension WBOAuthViewController:UIWebViewDelegate {
             if !isSuccess {
                 SVProgressHUD.showInfo(withStatus: "网络请求失败")
             } else {
-                SVProgressHUD.showInfo(withStatus: "网络请求成功")
                 
                 //跳转界面
                 //1.发送通知

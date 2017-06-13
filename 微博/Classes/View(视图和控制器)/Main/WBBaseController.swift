@@ -71,6 +71,10 @@ extension WBBaseController {
     @objc fileprivate func loginSuccess(n:Notification) -> () {
         print("登陆成功\(n)")
         
+        //登录前左侧是注册，右边是登陆
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        
         //更新 UI -> 将访客视图 更改为 表格视图
         //在访问 view 的 getter 方法时，如果 view == nil ，会调用 loadView ，然后调用 viewDidLoad (代码中没有重写 loadView ，重写了 viewDidLoad,所以 设置 view = nil,会重新加载 viewDidLoad)
         view = nil
@@ -115,6 +119,9 @@ extension WBBaseController {
         
         //设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: (tabBarController?.tabBar.bounds.height)!, right: 0)
+        
+        //修改指示器的缩进
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         //设置刷新控件
         refreshControl = UIRefreshControl()

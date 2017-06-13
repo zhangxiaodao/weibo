@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import SVProgressHUD
+import AFNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,20 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //取得用户授权显示通知[上方的提示条/声音/badgeNumber]
-        //  #available 是检测版本， 如果是 10.0 以上 取得用户授权
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert , .badge , .carPlay , .sound]) { (success, error) in
-                print("授权" + (success ? "成功" : "失败"))
-            }
-        } else {
-            
-            let notifySettings = UIUserNotificationSettings(types: [.alert , .badge , .sound], categories: nil)
-            application.registerUserNotificationSettings(notifySettings)
-
-        }
         
         
+        setupAdditions()
         
         
         window = UIWindow()
@@ -41,6 +32,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadAppInfo()
         
         return true
+    }
+}
+
+// MARK: - 设置应用程序额外信息
+extension AppDelegate {
+    fileprivate func setupAdditions() -> () {
+        //1.设置 SVProgressHUD  最小解除时间
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        //2.设置网络加载指示器
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
+        //3.设置用户授权显示通知
+        //取得用户授权显示通知[上方的提示条/声音/badgeNumber]
+        //  #available 是检测版本， 如果是 10.0 以上 取得用户授权
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert , .badge , .carPlay , .sound]) { (success, error) in
+                print("授权" + (success ? "成功" : "失败"))
+            }
+        } else {
+            
+            let notifySettings = UIUserNotificationSettings(types: [.alert , .badge , .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(notifySettings)
+            
+        }
     }
 }
 
