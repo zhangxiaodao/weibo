@@ -45,6 +45,8 @@
 		EDCFCCA41EDEA2A000689F5D /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCCA31EDEA2A000689F5D /* WBDemoViewController.swift */; };
 		EDCFCCA61EDEAB6400689F5D /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCCA51EDEAB6400689F5D /* UIBarButtonItem+Extension.swift */; };
 		EDD2C0D11EEF8F510021F7BE /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C0D01EEF8F510021F7BE /* WBTitleButton.swift */; };
+		EDD2C0D61EEFC6E00021F7BE /* WBWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */; };
+		EDD2C0D81EEFC72D0021F7BE /* WBNewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,8 @@
 		EDCFCCA31EDEA2A000689F5D /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		EDCFCCA51EDEAB6400689F5D /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		EDD2C0D01EEF8F510021F7BE /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
+		EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcome.swift; sourceTree = "<group>"; };
+		EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeature.swift; sourceTree = "<group>"; };
 		FE5CBF3A9C8948E8D6020C26 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -427,6 +431,8 @@
 		EDD2C0D21EEFC5970021F7BE /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
+				EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */,
+				EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 				EDCFCCA61EDEAB6400689F5D /* UIBarButtonItem+Extension.swift in Sources */,
 				ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */,
 				ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */,
+				EDD2C0D81EEFC72D0021F7BE /* WBNewFeature.swift in Sources */,
 				ED89D8641EE548AD00DB7B21 /* WBNetworkManager.swift in Sources */,
 				EDBA17D91EE64D3700F3041B /* WBNetworkManager+Extension.swift in Sources */,
 				ED7915351ED7D68D001DE08C /* WBBaseController.swift in Sources */,
@@ -651,6 +658,7 @@
 				EDBA17E21EE8F65100F3041B /* WBOAuthViewController.swift in Sources */,
 				EDCFCC961EDE5EAB00689F5D /* NSString+CZHash.m in Sources */,
 				ED7915391ED7D745001DE08C /* WBMessageViewController.swift in Sources */,
+				EDD2C0D61EEFC6E00021F7BE /* WBWelcome.swift in Sources */,
 				EDBA17E81EEA867600F3041B /* WBUserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

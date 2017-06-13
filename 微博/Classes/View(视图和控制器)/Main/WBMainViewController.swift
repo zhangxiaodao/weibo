@@ -21,6 +21,8 @@ class WBMainViewController: UITabBarController {
         setupComposeButton()
         setupTimr()
         
+        setupNewFeatureView()
+        
         //设置代理
         delegate = self
         
@@ -49,9 +51,6 @@ class WBMainViewController: UITabBarController {
     
     @objc fileprivate func userLogin(n:Notification) -> () {
         print("发送通知\(n)")
-        
-        _ = DispatchTime.now()
-        
         
         //判断 n.object 是否有值，如果有值，提示用户重新登录
         if n.object != nil {
@@ -85,6 +84,27 @@ class WBMainViewController: UITabBarController {
     /// 撰写按钮
     lazy var composeButton:UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 
+}
+
+// MARK: - 新特性视图
+extension WBMainViewController {
+    /// 设置新特性视图
+    fileprivate func setupNewFeatureView() -> () {
+        //1.如果更新，显示新特性，否则显示欢迎
+        let v = isNewVersion ? WBNewFeature() : WBWelcome()
+        
+        //2.添加视图
+        v.frame = view.bounds
+        view.addSubview(v)
+        
+    }
+    
+    /// extension 中可以有计算型属性，不会占用存储空间
+    /// 构造函数：给属性分配空间
+    private var isNewVersion:Bool {
+        return false
+    }
+    
 }
 
 // MARK: - UITabBarControllerDelegate
