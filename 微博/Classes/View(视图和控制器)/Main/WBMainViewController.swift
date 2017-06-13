@@ -119,15 +119,20 @@ extension WBMainViewController {
     
     private var isNewVersion:Bool {
         //1.去当前的版本号
-        
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        print("当前版本\(currentVersion)")
+
         //2.取保存在 'document' 目录中的之前的版本号
-        
+        let path:String = ("version" as NSString).cz_appendDocumentDir()
+        //从路径中取出文件
+        let sandboxVersion = (try? String(contentsOfFile: path)) ?? ""
+        print("沙盒版本\(sandboxVersion)")
         //3.将当前版本号保存在沙盒
+        _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         //4.返回两个版本是否一致
+        return currentVersion != sandboxVersion
         
-        
-        return false
     }
     
 }
