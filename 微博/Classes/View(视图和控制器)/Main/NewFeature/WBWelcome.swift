@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 /// 欢迎试图
 class WBWelcome: UIView {
     
@@ -21,6 +21,30 @@ class WBWelcome: UIView {
         v.frame = UIScreen.main.bounds
         return v
     }
+    
+    //initWithCoder 只是刚从 xib 的二进制将二进制文件将试图数据加载完成
+    //还没有和代码连线建立起关系，所以开发时，不要在这个方法里处理 UI
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        print("initWithCoder + \(iconView)")
+    }
+    
+    //从xib或者storyboard加载完毕就会调用
+    override func awakeFromNib() {
+        
+        //1. url
+        guard let urlString = WBNetworkManager.shared.userAccount.avatar_large ,
+            let url = URL(string: urlString) else { return  }
+        //2.设置头像
+        iconView.sd_setImage(with: url, placeholderImage: UIImage(named: "avatar_default_big"))
+        
+        
+    }
+    
+}
+
+// MARK: - 加载头像图片
+extension WBWelcome {
     
 }
 
@@ -49,7 +73,12 @@ extension WBWelcome {
             //更新约束
             self.layoutIfNeeded()
         }) { (_) in
-            self.tipLabel.alpha = 1
+            
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: { 
+                self.tipLabel.alpha = 1
+            }, completion: { (_) in
+                
+            })
         }
         
         
