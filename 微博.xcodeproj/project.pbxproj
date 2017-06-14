@@ -48,6 +48,7 @@
 		EDD2C0D61EEFC6E00021F7BE /* WBWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */; };
 		EDD2C0D81EEFC72D0021F7BE /* WBNewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */; };
 		EDD2C0DA1EEFD6610021F7BE /* WBWelcome.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2C0D91EEFD6610021F7BE /* WBWelcome.xib */; };
+		EDD2C0DE1EF0E1280021F7BE /* WBNewFeature.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2C0DD1EF0E1280021F7BE /* WBNewFeature.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcome.swift; sourceTree = "<group>"; };
 		EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeature.swift; sourceTree = "<group>"; };
 		EDD2C0D91EEFD6610021F7BE /* WBWelcome.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcome.xib; sourceTree = "<group>"; };
+		EDD2C0DD1EF0E1280021F7BE /* WBNewFeature.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBNewFeature.xib; sourceTree = "<group>"; };
 		FE5CBF3A9C8948E8D6020C26 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -436,6 +438,7 @@
 				EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */,
 				EDD2C0D91EEFD6610021F7BE /* WBWelcome.xib */,
 				EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */,
+				EDD2C0DD1EF0E1280021F7BE /* WBNewFeature.xib */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				EDAD86EF1EE15EF9005AE3E4 /* main.json in Resources */,
 				ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */,
 				EDD2C0DA1EEFD6610021F7BE /* WBWelcome.xib in Resources */,
+				EDD2C0DE1EF0E1280021F7BE /* WBNewFeature.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

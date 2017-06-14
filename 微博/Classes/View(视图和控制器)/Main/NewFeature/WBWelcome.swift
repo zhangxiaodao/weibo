@@ -77,7 +77,7 @@ extension WBWelcome {
             UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: { 
                 self.tipLabel.alpha = 1
             }, completion: { (_) in
-                
+                self.removeFromSuperview()
             })
         }
         

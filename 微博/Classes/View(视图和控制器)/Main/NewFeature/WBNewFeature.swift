@@ -10,6 +10,17 @@ import UIKit
 
 /// 新特性视图
 class WBNewFeature: UIView {
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    //进入微博
+    @IBAction func enterStatus() {
+    }
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.orange
