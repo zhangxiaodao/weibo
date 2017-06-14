@@ -97,7 +97,7 @@ extension WBMainViewController {
         }
         
         //1.如果更新，显示新特性，否则显示欢迎
-        let v = isNewVersion ? WBNewFeature() : WBWelcome.welcome()
+        let v = isNewVersion ? WBNewFeature.newFeature() : WBWelcome.welcome()
         
         //2.添加视图
         view.addSubview(v)
@@ -130,7 +130,8 @@ extension WBMainViewController {
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         //4.返回两个版本是否一致
-        return currentVersion != sandboxVersion
+//        return currentVersion != sandboxVersion
+        return currentVersion == sandboxVersion
         
     }
     
