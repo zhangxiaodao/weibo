@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WBWelcome" customModule="微博" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="PYc-5f-PV5">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="KK8-fO-dWz">
+                    <rect key="frame" x="145" y="422" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="B6g-u0-C8B"/>
+                        <constraint firstAttribute="height" constant="85" id="jHM-jt-aaE"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-Fo-1C8">
+                    <rect key="frame" x="145" y="523" width="85" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ycS-Fo-1C8" firstAttribute="top" secondItem="KK8-fO-dWz" secondAttribute="bottom" constant="16" id="0TH-CH-qds"/>
+                <constraint firstAttribute="bottom" secondItem="PYc-5f-PV5" secondAttribute="bottom" id="2mM-58-tVD"/>
+                <constraint firstItem="PYc-5f-PV5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3mO-ix-jI9"/>
+                <constraint firstItem="ycS-Fo-1C8" firstAttribute="width" secondItem="KK8-fO-dWz" secondAttribute="width" id="CVV-43-2S5"/>
+                <constraint firstItem="ycS-Fo-1C8" firstAttribute="centerX" secondItem="KK8-fO-dWz" secondAttribute="centerX" id="QdY-1A-xFS"/>
+                <constraint firstAttribute="bottom" secondItem="KK8-fO-dWz" secondAttribute="bottom" constant="160" id="W03-nL-pwM"/>
+                <constraint firstItem="KK8-fO-dWz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wk7-q0-Xki"/>
+                <constraint firstItem="PYc-5f-PV5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hsv-Me-QZW"/>
+                <constraint firstAttribute="trailing" secondItem="PYc-5f-PV5" secondAttribute="trailing" id="t4m-8U-5Ei"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="bottomCons" destination="W03-nL-pwM" id="Kfm-0V-Bso"/>
+                <outlet property="iconView" destination="KK8-fO-dWz" id="9VP-YZ-mj5"/>
+                <outlet property="tipLabel" destination="ycS-Fo-1C8" id="ijc-be-dwh"/>
+            </connections>
+            <point key="canvasLocation" x="32.5" y="118.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="621" height="1104"/>
+        <image name="avatar_default_big" width="85" height="85"/>
+    </resources>
+</document>

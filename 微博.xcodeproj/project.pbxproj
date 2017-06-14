@@ -47,6 +47,7 @@
 		EDD2C0D11EEF8F510021F7BE /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C0D01EEF8F510021F7BE /* WBTitleButton.swift */; };
 		EDD2C0D61EEFC6E00021F7BE /* WBWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */; };
 		EDD2C0D81EEFC72D0021F7BE /* WBNewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */; };
+		EDD2C0DA1EEFD6610021F7BE /* WBWelcome.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2C0D91EEFD6610021F7BE /* WBWelcome.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		EDD2C0D01EEF8F510021F7BE /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
 		EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcome.swift; sourceTree = "<group>"; };
 		EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeature.swift; sourceTree = "<group>"; };
+		EDD2C0D91EEFD6610021F7BE /* WBWelcome.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcome.xib; sourceTree = "<group>"; };
 		FE5CBF3A9C8948E8D6020C26 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -432,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				EDD2C0D51EEFC6E00021F7BE /* WBWelcome.swift */,
+				EDD2C0D91EEFD6610021F7BE /* WBWelcome.xib */,
 				EDD2C0D71EEFC72D0021F7BE /* WBNewFeature.swift */,
 			);
 			path = NewFeature;
@@ -554,6 +557,7 @@
 				EDBA17E51EEA521000F3041B /* Launch Screen.storyboard in Resources */,
 				EDAD86EF1EE15EF9005AE3E4 /* main.json in Resources */,
 				ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */,
+				EDD2C0DA1EEFD6610021F7BE /* WBWelcome.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
