@@ -70,32 +70,26 @@ class WBStatusListViewModel {
             }
             
             //视图模型创建完成
-//            
-//            guard let array = NSArray.yy_modelArray(with: WBStatus.self, json: json ?? []) as? [WBStatus] else {
-//                completion(false , false)
-//                return
-//            }
-//            
-//            print("刷新了\(array.count)条数据\(array)")
-//            
-//            //2.拼接数据
-//            if pullup {
-//                //上拉刷新，
-//                self.statusList = self.statusList + array
-//            } else {
-//                //下拉刷新，应该把结果拼接在数组前面
-//                self.statusList = array + self.statusList
-//            }
-//            
-//            //3.判断上拉刷新的数据量
-//            if pullup && array.count == 0 {
-//                self.pullupErrorTime += 1
-//                completion(false , false)
-//            } else {
-//                //3.完成回调
-//                completion(isSuccess , true)
-//
-//            }
+            print("刷新了\(array.count)条数据\(array)")
+            
+            //2.拼接数据
+            if pullup {
+                //上拉刷新，
+                self.statusList = self.statusList + array
+            } else {
+                //下拉刷新，应该把结果拼接在数组前面
+                self.statusList = array + self.statusList
+            }
+            
+            //3.判断上拉刷新的数据量
+            if pullup && array.count == 0 {
+                self.pullupErrorTime += 1
+                completion(false , false)
+            } else {
+                //3.完成回调
+                completion(isSuccess , true)
+
+            }
             
             
         }

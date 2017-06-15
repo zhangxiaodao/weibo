@@ -7,8 +7,12 @@
 //
 
 import Foundation
-
-class WBStatustViewModel {
+/**
+ 如果没有任何父类，如果希望开发时调试，输出调试信息，需要
+ 1. 遵循 CustomStringConvertible协议
+ 2. 实现 description 计算型属性
+ */
+class WBStatustViewModel:CustomStringConvertible {
     /// 微博模型
     var status:WBStatus
     
@@ -21,7 +25,9 @@ class WBStatustViewModel {
         self.status = model
     }
     
-    
+    var description: String {
+        return status.description
+    }
     
 }
 

@@ -17,8 +17,7 @@ class WBHomeViewController: WBBaseController {
     fileprivate lazy var listViewModel = WBStatusListViewModel()
     
     override func loadData() {
-        
-        print("加载数据结束 \(String(describing: listViewModel.statusList.last?.text))")
+
         listViewModel.loadStatus(pullup: self.isPullUp) { (isSuccess , shouldRefresh) in
             //结束刷新控件
             self.refreshControl?.endRefreshing()
@@ -54,7 +53,9 @@ extension WBHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
         
         //2. 设置 cell
-        cell.statusLabel?.text = listViewModel.statusList[indexPath.row].text
+        let viewModel = listViewModel.statusList[indexPath.row]
+        cell.statusLabel?.text = viewModel.status.text
+        cell.nameLabel.text = viewModel.status.user?.screen_name
         //3. 返回 cell
         return cell
     }
