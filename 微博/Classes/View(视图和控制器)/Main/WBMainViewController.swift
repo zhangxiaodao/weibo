@@ -130,8 +130,8 @@ extension WBMainViewController {
         _ = try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         //4.返回两个版本是否一致
-//        return currentVersion != sandboxVersion
-        return currentVersion == sandboxVersion
+        return currentVersion != sandboxVersion
+//        return currentVersion == sandboxVersion
         
     }
     
@@ -171,7 +171,9 @@ extension WBMainViewController: UITabBarControllerDelegate {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
                 vc.loadData()
             })
+            //5.清楚 tabbarItem 的 badgeNumber
             self.tabBar.items?[0].badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
             
         }
         
