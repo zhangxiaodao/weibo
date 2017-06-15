@@ -47,13 +47,13 @@ class WBStatusListViewModel {
         
         
         WBNetworkManager.shared.statusList(since_id:since_id , max_id: max_id) { (json, isSuccess) in
-            //1.字典转模型
+            //1.字典转模型(所有的第三方框架都支持嵌套的字典转模型)
             guard let array = NSArray.yy_modelArray(with: WBStatus.self, json: json ?? []) as? [WBStatus] else {
                 completion(false , false)
                 return
             }
             
-            print("刷新了\(array.count)条数据")
+            print("刷新了\(array.count)条数据\(array)")
             
             //2.拼接数据
             if pullup {
