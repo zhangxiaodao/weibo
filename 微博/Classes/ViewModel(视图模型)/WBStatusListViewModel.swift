@@ -45,58 +45,57 @@ class WBStatusListViewModel {
         let since_id = pullup ? 0 : (statusList.first?.status.id ?? 0)
         let max_id = !pullup ? 0 : (statusList.last?.status.id ?? 0)
         
-        
+        //发起网络请求，加载微博数据 [字典的数组]
         WBNetworkManager.shared.statusList(since_id:since_id , max_id: max_id) { (json, isSuccess) in
             
-            //0. 判断网络请求是否成功
+            //0.如果网络请求失败，直接执行完成回调
             if !isSuccess {
-                //直接返回
                 completion(false, false)
                 return
             }
             
-            //1.字典转模型(所有的第三方框架都支持嵌套的字典转模型)
-            //1>定义结果可变数组
+            //1. 遍历字典数组，字典转 模型 => 视图模型，将视图模型添加到数组
             var array = [WBStatustViewModel]()
             
-            //2> 遍历服务器返回的字典数组，字典转模型
             for dict in json ?? [] {
-                //a)创建微博模型 - 如果创建模型失败，继续后续的便利
-                guard let model = WBStatus.yy_model(with: dict) else {
-                    continue
-                }
+                //1>创建微博模型
+                let status = WBStatus()
                 
-                //b) 将 视图模型 添加到数组
-                array.append(WBStatustViewModel(model: model))
+                //2>使用字典设置模型数值
+                status.yy_modelSet(with: dict)
+                
+                //3>使用 ‘微博’ 模型创建 ‘微博视图’ 模型
+                let viewModel = WBStatustViewModel(model: status)
+                array.append(viewModel)
             }
             
-            
-            
-            guard let array = NSArray.yy_modelArray(with: WBStatus.self, json: json ?? []) as? [WBStatus] else {
-                completion(false , false)
-                return
-            }
-            
-            print("刷新了\(array.count)条数据\(array)")
-            
-            //2.拼接数据
-            if pullup {
-                //上拉刷新，
-                self.statusList = self.statusList + array
-            } else {
-                //下拉刷新，应该把结果拼接在数组前面
-                self.statusList = array + self.statusList
-            }
-            
-            //3.判断上拉刷新的数据量
-            if pullup && array.count == 0 {
-                self.pullupErrorTime += 1
-                completion(false , false)
-            } else {
-                //3.完成回调
-                completion(isSuccess , true)
-
-            }
+            //视图模型创建完成
+//            
+//            guard let array = NSArray.yy_modelArray(with: WBStatus.self, json: json ?? []) as? [WBStatus] else {
+//                completion(false , false)
+//                return
+//            }
+//            
+//            print("刷新了\(array.count)条数据\(array)")
+//            
+//            //2.拼接数据
+//            if pullup {
+//                //上拉刷新，
+//                self.statusList = self.statusList + array
+//            } else {
+//                //下拉刷新，应该把结果拼接在数组前面
+//                self.statusList = array + self.statusList
+//            }
+//            
+//            //3.判断上拉刷新的数据量
+//            if pullup && array.count == 0 {
+//                self.pullupErrorTime += 1
+//                completion(false , false)
+//            } else {
+//                //3.完成回调
+//                completion(isSuccess , true)
+//
+//            }
             
             
         }

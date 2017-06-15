@@ -21,5 +21,7 @@ class WBStatustViewModel {
         self.status = model
     }
     
+    
+    
 }
 
