@@ -69,12 +69,12 @@ extension WBWelcome {
         bottomCons.constant = bounds.size.height - 200
         
         //如果控件们的 frame 还没有更新好！所有的约束会一起动画
-        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
             //更新约束
             self.layoutIfNeeded()
         }) { (_) in
             
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: { 
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: {
                 self.tipLabel.alpha = 1
             }, completion: { (_) in
                 self.removeFromSuperview()
