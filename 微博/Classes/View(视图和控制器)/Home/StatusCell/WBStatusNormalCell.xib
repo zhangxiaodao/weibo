@@ -55,7 +55,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="aFr-i2-49x" userLabel="认证图标">
-                        <rect key="frame" x="38" y="39" width="14" height="14"/>
+                        <rect key="frame" x="34" y="35" width="14" height="14"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46r-BM-qav" userLabel="正文">
                         <rect key="frame" x="11" y="57" width="33" height="16"/>
@@ -73,9 +73,9 @@
                     <constraint firstItem="46r-BM-qav" firstAttribute="leading" secondItem="KNt-8f-6Im" secondAttribute="leading" id="W2n-Fp-Sfy"/>
                     <constraint firstItem="46r-BM-qav" firstAttribute="top" secondItem="KNt-8f-6Im" secondAttribute="bottom" constant="11" id="YId-mA-22e"/>
                     <constraint firstItem="2qc-qf-vdn" firstAttribute="leading" secondItem="jFt-uV-FmG" secondAttribute="trailing" constant="4" id="dGf-4w-4nm"/>
-                    <constraint firstItem="aFr-i2-49x" firstAttribute="centerX" secondItem="KNt-8f-6Im" secondAttribute="trailing" id="dMS-KB-F5t"/>
+                    <constraint firstItem="aFr-i2-49x" firstAttribute="centerX" secondItem="KNt-8f-6Im" secondAttribute="trailing" constant="-4" id="dMS-KB-F5t"/>
                     <constraint firstItem="jFt-uV-FmG" firstAttribute="leading" secondItem="KNt-8f-6Im" secondAttribute="trailing" constant="11" id="gnH-fx-R3L"/>
-                    <constraint firstItem="aFr-i2-49x" firstAttribute="centerY" secondItem="KNt-8f-6Im" secondAttribute="bottom" id="hE1-z1-hUo"/>
+                    <constraint firstItem="aFr-i2-49x" firstAttribute="centerY" secondItem="KNt-8f-6Im" secondAttribute="bottom" constant="-4" id="hE1-z1-hUo"/>
                     <constraint firstItem="kP3-6a-bcE" firstAttribute="leading" secondItem="jFt-uV-FmG" secondAttribute="leading" id="hpx-j5-a2W"/>
                     <constraint firstItem="kP3-6a-bcE" firstAttribute="bottom" secondItem="KNt-8f-6Im" secondAttribute="bottom" id="jEn-EW-HB9"/>
                     <constraint firstItem="jFt-uV-FmG" firstAttribute="top" secondItem="KNt-8f-6Im" secondAttribute="top" constant="4" id="lG5-HG-bw3"/>
