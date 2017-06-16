@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E33D8D4D00E0F98AA04D04E /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053BE41C5C63FF393BFE9B46 /* Pods___.framework */; };
+		ED155BCE1EF376A50029DC45 /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BCD1EF376A50029DC45 /* UIImageView+WebImage.swift */; };
 		ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7914F81ED7C923001DE08C /* AppDelegate.swift */; };
 		ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7914FF1ED7C924001DE08C /* Assets.xcassets */; };
 		ED79150E1ED7C924001DE08C /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79150D1ED7C924001DE08C /* __Tests.swift */; };
@@ -77,6 +78,7 @@
 		2F51A374CD3A05C48684D256 /* Pods-微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.release.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.release.xcconfig"; sourceTree = "<group>"; };
 		406BE7EE8B8D6B786741D3B7 /* Pods-微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-微博.debug.xcconfig"; path = "Pods/Target Support Files/Pods-微博/Pods-微博.debug.xcconfig"; sourceTree = "<group>"; };
 		A819F04F00BED17D36545A82 /* Pods___UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED155BCD1EF376A50029DC45 /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		ED7914F51ED7C923001DE08C /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7914F81ED7C923001DE08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7914FF1ED7C924001DE08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 			children = (
 				EDCFCCA01EDE65DA00689F5D /* Bundle+Extensions.swift */,
 				EDCFCCA51EDEAB6400689F5D /* UIBarButtonItem+Extension.swift */,
+				ED155BCD1EF376A50029DC45 /* UIImageView+WebImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				EDCFCCA11EDE65DA00689F5D /* Bundle+Extensions.swift in Sources */,
 				EDCFCC951EDE5EAB00689F5D /* NSString+CZBase64.m in Sources */,
 				EDCFCCA41EDEA2A000689F5D /* WBDemoViewController.swift in Sources */,
+				ED155BCE1EF376A50029DC45 /* UIImageView+WebImage.swift in Sources */,
 				EDCFCCA61EDEAB6400689F5D /* UIBarButtonItem+Extension.swift in Sources */,
 				ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */,
 				EDD2C1651EF272230021F7BE /* WBUser.swift in Sources */,
