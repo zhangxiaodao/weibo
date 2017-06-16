@@ -131,12 +131,15 @@
                             <outlet property="retweetedButton" destination="rgk-Uz-tuo" id="rhh-Og-rTq"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnV-b5-aTl">
-                        <rect key="frame" x="11" y="85" width="352" height="211.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnV-b5-aTl" userLabel="配图视图" customClass="WBStatusPictureView" customModule="微博" customModuleProvider="target">
+                        <rect key="frame" x="11" y="85" width="352" height="200"/>
                         <color key="backgroundColor" red="0.99911743402481079" green="0.23574358224868774" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="211.5" id="c5Q-cC-8xb"/>
+                            <constraint firstAttribute="height" constant="200" id="c5Q-cC-8xb"/>
                         </constraints>
+                        <connections>
+                            <outlet property="heightCons" destination="c5Q-cC-8xb" id="PLE-EU-bxy"/>
+                        </connections>
                     </view>
                 </subviews>
                 <constraints>
@@ -171,6 +174,8 @@
                 <outlet property="iconView" destination="KNt-8f-6Im" id="ayq-FF-IYw"/>
                 <outlet property="memberIconView" destination="2qc-qf-vdn" id="JEW-Eo-uwh"/>
                 <outlet property="nameLabel" destination="jFt-uV-FmG" id="Nr5-YE-ATq"/>
+                <outlet property="pictureTopCons" destination="jrO-EO-ETC" id="Rhq-d5-o8C"/>
+                <outlet property="pictureView" destination="AnV-b5-aTl" id="MC2-Jf-5nt"/>
                 <outlet property="sourceLabel" destination="NK1-qO-254" id="yRC-0s-Tgl"/>
                 <outlet property="statusLabel" destination="46r-BM-qav" id="Amj-74-8wh"/>
                 <outlet property="timeLabel" destination="kP3-6a-bcE" id="cgu-cl-zo6"/>
