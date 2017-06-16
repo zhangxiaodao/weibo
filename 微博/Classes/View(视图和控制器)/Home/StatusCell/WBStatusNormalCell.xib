@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="207" id="CYS-zC-6lv" customClass="WBStatusCell" customModule="微博" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="337" id="CYS-zC-6lv" customClass="WBStatusCell" customModule="微博" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYS-zC-6lv" id="WE4-el-0U7">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="206.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="336.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HD-GW-ToD" userLabel="顶部分割视图">
@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-fh-89R" userLabel="底部工具栏" customClass="WBStatusToolBar" customModule="微博" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="178.5" width="375" height="28"/>
+                        <rect key="frame" x="0.0" y="308.5" width="375" height="28"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stB-xN-Tah">
                                 <rect key="frame" x="125" y="0.0" width="125" height="28"/>
@@ -131,11 +131,21 @@
                             <outlet property="retweetedButton" destination="rgk-Uz-tuo" id="rhh-Og-rTq"/>
                         </connections>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnV-b5-aTl">
+                        <rect key="frame" x="11" y="85" width="352" height="211.5"/>
+                        <color key="backgroundColor" red="0.99911743402481079" green="0.23574358224868774" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="211.5" id="c5Q-cC-8xb"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="1Bh-fh-89R" secondAttribute="trailing" id="4IV-jV-QTI"/>
+                    <constraint firstItem="AnV-b5-aTl" firstAttribute="leading" secondItem="46r-BM-qav" secondAttribute="leading" id="6io-St-9Af"/>
                     <constraint firstAttribute="trailing" secondItem="8HD-GW-ToD" secondAttribute="trailing" id="71U-Ly-E1n"/>
+                    <constraint firstItem="1Bh-fh-89R" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AnV-b5-aTl" secondAttribute="bottom" constant="12" id="7Pd-xZ-aOm"/>
                     <constraint firstAttribute="bottom" secondItem="1Bh-fh-89R" secondAttribute="bottom" id="EP2-KE-DTE"/>
+                    <constraint firstAttribute="trailing" secondItem="AnV-b5-aTl" secondAttribute="trailing" constant="12" id="Eok-Wk-1Y1"/>
                     <constraint firstItem="2qc-qf-vdn" firstAttribute="centerY" secondItem="jFt-uV-FmG" secondAttribute="centerY" id="Gdt-gH-v1d"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="46r-BM-qav" secondAttribute="trailing" constant="11" id="HCd-kC-xy7"/>
                     <constraint firstItem="KNt-8f-6Im" firstAttribute="leading" secondItem="WE4-el-0U7" secondAttribute="leading" constant="11" id="Igj-v2-dVo"/>
@@ -149,8 +159,8 @@
                     <constraint firstItem="aFr-i2-49x" firstAttribute="centerY" secondItem="KNt-8f-6Im" secondAttribute="bottom" constant="-4" id="hE1-z1-hUo"/>
                     <constraint firstItem="kP3-6a-bcE" firstAttribute="leading" secondItem="jFt-uV-FmG" secondAttribute="leading" id="hpx-j5-a2W"/>
                     <constraint firstItem="kP3-6a-bcE" firstAttribute="bottom" secondItem="KNt-8f-6Im" secondAttribute="bottom" id="jEn-EW-HB9"/>
+                    <constraint firstItem="AnV-b5-aTl" firstAttribute="top" secondItem="46r-BM-qav" secondAttribute="bottom" constant="12" id="jrO-EO-ETC"/>
                     <constraint firstItem="jFt-uV-FmG" firstAttribute="top" secondItem="KNt-8f-6Im" secondAttribute="top" constant="4" id="lG5-HG-bw3"/>
-                    <constraint firstItem="1Bh-fh-89R" firstAttribute="top" relation="greaterThanOrEqual" secondItem="46r-BM-qav" secondAttribute="bottom" constant="12" id="m0e-Rf-Mgh"/>
                     <constraint firstItem="8HD-GW-ToD" firstAttribute="leading" secondItem="WE4-el-0U7" secondAttribute="leading" id="mCo-3A-wEf"/>
                     <constraint firstItem="NK1-qO-254" firstAttribute="leading" secondItem="kP3-6a-bcE" secondAttribute="trailing" constant="8" id="n3v-KF-JVc"/>
                     <constraint firstItem="NK1-qO-254" firstAttribute="centerY" secondItem="kP3-6a-bcE" secondAttribute="centerY" id="pzs-tZ-UPk"/>
@@ -167,7 +177,7 @@
                 <outlet property="toolBar" destination="1Bh-fh-89R" id="Kwl-AI-hai"/>
                 <outlet property="vipIconView" destination="aFr-i2-49x" id="Mfg-lc-wGf"/>
             </connections>
-            <point key="canvasLocation" x="-135.5" y="179.5"/>
+            <point key="canvasLocation" x="-135.5" y="244.5"/>
         </tableViewCell>
     </objects>
     <resources>
