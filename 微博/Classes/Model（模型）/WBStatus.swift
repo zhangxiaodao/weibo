@@ -17,6 +17,12 @@ class WBStatus: NSObject {
     var id:Int64 = 0
     /// 微博信息内容
     var text:String?
+    //转发数
+    var reposts_count:Int = 0
+    //评论数
+    var comments_count:Int = 0
+    //点赞数
+    var attitudes_count:Int = 0
     
     /// 微博的用户 - 注意和服务器返回的 KEY 要一至
     var user:WBUser?
