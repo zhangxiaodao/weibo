@@ -25,8 +25,7 @@ class WBStatusCell: UITableViewCell {
             toolBar.viewModel = viewModel
             
             //测试修改配图视图的高度
-            pictureView.heightCons.constant = 0
-            pictureTopCons.constant = 0
+            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
         }
     }
     
