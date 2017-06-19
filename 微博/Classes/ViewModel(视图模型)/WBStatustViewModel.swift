@@ -83,7 +83,32 @@ class WBStatustViewModel:CustomStringConvertible {
     /// - Parameter count: 配图的数量
     /// - Returns: 配图使徒的大小
     fileprivate func calcPictureViewSize(count:Int?) -> CGSize {
-        return CGSize(width: 100, height: 200)
+
+        if count == 0 {
+            return CGSize()
+        }
+        
+        //1. 计算配图视图的宽度
+        //常数准备
+        //配图视图的外侧边距
+        let WBStatusPictureViewOutterMargin = CGFloat(12)
+        //配图视图的内侧边距
+        let WBStatusPictureViewInnerMargin = CGFloat(3)
+        //视图的宽度
+        let WBStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * WBStatusPictureViewOutterMargin
+        //每个 item 默认的宽度
+        let WBStatusPictureItemWidth = (WBStatusPictureViewWidth - 2 * WBStatusPictureViewInnerMargin) / 3
+        
+        //2. 计算高度
+        //1> 根据 count 知道行数 1 ~ 9
+        let row = (count! - 1) / 3 + 1
+        
+        //2> 根据行数计算高度
+        var height = WBStatusPictureViewOutterMargin
+        height += CGFloat(row) * WBStatusPictureItemWidth
+        height += CGFloat(row - 1) * WBStatusPictureViewInnerMargin
+        
+        return CGSize(width: 100, height: height)
     }
     
     /// 给定一个数字，返回对应的描述结果
