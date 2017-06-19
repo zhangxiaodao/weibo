@@ -11,6 +11,7 @@
 		ED155BCE1EF376A50029DC45 /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BCD1EF376A50029DC45 /* UIImageView+WebImage.swift */; };
 		ED155BD01EF37ADC0029DC45 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BCF1EF37ADC0029DC45 /* UIImage+Extension.swift */; };
 		ED155BD21EF389AC0029DC45 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BD11EF389AC0029DC45 /* WBStatusToolBar.swift */; };
+		ED155BD41EF3CB130029DC45 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */; };
 		ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7914F81ED7C923001DE08C /* AppDelegate.swift */; };
 		ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7914FF1ED7C924001DE08C /* Assets.xcassets */; };
 		ED79150E1ED7C924001DE08C /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79150D1ED7C924001DE08C /* __Tests.swift */; };
@@ -84,6 +85,7 @@
 		ED155BCD1EF376A50029DC45 /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		ED155BCF1EF37ADC0029DC45 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		ED155BD11EF389AC0029DC45 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
+		ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		ED7914F51ED7C923001DE08C /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7914F81ED7C923001DE08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7914FF1ED7C924001DE08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 			children = (
 				EDD2C15E1EF2659C0021F7BE /* WBStatusCell.swift */,
 				ED155BD11EF389AC0029DC45 /* WBStatusToolBar.swift */,
+				ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */,
 				EDD2C1621EF265CE0021F7BE /* WBStatusNormalCell.xib */,
 			);
 			path = StatusCell;
@@ -708,6 +711,7 @@
 				EDCFCC961EDE5EAB00689F5D /* NSString+CZHash.m in Sources */,
 				ED7915391ED7D745001DE08C /* WBMessageViewController.swift in Sources */,
 				EDD2C1671EF278310021F7BE /* WBStatustViewModel.swift in Sources */,
+				ED155BD41EF3CB130029DC45 /* WBStatusPictureView.swift in Sources */,
 				EDD2C0D61EEFC6E00021F7BE /* WBWelcome.swift in Sources */,
 				EDBA17E81EEA867600F3041B /* WBUserAccount.swift in Sources */,
 			);
