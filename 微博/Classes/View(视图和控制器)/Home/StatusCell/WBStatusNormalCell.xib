@@ -132,7 +132,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnV-b5-aTl" userLabel="配图视图" customClass="WBStatusPictureView" customModule="微博" customModuleProvider="target">
-                        <rect key="frame" x="11" y="85" width="352" height="200"/>
+                        <rect key="frame" x="11" y="73" width="352" height="200"/>
                         <color key="backgroundColor" red="0.99911743402481079" green="0.23574358224868774" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="c5Q-cC-8xb"/>
@@ -162,7 +162,7 @@
                     <constraint firstItem="aFr-i2-49x" firstAttribute="centerY" secondItem="KNt-8f-6Im" secondAttribute="bottom" constant="-4" id="hE1-z1-hUo"/>
                     <constraint firstItem="kP3-6a-bcE" firstAttribute="leading" secondItem="jFt-uV-FmG" secondAttribute="leading" id="hpx-j5-a2W"/>
                     <constraint firstItem="kP3-6a-bcE" firstAttribute="bottom" secondItem="KNt-8f-6Im" secondAttribute="bottom" id="jEn-EW-HB9"/>
-                    <constraint firstItem="AnV-b5-aTl" firstAttribute="top" secondItem="46r-BM-qav" secondAttribute="bottom" constant="12" id="jrO-EO-ETC"/>
+                    <constraint firstItem="AnV-b5-aTl" firstAttribute="top" secondItem="46r-BM-qav" secondAttribute="bottom" id="jrO-EO-ETC"/>
                     <constraint firstItem="jFt-uV-FmG" firstAttribute="top" secondItem="KNt-8f-6Im" secondAttribute="top" constant="4" id="lG5-HG-bw3"/>
                     <constraint firstItem="8HD-GW-ToD" firstAttribute="leading" secondItem="WE4-el-0U7" secondAttribute="leading" id="mCo-3A-wEf"/>
                     <constraint firstItem="NK1-qO-254" firstAttribute="leading" secondItem="kP3-6a-bcE" secondAttribute="trailing" constant="8" id="n3v-KF-JVc"/>

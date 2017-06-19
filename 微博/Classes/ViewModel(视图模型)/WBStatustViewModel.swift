@@ -84,7 +84,7 @@ class WBStatustViewModel:CustomStringConvertible {
     /// - Returns: 配图使徒的大小
     fileprivate func calcPictureViewSize(count:Int?) -> CGSize {
 
-        if count == 0 && count == nil{
+        if count == 0 || count == nil{
             return CGSize()
         }
         
