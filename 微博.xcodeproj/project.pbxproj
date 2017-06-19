@@ -109,7 +109,7 @@
 		EDBA17D81EE64D3700F3041B /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		EDBA17DA1EE6A5B000F3041B /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		EDBA17DC1EE6A88C00F3041B /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
-		EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBCommon.swift; path = Additions/WBCommon.swift; sourceTree = "<group>"; };
+		EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBCommon.swift; path = "Classes/Tools(工具)/Additions/WBCommon.swift"; sourceTree = "<group>"; };
 		EDBA17E11EE8F65100F3041B /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		EDBA17E41EEA521000F3041B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EDBA17E71EEA867600F3041B /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
@@ -227,6 +227,7 @@
 			children = (
 				ED7915261ED7D59F001DE08C /* Classes */,
 				ED7914F81ED7C923001DE08C /* AppDelegate.swift */,
+				EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */,
 				EDCFCC9E1EDE5EEE00689F5D /* WeiBo-Bridge.h */,
 				EDBA17E41EEA521000F3041B /* Launch Screen.storyboard */,
 				ED7914FF1ED7C924001DE08C /* Assets.xcassets */,
@@ -278,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				EDBA17E61EEA865F00F3041B /* Model */,
-				EDBA17DE1EE8F35F00F3041B /* WBCommon.swift */,
 				ED89D8601EE547E000DB7B21 /* Network */,
 				EDCFCC9F1EDE659900689F5D /* Extensions */,
 				EDCFCC781EDE5EAB00689F5D /* Additions */,
