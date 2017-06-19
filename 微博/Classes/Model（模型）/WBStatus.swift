@@ -26,11 +26,22 @@ class WBStatus: NSObject {
     
     /// 微博的用户 - 注意和服务器返回的 KEY 要一至
     var user:WBUser?
+    ///微博配图模型数组
+    var pic_urls:[WBStatusPicture]?
     
     
     /// 重写 description 的计算型属性
     override var description: String{
         return yy_modelDescription()
+    }
+    
+    
+    /// 类函数 -> 告诉第三方 YY_Model 如果遇到数组类型的属性，数组中存放的对象是什么类?
+    /// YY_Model 字典黄钻模型时，发现一个数组属性,就会调用 此 类方法， 类方法如果实现就尝试使用 '类' 来实例化数组中的对象
+    ///                 pic_urls ：属性名称  WBStatusPicture.self : 数组中存放的类型
+    /// - Returns: 字典 ["pic_urls" : WBStatusPicture.self]
+    class func modelContainerPropertyGenericClass() -> [String:AnyClass] {
+        return ["pic_urls" : WBStatusPicture.self]
     }
     
 }

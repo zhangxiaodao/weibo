@@ -32,6 +32,7 @@
 		EDBA17E21EE8F65100F3041B /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17E11EE8F65100F3041B /* WBOAuthViewController.swift */; };
 		EDBA17E51EEA521000F3041B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBA17E41EEA521000F3041B /* Launch Screen.storyboard */; };
 		EDBA17E81EEA867600F3041B /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17E71EEA867600F3041B /* WBUserAccount.swift */; };
+		EDCAE5461EF7B05C00DF35EB /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCAE5451EF7B05C00DF35EB /* WBStatusPicture.swift */; };
 		EDCFCC921EDE5EAB00689F5D /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */; };
 		EDCFCC931EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7D1EDE5EAB00689F5D /* NSAttributedString+CZAdditon.m */; };
 		EDCFCC941EDE5EAB00689F5D /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFCC7F1EDE5EAB00689F5D /* NSObject+CZRuntime.m */; };
@@ -110,6 +111,7 @@
 		EDBA17E11EE8F65100F3041B /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		EDBA17E41EEA521000F3041B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EDBA17E71EEA867600F3041B /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
+		EDCAE5451EF7B05C00DF35EB /* WBStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
 		EDCFCC791EDE5EAB00689F5D /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		EDCFCC7A1EDE5EAB00689F5D /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		EDCFCC7B1EDE5EAB00689F5D /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				EDBA17DA1EE6A5B000F3041B /* WBStatus.swift */,
 				EDD2C1641EF272230021F7BE /* WBUser.swift */,
+				EDCAE5451EF7B05C00DF35EB /* WBStatusPicture.swift */,
 			);
 			path = "Model（模型）";
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */,
 				EDCFCC971EDE5EAB00689F5D /* NSString+CZPath.m in Sources */,
 				ED155BD21EF389AC0029DC45 /* WBStatusToolBar.swift in Sources */,
+				EDCAE5461EF7B05C00DF35EB /* WBStatusPicture.swift in Sources */,
 				EDCFCC9C1EDE5EAB00689F5D /* UIView+CZAddition.m in Sources */,
 				EDBA17E21EE8F65100F3041B /* WBOAuthViewController.swift in Sources */,
 				EDCFCC961EDE5EAB00689F5D /* NSString+CZHash.m in Sources */,
