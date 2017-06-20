@@ -100,7 +100,26 @@ class WBStatusListViewModel {
     ///
     /// - Parameter list: 本次下载的视图模型数组
     fileprivate func cacheSingleImage(list:[WBStatustViewModel]) {
-         
+        //遍历数组，查找微博数据中有单张图像的，进行缓存
+        for vm in list {
+            
+            //1> 判断图像数量
+            if vm.picURLs?.count != 1{
+                continue
+            }
+            
+            //2. 代码执行到此，数组中有且只有一张图片 -> 获取 图像模型
+            guard let pic = vm.picURLs?[0].thumbnail_pic ,
+                let url = URL(string: pic)
+                else {
+                    continue
+            }
+            
+            
+            
+            print("要缓存的 URL 是 \(String(describing: pic))")
+            
+        }
     }
     
     
