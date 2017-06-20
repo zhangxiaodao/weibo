@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="88" width="375" height="244.5"/>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62g-ug-7bv" userLabel="被转发微博的正文">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62g-ug-7bv" userLabel="被转发微博的正文">
                         <rect key="frame" x="12" y="100" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,6 +192,7 @@
                 <outlet property="memberIconView" destination="2qc-qf-vdn" id="JEW-Eo-uwh"/>
                 <outlet property="nameLabel" destination="jFt-uV-FmG" id="Nr5-YE-ATq"/>
                 <outlet property="pictureView" destination="AnV-b5-aTl" id="MC2-Jf-5nt"/>
+                <outlet property="retweetedLabel" destination="62g-ug-7bv" id="bbp-md-EPZ"/>
                 <outlet property="sourceLabel" destination="NK1-qO-254" id="yRC-0s-Tgl"/>
                 <outlet property="statusLabel" destination="46r-BM-qav" id="Amj-74-8wh"/>
                 <outlet property="timeLabel" destination="kP3-6a-bcE" id="cgu-cl-zo6"/>

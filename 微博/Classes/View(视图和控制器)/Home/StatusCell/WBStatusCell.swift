@@ -30,6 +30,9 @@ class WBStatusCell: UITableViewCell {
             //设置配图 (内转发和原创)
             pictureView.urls = viewModel?.picURLs
             
+            //设置被转发微博的文字
+            retweetedLabel?.text = viewModel?.retweetedText
+            
             //测试 4 张图像
 //            if (viewModel?.status.pic_urls?.count)! > 4 {
 //                //修改数组 -> 将末尾的数据全部删除
@@ -63,5 +66,7 @@ class WBStatusCell: UITableViewCell {
     //配图视图
     @IBOutlet weak var pictureView: WBStatusPictureView!
     
-    @IBOutlet weak var pictureTopCons: NSLayoutConstraint!
+    //被转发微博的标签 - 原创微博没有此控件 一定要用 ?
+    @IBOutlet weak var retweetedLabel: UILabel?
+    
 }

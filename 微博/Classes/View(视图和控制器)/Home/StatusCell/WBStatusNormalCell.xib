@@ -174,7 +174,6 @@
                 <outlet property="iconView" destination="KNt-8f-6Im" id="ayq-FF-IYw"/>
                 <outlet property="memberIconView" destination="2qc-qf-vdn" id="JEW-Eo-uwh"/>
                 <outlet property="nameLabel" destination="jFt-uV-FmG" id="Nr5-YE-ATq"/>
-                <outlet property="pictureTopCons" destination="jrO-EO-ETC" id="Rhq-d5-o8C"/>
                 <outlet property="pictureView" destination="AnV-b5-aTl" id="MC2-Jf-5nt"/>
                 <outlet property="sourceLabel" destination="NK1-qO-254" id="yRC-0s-Tgl"/>
                 <outlet property="statusLabel" destination="46r-BM-qav" id="Amj-74-8wh"/>
