@@ -86,14 +86,23 @@ class WBStatusListViewModel {
                 self.pullupErrorTime += 1
                 completion(false , false)
             } else {
+                
+                self.cacheSingleImage(list: array)
+                
                 //3.完成回调
                 completion(isSuccess , true)
 
             }
-            
-            
         }
     }
+    
+    /// 缓存本次下载微博数据数组中的单张图片
+    ///
+    /// - Parameter list: 本次下载的视图模型数组
+    fileprivate func cacheSingleImage(list:[WBStatustViewModel]) {
+         
+    }
+    
     
     
     
