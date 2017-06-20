@@ -55,10 +55,10 @@
 		EDD2C0DA1EEFD6610021F7BE /* WBWelcome.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2C0D91EEFD6610021F7BE /* WBWelcome.xib */; };
 		EDD2C0DE1EF0E1280021F7BE /* WBNewFeature.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2C0DD1EF0E1280021F7BE /* WBNewFeature.xib */; };
 		EDD2C15F1EF2659C0021F7BE /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C15E1EF2659C0021F7BE /* WBStatusCell.swift */; };
-		EDD2C1631EF265CE0021F7BE /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2C1621EF265CE0021F7BE /* WBStatusNormalCell.xib */; };
+		EDD2C1631EF265CE0021F7BE /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2C1621EF265CE0021F7BE /* WBStatusRetweetedCell.xib */; };
 		EDD2C1651EF272230021F7BE /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C1641EF272230021F7BE /* WBUser.swift */; };
 		EDD2C1671EF278310021F7BE /* WBStatustViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2C1661EF278310021F7BE /* WBStatustViewModel.swift */; };
-		EDD740701EF8C92A00342F9B /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD7406F1EF8C92A00342F9B /* WBStatusRetweetedCell.xib */; };
+		EDD740701EF8C92A00342F9B /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD7406F1EF8C92A00342F9B /* WBStatusNormalCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,10 +150,10 @@
 		EDD2C0D91EEFD6610021F7BE /* WBWelcome.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcome.xib; sourceTree = "<group>"; };
 		EDD2C0DD1EF0E1280021F7BE /* WBNewFeature.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBNewFeature.xib; sourceTree = "<group>"; };
 		EDD2C15E1EF2659C0021F7BE /* WBStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
-		EDD2C1621EF265CE0021F7BE /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
+		EDD2C1621EF265CE0021F7BE /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		EDD2C1641EF272230021F7BE /* WBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
 		EDD2C1661EF278310021F7BE /* WBStatustViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatustViewModel.swift; sourceTree = "<group>"; };
-		EDD7406F1EF8C92A00342F9B /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
+		EDD7406F1EF8C92A00342F9B /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
 		FE5CBF3A9C8948E8D6020C26 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -477,8 +477,8 @@
 				EDD2C15E1EF2659C0021F7BE /* WBStatusCell.swift */,
 				ED155BD11EF389AC0029DC45 /* WBStatusToolBar.swift */,
 				ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */,
-				EDD2C1621EF265CE0021F7BE /* WBStatusNormalCell.xib */,
-				EDD7406F1EF8C92A00342F9B /* WBStatusRetweetedCell.xib */,
+				EDD2C1621EF265CE0021F7BE /* WBStatusRetweetedCell.xib */,
+				EDD7406F1EF8C92A00342F9B /* WBStatusNormalCell.xib */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -598,11 +598,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDBA17E51EEA521000F3041B /* Launch Screen.storyboard in Resources */,
-				EDD2C1631EF265CE0021F7BE /* WBStatusNormalCell.xib in Resources */,
+				EDD2C1631EF265CE0021F7BE /* WBStatusRetweetedCell.xib in Resources */,
 				EDAD86EF1EE15EF9005AE3E4 /* main.json in Resources */,
 				ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */,
 				EDD2C0DA1EEFD6610021F7BE /* WBWelcome.xib in Resources */,
-				EDD740701EF8C92A00342F9B /* WBStatusRetweetedCell.xib in Resources */,
+				EDD740701EF8C92A00342F9B /* WBStatusNormalCell.xib in Resources */,
 				EDD2C0DE1EF0E1280021F7BE /* WBNewFeature.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
