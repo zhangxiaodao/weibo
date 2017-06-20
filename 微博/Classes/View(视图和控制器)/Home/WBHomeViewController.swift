@@ -52,13 +52,16 @@ extension WBHomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //0. 取出视图模型，根据试图模型判断 判断 可重用 cell
+        let vm = listViewModel.statusList[indexPath.row]
+        let cellID = (vm.status.retweeted_status != nil) ? retweetedCellID : originalCellId
+        
         //1. 取 cell
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellID, for: indexPath) as! WBStatusCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! WBStatusCell
         
         //2. 设置 cell
-        let viewModel = listViewModel.statusList[indexPath.row]
-        cell.viewModel = viewModel
+        cell.viewModel = vm
         
         //3. 返回 cell
         return cell
