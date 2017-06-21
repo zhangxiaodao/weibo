@@ -91,6 +91,18 @@ class WBStatustViewModel:CustomStringConvertible {
         return status.description
     }
     
+    /// 使用单张图像更新配图视图的大小
+    ///
+    /// - Parameter image: 网络缓存的单张图像
+    func updateSingleImage(image:UIImage) -> () {
+        var size = image.size
+        
+        size.height += WBStatusPictureViewOutterMargin
+        
+        pictureViewSize = size
+        
+    }
+    
     /// 计算指定数量的图片对应的配图视图的大小
     ///
     /// - Parameter count: 配图的数量
