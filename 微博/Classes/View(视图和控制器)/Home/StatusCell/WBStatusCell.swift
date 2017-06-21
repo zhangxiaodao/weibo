@@ -24,8 +24,11 @@ class WBStatusCell: UITableViewCell {
             //底部工具栏
             toolBar.viewModel = viewModel
             
+            //配图视图模型
+            pictureView.viewModel = viewModel
+            
             //测试修改配图视图的高度
-            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+            //pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
             
             //设置配图 (内转发和原创)
             pictureView.urls = viewModel?.picURLs
