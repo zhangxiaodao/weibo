@@ -101,6 +101,10 @@ class WBStatusListViewModel {
     /// - Parameter list: 本次下载的视图模型数组
     fileprivate func cacheSingleImage(list:[WBStatustViewModel]) {
         
+        //调度组
+        let group = DispatchGroup()
+        
+        //记录数据长度
         var length = 0
         
         //遍历数组，查找微博数据中有单张图像的，进行缓存
@@ -117,7 +121,7 @@ class WBStatusListViewModel {
                 else {
                     continue
             }
-            print("要缓存的 URL 是 \(String(describing: pic))")
+
             
             //3> 下载图像
             //1) downloadImage 是 SDWebImage 的核心方法
@@ -126,6 +130,10 @@ class WBStatusListViewModel {
             //4) 不会发起网络请求，同时，回调方法，同样会调用。
             //5) 方法还是同样的方法，调用还是同样的调用，不过内部不会再发起网络请求!
             //*** 注意要缓存的图像过大 -> 找后台要  小图像的借口
+            
+            //A> 入组
+            group.enter()
+            
             SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
                 //将图像转换成二进制
                 if let image = image,
@@ -135,8 +143,16 @@ class WBStatusListViewModel {
                 }
                 
                 print("缓存的图像是 \(String(describing: image)) 大小\(length)")
+                
+                //B> 出组
+                group.leave()
             })
             
+        }
+        
+        //C> 监听调度组情况
+        group.notify(queue: DispatchQueue.main) { 
+            print("图像缓存完成 \(length / 1024) K")
         }
     }
     
