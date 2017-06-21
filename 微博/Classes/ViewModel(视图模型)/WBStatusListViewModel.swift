@@ -87,10 +87,10 @@ class WBStatusListViewModel {
                 completion(false , false)
             } else {
                 
-                self.cacheSingleImage(list: array)
+                self.cacheSingleImage(list: array , finish: completion)
                 
                 //3.完成回调
-                completion(isSuccess , true)
+//                completion(isSuccess , true)
 
             }
         }
@@ -99,7 +99,7 @@ class WBStatusListViewModel {
     /// 缓存本次下载微博数据数组中的单张图片
     ///
     /// - Parameter list: 本次下载的视图模型数组
-    fileprivate func cacheSingleImage(list:[WBStatustViewModel]) {
+    fileprivate func cacheSingleImage(list:[WBStatustViewModel] , finish:@escaping (_ isSuccess:Bool ,_ shouldRefresh:Bool)->()) {
         
         //调度组
         let group = DispatchGroup()
@@ -153,6 +153,8 @@ class WBStatusListViewModel {
         //C> 监听调度组情况
         group.notify(queue: DispatchQueue.main) { 
             print("图像缓存完成 \(length / 1024) K")
+            
+            finish(true, true)
         }
     }
     
