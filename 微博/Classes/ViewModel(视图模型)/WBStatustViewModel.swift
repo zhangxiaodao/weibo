@@ -153,10 +153,12 @@ class WBStatustViewModel:CustomStringConvertible {
     /// - Parameter image: 网络缓存的单张图像
     func updateSingleImage(image:UIImage) -> () {
         var size = image.size
-        
+        //注意：尺寸需要增加 顶部 12 个点，方便布局
         size.height += WBStatusPictureViewOutterMargin
-        
+        //重新设置配图视图的大小
         pictureViewSize = size
+        //更新行高
+        updateRowHeight()
         
     }
     

@@ -166,6 +166,10 @@ extension WBBaseController:UITableViewDelegate , UITableViewDataSource{
         return 0
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 10
+    }
+    
     //基类只是准备方法，子类负责具体的实现
     //子类的数据源方法，不需要 super
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
