@@ -149,10 +149,32 @@ class WBStatustViewModel:CustomStringConvertible {
     }
     
     /// 使用单张图像更新配图视图的大小
-    ///
+    /// 新浪微博针对单张图片，都是缩略图，但是偶尔会有一张特别大的图
+    /// 新浪微博，为了鼓励原创，支持‘长微博’，但是有的时候，有特别长的微博，就显得的很窄了
     /// - Parameter image: 网络缓存的单张图像
     func updateSingleImage(image:UIImage) -> () {
         var size = image.size
+        
+        //过宽图像处理
+        let maxWidth:CGFloat = 300
+        let minWidth:CGFloat = 40
+        
+        ////过宽处理
+        if size.width > maxWidth {
+            //设置最大宽度
+            size.width = maxWidth
+            //等比例调整高度
+            size.height = size.width * image.size.height / image.size.width
+        }
+        
+        //过窄处理
+        if size.width < minWidth {
+            size.width = minWidth
+            //要处理高度，否则高度太大，会影响用户体验
+            size.height = size.width * image.size.height / image.size.width / 4
+        }
+        
+        
         //注意：尺寸需要增加 顶部 12 个点，方便布局
         size.height += WBStatusPictureViewOutterMargin
         //重新设置配图视图的大小
