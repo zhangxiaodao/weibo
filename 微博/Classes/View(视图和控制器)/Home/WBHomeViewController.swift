@@ -58,6 +58,7 @@ extension WBHomeViewController {
         let cellID = (vm.status.retweeted_status != nil) ? retweetedCellID : originalCellId
         
         //1. 取 cell
+        //如果没有，找到 cell ，按照自动布局规则，从上到下计算，找到向下的约束，从而计算动态行高
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! WBStatusCell
         
         //2. 设置 cell

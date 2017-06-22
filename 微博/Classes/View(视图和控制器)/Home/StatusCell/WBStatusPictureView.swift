@@ -13,6 +13,8 @@ class WBStatusPictureView: UIView {
     var viewModel:WBStatustViewModel? {
         didSet {
             calcViewSize()
+            //设置配图 (内转发和原创)
+            urls = viewModel?.picURLs
         }
     }
     
@@ -38,7 +40,7 @@ class WBStatusPictureView: UIView {
         heightCons.constant = viewModel?.pictureViewSize.height ?? 0
     }
     
-    var urls:[WBStatusPicture]? {
+    private var urls:[WBStatusPicture]? {
         didSet {
             
             //1. 隐藏 所有 的 imageView
