@@ -24,7 +24,7 @@ class WBBaseController: UIViewController {
     //表格视图 - 如果用户没有登录，就不创建
     var tableView:UITableView?
     //刷新控件
-    var refreshControl:UIRefreshControl?
+    var refreshControl:CZRefreshControl?
     //上拉刷新标记
     var isPullUp = false
     
@@ -123,7 +123,7 @@ extension WBBaseController {
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         //设置刷新控件
-        refreshControl = UIRefreshControl()
+        refreshControl = CZRefreshControl()
         
         //添加到视图
         tableView?.addSubview(refreshControl!)

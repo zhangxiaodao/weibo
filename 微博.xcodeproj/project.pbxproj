@@ -24,6 +24,7 @@
 		ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */; };
 		ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */; };
 		ED89D8641EE548AD00DB7B21 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89D8631EE548AD00DB7B21 /* WBNetworkManager.swift */; };
+		EDA220821EFBAD240052A56F /* CZRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA220811EFBAD240052A56F /* CZRefreshControl.swift */; };
 		EDAD86ED1EE103C1005AE3E4 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */; };
 		EDAD86EF1EE15EF9005AE3E4 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = EDAD86EE1EE15EF9005AE3E4 /* main.json */; };
 		EDBA17D91EE64D3700F3041B /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA17D81EE64D3700F3041B /* WBNetworkManager+Extension.swift */; };
@@ -105,6 +106,7 @@
 		ED79153A1ED7D74F001DE08C /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		ED79153C1ED7D75B001DE08C /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 		ED89D8631EE548AD00DB7B21 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
+		EDA220811EFBAD240052A56F /* CZRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZRefreshControl.swift; sourceTree = "<group>"; };
 		EDAD86EC1EE103C1005AE3E4 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		EDAD86EE1EE15EF9005AE3E4 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		EDBA17D81EE64D3700F3041B /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		ED7915281ED7D59F001DE08C /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				EDA220801EFBAD010052A56F /* CZRefreshControll */,
 				EDBA17E61EEA865F00F3041B /* Model */,
 				ED89D8601EE547E000DB7B21 /* Network */,
 				EDCFCC9F1EDE659900689F5D /* Extensions */,
@@ -363,6 +366,14 @@
 				EDBA17D81EE64D3700F3041B /* WBNetworkManager+Extension.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		EDA220801EFBAD010052A56F /* CZRefreshControll */ = {
+			isa = PBXGroup;
+			children = (
+				EDA220811EFBAD240052A56F /* CZRefreshControl.swift */,
+			);
+			path = CZRefreshControll;
 			sourceTree = "<group>";
 		};
 		EDAD86E81EDFF1C0005AE3E4 /* Main(主控制器) */ = {
@@ -709,6 +720,7 @@
 				ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */,
 				EDCFCC971EDE5EAB00689F5D /* NSString+CZPath.m in Sources */,
 				ED155BD21EF389AC0029DC45 /* WBStatusToolBar.swift in Sources */,
+				EDA220821EFBAD240052A56F /* CZRefreshControl.swift in Sources */,
 				EDCAE5461EF7B05C00DF35EB /* WBStatusPicture.swift in Sources */,
 				EDCFCC9C1EDE5EAB00689F5D /* UIView+CZAddition.m in Sources */,
 				EDBA17E21EE8F65100F3041B /* WBOAuthViewController.swift in Sources */,
