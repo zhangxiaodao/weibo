@@ -9,7 +9,7 @@
 import UIKit
 
 /// 刷新状态切换的临界点
-fileprivate let CZRefreshOffset:CGFloat = 60
+fileprivate let CZRefreshOffset:CGFloat = 126
 
 /// 刷新状态
 ///
@@ -103,6 +103,9 @@ class CZRefreshControl: UIControl {
         //可以根据高度设置刷新控件的 frame
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
         
+        // --- 传递父视图的高度
+        refreshView.parentViewHeight = height
+        
         //判断临界点
         if sv.isDragging {
             if height > CZRefreshOffset && (refreshView.refreshState == .Normal){
@@ -148,6 +151,8 @@ class CZRefreshControl: UIControl {
         inset.top += CZRefreshOffset
         sv.contentInset = inset
         
+        //设置刷新视图的父视图高度
+        refreshView.parentViewHeight = CZRefreshOffset
     }
 
     /// 结束刷新

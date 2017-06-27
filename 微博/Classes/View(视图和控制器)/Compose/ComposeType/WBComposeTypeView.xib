@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WBComposeTypeView" customModule="微博" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUy-UK-J3k">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nTE-Dz-jOq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="ibN-qe-IRm">
+                                <rect key="frame" x="130" y="100" width="154" height="48"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-uJ-shE">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSo-MQ-L0v">
+                                        <rect key="frame" x="194" y="9" width="26" height="26"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_close"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xSo-MQ-L0v" firstAttribute="centerY" secondItem="rq8-uJ-shE" secondAttribute="centerY" id="HCz-kK-J6S"/>
+                                    <constraint firstItem="xSo-MQ-L0v" firstAttribute="centerX" secondItem="rq8-uJ-shE" secondAttribute="centerX" id="MoW-QR-K8L"/>
+                                    <constraint firstAttribute="height" constant="44" id="PZV-N5-OOa"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-2e-1hd">
+                                <rect key="frame" x="0.0" y="412" width="414" height="224"/>
+                                <color key="backgroundColor" red="0.90216869115829468" green="0.47082293033599854" blue="0.21715718507766724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="kDX-X9-l7A"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5f4-2e-1hd" secondAttribute="trailing" id="2Zo-Ot-csc"/>
+                            <constraint firstAttribute="trailing" secondItem="rq8-uJ-shE" secondAttribute="trailing" id="8Mf-uR-DwR"/>
+                            <constraint firstItem="rq8-uJ-shE" firstAttribute="top" secondItem="5f4-2e-1hd" secondAttribute="bottom" constant="56" id="EuM-ZX-nGx"/>
+                            <constraint firstItem="ibN-qe-IRm" firstAttribute="centerX" secondItem="nTE-Dz-jOq" secondAttribute="centerX" id="Id3-HT-U6C"/>
+                            <constraint firstItem="5f4-2e-1hd" firstAttribute="leading" secondItem="nTE-Dz-jOq" secondAttribute="leading" id="JDR-19-jlk"/>
+                            <constraint firstItem="ibN-qe-IRm" firstAttribute="top" secondItem="nTE-Dz-jOq" secondAttribute="top" constant="100" id="Nlr-uX-TpR"/>
+                            <constraint firstAttribute="bottom" secondItem="rq8-uJ-shE" secondAttribute="bottom" id="P4D-IP-2xS"/>
+                            <constraint firstItem="rq8-uJ-shE" firstAttribute="leading" secondItem="nTE-Dz-jOq" secondAttribute="leading" id="Tz7-Ab-IuD"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cUy-UK-J3k" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3y0-61-ivB"/>
+                <constraint firstAttribute="trailing" secondItem="cUy-UK-J3k" secondAttribute="trailing" id="gVQ-86-met"/>
+                <constraint firstAttribute="bottom" secondItem="cUy-UK-J3k" secondAttribute="bottom" id="th3-mC-K7v"/>
+                <constraint firstItem="cUy-UK-J3k" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vee-AZ-bQc"/>
+            </constraints>
+            <point key="canvasLocation" x="32.5" y="68.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="compose_slogan" width="154" height="48"/>
+        <image name="tabbar_compose_background_icon_close" width="26" height="26"/>
+    </resources>
+</document>

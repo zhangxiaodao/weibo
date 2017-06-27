@@ -23,40 +23,43 @@ class CZRefreshView: UIView {
             switch refreshState {
             case .Normal:
                 
-                tipIcon.isHidden = false
-                indicator.stopAnimating()
+                tipIcon?.isHidden = false
+                indicator?.stopAnimating()
                 
-                tiplabel.text = "继续使劲拉..."
+                tiplabel?.text = "继续使劲拉..."
                 // .identity 恢复到默认状态
                 UIView.animate(withDuration: 0.25, animations: { 
-                    self.tipIcon.transform = CGAffineTransform.identity
+                    self.tipIcon?.transform = CGAffineTransform.identity
                 })
             case .Pulling:
-                tiplabel.text = "放手就刷新..."
+                tiplabel?.text = "放手就刷新..."
                 
                 UIView.animate(withDuration: 0.25, animations: {
-                    self.tipIcon.transform = CGAffineTransform(rotationAngle: .pi - 0.001)
+                    self.tipIcon?.transform = CGAffineTransform(rotationAngle: .pi - 0.001)
                 })
             case .WillRefresh:
-                tiplabel.text = "正在刷新中..."
+                tiplabel?.text = "正在刷新中..."
                 //隐藏提示图标
-                tipIcon.isHidden = true
+                tipIcon?.isHidden = true
                 //显示菊花
-                indicator.startAnimating()
+                indicator?.startAnimating()
             }
         }
     }
     
+    /// 父视图的高度 - 为了刷新控件不需要关心当前的刷新视图是谁
+    var parentViewHeight:CGFloat = 0.0
     
     /// 提示器
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView?
     /// 提示图标
-    @IBOutlet weak var tiplabel: UILabel!
+    @IBOutlet weak var tiplabel: UILabel?
     /// 提示标签
-    @IBOutlet weak var tipIcon: UIImageView!
+    
+    @IBOutlet weak var tipIcon: UIImageView?
 
     class func refreshView() -> CZRefreshView {
-        let nib = UINib(nibName: "CZRefreshView", bundle: nil)
+        let nib = UINib(nibName: "CZMeiTuanRefreshView", bundle: nil)
         return nib.instantiate(withOwner: nil, options: nil).last as! CZRefreshView
         
     }

@@ -74,11 +74,15 @@ class WBMainViewController: UITabBarController {
     
     //MARK: - 监听方法
     /// 撰写微博
-    //FIXME:没有实现
-    //peivate 能保证方法私有，仅在当前对象被访问
-    //@objc 允许这个函数在运行时通过 OC 的消息机制被调用
     func composeStatus() -> () {
         print("撰写微博")
+        
+        // 0>判断是否登录
+        
+        // 1>实例化视图
+        let v = WBComposeTypeView.composeTypeView()
+        // 2>显示控件
+        v.show()
     }
     
     //MARK: - 私有控件
