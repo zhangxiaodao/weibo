@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 /**
  如果没有任何父类，如果希望开发时调试，输出调试信息，需要
  1. 遵循 CustomStringConvertible协议
