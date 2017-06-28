@@ -27,11 +27,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-uJ-shE">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSo-MQ-L0v">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSo-MQ-L0v" userLabel="关闭按钮">
                                         <rect key="frame" x="194" y="9" width="26" height="26"/>
                                         <state key="normal" image="tabbar_compose_background_icon_close"/>
                                         <connections>
                                             <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fqf-TJ-Dsd"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPN-dF-7aj" userLabel="返回上一页按钮">
+                                        <rect key="frame" x="194" y="9" width="26" height="26"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="clickReturn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qv6-10-FHg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -39,7 +46,9 @@
                                 <constraints>
                                     <constraint firstItem="xSo-MQ-L0v" firstAttribute="centerY" secondItem="rq8-uJ-shE" secondAttribute="centerY" id="HCz-kK-J6S"/>
                                     <constraint firstItem="xSo-MQ-L0v" firstAttribute="centerX" secondItem="rq8-uJ-shE" secondAttribute="centerX" id="MoW-QR-K8L"/>
+                                    <constraint firstItem="hPN-dF-7aj" firstAttribute="centerY" secondItem="rq8-uJ-shE" secondAttribute="centerY" id="PB2-GC-Zsa"/>
                                     <constraint firstAttribute="height" constant="44" id="PZV-N5-OOa"/>
+                                    <constraint firstItem="hPN-dF-7aj" firstAttribute="centerX" secondItem="rq8-uJ-shE" secondAttribute="centerX" id="o1n-KA-bmj"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-2e-1hd">
@@ -72,13 +81,17 @@
                 <constraint firstItem="cUy-UK-J3k" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vee-AZ-bQc"/>
             </constraints>
             <connections>
-                <outlet property="scrollerView" destination="5f4-2e-1hd" id="t9g-9M-nG8"/>
+                <outlet property="closeButtonCenterXCons" destination="MoW-QR-K8L" id="p5k-dc-RCL"/>
+                <outlet property="returnButton" destination="hPN-dF-7aj" id="5aI-My-xez"/>
+                <outlet property="returnButtonCenterXCons" destination="o1n-KA-bmj" id="KZR-Pc-ZDi"/>
+                <outlet property="scrollView" destination="5f4-2e-1hd" id="bHi-t9-lF4"/>
             </connections>
-            <point key="canvasLocation" x="32.5" y="68.5"/>
+            <point key="canvasLocation" x="32" y="68"/>
         </view>
     </objects>
     <resources>
         <image name="compose_slogan" width="154" height="48"/>
         <image name="tabbar_compose_background_icon_close" width="26" height="26"/>
+        <image name="tabbar_compose_background_icon_return" width="26" height="26"/>
     </resources>
 </document>
