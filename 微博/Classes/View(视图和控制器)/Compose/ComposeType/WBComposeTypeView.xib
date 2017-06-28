@@ -30,6 +30,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSo-MQ-L0v">
                                         <rect key="frame" x="194" y="9" width="26" height="26"/>
                                         <state key="normal" image="tabbar_compose_background_icon_close"/>
+                                        <connections>
+                                            <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fqf-TJ-Dsd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,6 +71,9 @@
                 <constraint firstAttribute="bottom" secondItem="cUy-UK-J3k" secondAttribute="bottom" id="th3-mC-K7v"/>
                 <constraint firstItem="cUy-UK-J3k" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vee-AZ-bQc"/>
             </constraints>
+            <connections>
+                <outlet property="scrollerView" destination="5f4-2e-1hd" id="t9g-9M-nG8"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="68.5"/>
         </view>
     </objects>

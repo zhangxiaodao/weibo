@@ -12,6 +12,8 @@
 		ED155BD01EF37ADC0029DC45 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BCF1EF37ADC0029DC45 /* UIImage+Extension.swift */; };
 		ED155BD21EF389AC0029DC45 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BD11EF389AC0029DC45 /* WBStatusToolBar.swift */; };
 		ED155BD41EF3CB130029DC45 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */; };
+		ED484BAA1F034AFD00426DCD /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED484BA91F034AFD00426DCD /* WBComposeTypeButton.swift */; };
+		ED484BAE1F034F9500426DCD /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED484BAD1F034F9500426DCD /* WBComposeTypeButton.xib */; };
 		ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7914F81ED7C923001DE08C /* AppDelegate.swift */; };
 		ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7914FF1ED7C924001DE08C /* Assets.xcassets */; };
 		ED79150E1ED7C924001DE08C /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79150D1ED7C924001DE08C /* __Tests.swift */; };
@@ -95,6 +97,8 @@
 		ED155BCF1EF37ADC0029DC45 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		ED155BD11EF389AC0029DC45 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
+		ED484BA91F034AFD00426DCD /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
+		ED484BAD1F034F9500426DCD /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
 		ED7914F51ED7C923001DE08C /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7914F81ED7C923001DE08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7914FF1ED7C924001DE08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -519,6 +523,8 @@
 			children = (
 				EDEDCE611F024B450020DC78 /* WBComposeTypeView.swift */,
 				EDEDCE631F024F300020DC78 /* WBComposeTypeView.xib */,
+				ED484BA91F034AFD00426DCD /* WBComposeTypeButton.swift */,
+				ED484BAD1F034F9500426DCD /* WBComposeTypeButton.xib */,
 			);
 			name = ComposeType;
 			path = Compose/ComposeType;
@@ -643,6 +649,7 @@
 				EDD2C1631EF265CE0021F7BE /* WBStatusRetweetedCell.xib in Resources */,
 				EDAD86EF1EE15EF9005AE3E4 /* main.json in Resources */,
 				ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */,
+				ED484BAE1F034F9500426DCD /* WBComposeTypeButton.xib in Resources */,
 				EDD2C0DA1EEFD6610021F7BE /* WBWelcome.xib in Resources */,
 				EDD740701EF8C92A00342F9B /* WBStatusNormalCell.xib in Resources */,
 				EDEDCE641F024F300020DC78 /* WBComposeTypeView.xib in Resources */,
@@ -739,6 +746,7 @@
 				EDCFCCA61EDEAB6400689F5D /* UIBarButtonItem+Extension.swift in Sources */,
 				ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */,
 				EDD2C1651EF272230021F7BE /* WBUser.swift in Sources */,
+				ED484BAA1F034AFD00426DCD /* WBComposeTypeButton.swift in Sources */,
 				ED79153B1ED7D74F001DE08C /* WBDiscoverViewController.swift in Sources */,
 				EDD2C0D81EEFC72D0021F7BE /* WBNewFeature.swift in Sources */,
 				ED89D8641EE548AD00DB7B21 /* WBNetworkManager.swift in Sources */,
