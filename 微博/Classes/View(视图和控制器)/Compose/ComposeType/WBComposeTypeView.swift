@@ -101,12 +101,42 @@ class WBComposeTypeView: UIView {
     }
     //关闭视图
     @IBAction func close(_ sender: Any) {
-        removeFromSuperview()
+//        removeFromSuperview()
+        hideBtns()
     }
 }
 
 // MARK: - 动画扩展方法
 fileprivate extension WBComposeTypeView {
+    
+    //MARK - 消除部分的动画
+    /// 隐藏按钮动画
+    fileprivate func hideBtns() {
+        //1.根据  contentOffSet 判断显示的子视图
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let v = scrollView.subviews[page]
+        
+        //2.便利 v 中的所有按钮
+        for (i , btn) in v.subviews.enumerated().reversed() {
+            //1.创建动画
+            let anim:POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            //2.设置动画属性
+            anim.fromValue = btn.center.y
+            anim.toValue = btn.center.y + 400
+            
+            //设置动画时间
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
+            
+            //3.添加动画
+            btn.pop_add(anim, forKey: nil)
+        }
+        
+        
+    }
+    
+    
+    //MARK - 显示部分的动画
     fileprivate func showCurrentView() {
         //1>创建动画
         let anim:POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
