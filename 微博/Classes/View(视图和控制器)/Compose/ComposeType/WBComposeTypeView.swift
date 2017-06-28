@@ -116,6 +116,38 @@ fileprivate extension WBComposeTypeView {
         
         //2>添加到视图
         pop_add(anim, forKey: nil)
+        
+        //3.添加按钮的动画
+        showBtns()
+    }
+    
+    /// 弹力显示所有的按钮
+    fileprivate func showBtns(){
+        //1.获取 scrllView 的第 0 个视图
+        let v = scrollView.subviews[0]
+        
+        //2.便利 v 中所有的按钮
+        for (i , btn) in v.subviews.enumerated() {
+            //1>创建动画
+            let anim:POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            //2>设置动画属性
+            anim.fromValue = btn.center.y + 400
+            anim.toValue = btn.center.y
+            
+            //弹力系数 0~20 数值越大，弹性越大默认是4
+            anim.springBounciness = 8
+            // 弹力速度，取值范围 0~20，数值越大，速度越快，默认值是 12
+            anim.springSpeed = 8
+            
+            //设置动画启动时间
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(i) * 0.025
+            
+            //3>添加动画
+            btn.pop_add(anim, forKey: nil)
+            
+        }
+        
     }
 }
 

@@ -51,7 +51,7 @@
                                     <constraint firstItem="hPN-dF-7aj" firstAttribute="centerX" secondItem="rq8-uJ-shE" secondAttribute="centerX" id="o1n-KA-bmj"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-2e-1hd">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-2e-1hd">
                                 <rect key="frame" x="0.0" y="412" width="414" height="224"/>
                                 <color key="backgroundColor" red="0.90216869115829468" green="0.47082293033599854" blue="0.21715718507766724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
