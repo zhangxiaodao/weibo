@@ -106,7 +106,31 @@ class WBComposeTypeView: UIView {
     }
     
     func clickBtn(btn:WBComposeTypeButton) {
-        print("点啊记得按钮\(btn)")
+        
+        //1.判断当前显示的视图
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let v = scrollView.subviews[page]
+        
+        //2.便利当前视图
+        // - 选中的按钮方法
+        // - 未选中的按钮缩小
+        for button in v.subviews {
+            
+            //1.形变动画
+            let scaleAnim:POPBasicAnimation = POPBasicAnimation(propertyNamed:kPOPViewScaleXY)
+            
+            // 注意： x,y 在系统中使用 CGPoint 表示，如果要转换成 id ,需要使用 'NSValue' 使用
+            let scale = (btn == button) ? 2 : 0.2
+            scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+            
+            scaleAnim.duration = 0.5
+            
+            button.pop_add(scaleAnim , forKey:nil)
+            
+            //2.渐变动画
+            
+        }
+        
     }
 }
 
