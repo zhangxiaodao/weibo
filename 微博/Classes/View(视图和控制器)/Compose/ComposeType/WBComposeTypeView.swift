@@ -23,7 +23,7 @@ class WBComposeTypeView: UIView {
     
     //按钮数据数组
     fileprivate let buttonsInfo = [
-        ["imageName":"tabbar_compose_idea" , "title":"文字"],
+        ["imageName":"tabbar_compose_idea" , "title":"文字" , "clsName":"WBComposeViewController"],
         ["imageName":"tabbar_compose_photo" , "title":"照片/视频"],
         ["imageName":"tabbar_compose_lbs" , "title":"签到"],
         ["imageName":"tabbar_compose_review" , "title":"点评"],
@@ -104,6 +104,10 @@ class WBComposeTypeView: UIView {
 //        removeFromSuperview()
         hideBtns()
     }
+    
+    func clickBtn(btn:WBComposeTypeButton) {
+        print("点啊记得按钮\(btn)")
+    }
 }
 
 // MARK: - 动画扩展方法
@@ -130,9 +134,32 @@ fileprivate extension WBComposeTypeView {
             
             //3.添加动画
             btn.pop_add(anim, forKey: nil)
+            
+            //4.监听 第 0 个按钮的动画，是最后一个执行
+            if i == 0 {
+                anim.completionBlock = { (_ , _) in
+                    self.hideCurrentView()
+                }
+            }
         }
+    }
+    
+    private func hideCurrentView() {
+        //1.创建动画 
+        let anim:POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
         
+        //2.设置动画属性
+        anim.fromValue = 1
+        anim.toValue = 0
+        anim.duration = 0.25
         
+        //3.添加视图
+        pop_add(anim, forKey: nil)
+        
+        //4.添加完成监听方法
+        anim.completionBlock = {(_ , _) in
+            self.removeFromSuperview()
+        }
     }
     
     
@@ -235,10 +262,16 @@ fileprivate extension WBComposeTypeView {
             let btn = WBComposeTypeButton.composeTypeBtn(imageName: imageName, title: title)
             v.addSubview(btn)
             
+            
             if let actionName = dict["clickName"] {
                 btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            } else {
+                //FIXM: -
+                btn.addTarget(self, action: #selector(clickBtn(btn:)), for: .touchUpInside)
             }
             
+            //4.设置要展现的类型
+            btn.clsName = dict["clsName"]
         }
         
         //便利视图的子视图，布局按钮

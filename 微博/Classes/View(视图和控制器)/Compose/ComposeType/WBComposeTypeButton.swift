@@ -12,6 +12,9 @@ class WBComposeTypeButton: UIControl {
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    var clsName:String?
+    
+    
     class func composeTypeBtn(imageName:String , title:String) -> WBComposeTypeButton {
         let nib = UINib.init(nibName: "WBComposeTypeButton", bundle: nil)
         let btn = nib.instantiate(withOwner: nil, options: nil)[0] as! WBComposeTypeButton
