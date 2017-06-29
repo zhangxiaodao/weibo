@@ -104,7 +104,9 @@ class CZRefreshControl: UIControl {
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
         
         // --- 传递父视图的高度
-        refreshView.parentViewHeight = height
+        if refreshView.refreshState == .WillRefresh {
+            refreshView.parentViewHeight = height
+        }
         
         //判断临界点
         if sv.isDragging {

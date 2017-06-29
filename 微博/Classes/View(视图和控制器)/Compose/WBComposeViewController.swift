@@ -15,6 +15,11 @@ class WBComposeViewController: UIViewController {
         
         view.backgroundColor = UIColor.cz_random()
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "推出", target: self, action: #selector(self.close))
+    }
+    
+    func close() -> () {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

@@ -82,7 +82,25 @@ class WBMainViewController: UITabBarController {
         // 1>实例化视图
         let v = WBComposeTypeView.composeTypeView()
         // 2>显示控件
-        v.show()
+        v.show { [weak v] (clsName) in
+            print(clsName ?? "")
+            
+            guard let clsName = clsName ,
+                let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+                else {
+                    v?.removeFromSuperview()
+                return
+            }
+            
+            let vc = cls.init()
+            
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.present(nav, animated: true, completion: {
+                v?.removeFromSuperview()
+            })
+            
+        }
     }
     
     //MARK: - 私有控件

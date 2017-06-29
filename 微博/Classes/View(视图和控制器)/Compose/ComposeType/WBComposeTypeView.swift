@@ -35,7 +35,10 @@ class WBComposeTypeView: UIView {
         ["imageName":"tabbar_compose_shooting" , "title":"拍摄"]
         ]
     
-    /// 类方法
+    //完成回调
+    var completionBlock:((_ clsName:String?)->())?
+    
+    ///MARK: - 类方法
     class func composeTypeView() -> WBComposeTypeView {
         let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBComposeTypeView
@@ -49,7 +52,11 @@ class WBComposeTypeView: UIView {
     }
     
     /// 显示当前视图
-    func show() -> () {
+    func show(completion:@escaping (_ clsName:String?)->()) -> () {
+        
+        //0.记录闭包
+        completionBlock = completion
+        
         //1.将当前视图添加到 根视图控制器 的 view
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
@@ -105,7 +112,7 @@ class WBComposeTypeView: UIView {
         hideBtns()
     }
     
-    func clickBtn(btn:WBComposeTypeButton) {
+    func clickBtn(selectorBtn:WBComposeTypeButton) {
         
         //1.判断当前显示的视图
         let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
@@ -114,13 +121,13 @@ class WBComposeTypeView: UIView {
         //2.便利当前视图
         // - 选中的按钮方法
         // - 未选中的按钮缩小
-        for button in v.subviews {
+        for (i,button) in v.subviews.enumerated() {
             
             //1.形变动画
             let scaleAnim:POPBasicAnimation = POPBasicAnimation(propertyNamed:kPOPViewScaleXY)
             
             // 注意： x,y 在系统中使用 CGPoint 表示，如果要转换成 id ,需要使用 'NSValue' 使用
-            let scale = (btn == button) ? 2 : 0.2
+            let scale = (selectorBtn == button) ? 2 : 0.2
             scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
             
             scaleAnim.duration = 0.5
@@ -128,7 +135,21 @@ class WBComposeTypeView: UIView {
             button.pop_add(scaleAnim , forKey:nil)
             
             //2.渐变动画
+            let alphaAnim:POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
             
+            alphaAnim.toValue = 0.2
+            alphaAnim.duration = 0.5
+            
+            selectorBtn.pop_add(alphaAnim, forKey: nil)
+            
+            //3.添加动画监听
+            if i == 0 {
+                alphaAnim.completionBlock = {(_ , _) in
+                    //需要执行回调
+                    print("完成回调展现控制器")
+                    self.completionBlock?(selectorBtn.clsName)
+                }
+            }
         }
         
     }
@@ -291,7 +312,7 @@ fileprivate extension WBComposeTypeView {
                 btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
             } else {
                 //FIXM: -
-                btn.addTarget(self, action: #selector(clickBtn(btn:)), for: .touchUpInside)
+                btn.addTarget(self, action: #selector(clickBtn(selectorBtn:)), for: .touchUpInside)
             }
             
             //4.设置要展现的类型
