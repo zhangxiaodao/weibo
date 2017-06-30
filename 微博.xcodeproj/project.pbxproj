@@ -70,6 +70,7 @@
 		EDEDCE5D1F0248880020DC78 /* CZRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEDCE571F0248870020DC78 /* CZRefreshControl.swift */; };
 		EDEDCE5E1F0248880020DC78 /* CZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEDCE581F0248870020DC78 /* CZRefreshView.swift */; };
 		EDEDCE5F1F0248880020DC78 /* CZRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEDCE591F0248870020DC78 /* CZRefreshView.xib */; };
+		EDF891291F0504CE00B5304D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF891281F0504CE00B5304D /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,7 @@
 		EDEDCE571F0248870020DC78 /* CZRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZRefreshControl.swift; sourceTree = "<group>"; };
 		EDEDCE581F0248870020DC78 /* CZRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZRefreshView.swift; sourceTree = "<group>"; };
 		EDEDCE591F0248870020DC78 /* CZRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZRefreshView.xib; sourceTree = "<group>"; };
+		EDF891281F0504CE00B5304D /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FE5CBF3A9C8948E8D6020C26 /* Pods___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -476,6 +478,7 @@
 				EDCFCCA51EDEAB6400689F5D /* UIBarButtonItem+Extension.swift */,
 				ED155BCD1EF376A50029DC45 /* UIImageView+WebImage.swift */,
 				ED155BCF1EF37ADC0029DC45 /* UIImage+Extension.swift */,
+				EDF891281F0504CE00B5304D /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				EDD2C15F1EF2659C0021F7BE /* WBStatusCell.swift in Sources */,
 				EDBA17DD1EE6A88C00F3041B /* WBStatusListViewModel.swift in Sources */,
 				ED7915371ED7D6EA001DE08C /* WBHomeViewController.swift in Sources */,
+				EDF891291F0504CE00B5304D /* String+Extension.swift in Sources */,
 				EDCFCC941EDE5EAB00689F5D /* NSObject+CZRuntime.m in Sources */,
 				EDE52DA11F049AF300D1EF99 /* WBComposeTypeView.swift in Sources */,
 				ED7915331ED7D649001DE08C /* WBNavigationViewController.swift in Sources */,
