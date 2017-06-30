@@ -22,7 +22,12 @@ class WBStatus: NSObject {
     var created_at:String?
     
     //微博来源 - 发布微博使用的客户端
-    var source:String?
+    var source:String? {
+        didSet {
+            //重新计算来源并且保存
+            source = "来自于 " + (source?.cz_href()?.text ?? "")
+        }
+    }
     
     //转发数
     var reposts_count:Int = 0
