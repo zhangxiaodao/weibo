@@ -27,7 +27,10 @@ class WBStatusCell: UITableViewCell {
     
     var viewModel:WBStatustViewModel? {
         didSet{
-            statusLabel.text = viewModel?.status.text
+            statusLabel.attributedText = viewModel?.statusAttrText
+            //设置被转发微博的文字
+            retweetedLabel?.attributedText = viewModel?.retweetedAttrText
+            
             nameLabel.text = viewModel?.status.user?.screen_name
             
             //设置会员图标
@@ -41,9 +44,6 @@ class WBStatusCell: UITableViewCell {
             
             //配图视图模型
             pictureView.viewModel = viewModel
-            
-            //设置被转发微博的文字
-            retweetedLabel?.text = viewModel?.retweetedText
             
             //设置来源
             sourceLabel.text = viewModel?.status.source

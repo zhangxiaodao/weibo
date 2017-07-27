@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 /**
  如果没有任何父类，如果希望开发时调试，输出调试信息，需要
  1. 遵循 CustomStringConvertible协议
@@ -45,8 +46,11 @@ class WBStatustViewModel:CustomStringConvertible {
         return status.retweeted_status?.pic_urls ?? status.pic_urls
     }
     
+    /// 微博正文的属性文本
+    var statusAttrText:NSAttributedString?
     /// 被转发微博的文字
-    var retweetedText:String?
+    var retweetedAttrText:NSAttributedString?
+    
     
     /// 行高
     var rowHeight:CGFloat = 0
@@ -88,8 +92,20 @@ class WBStatustViewModel:CustomStringConvertible {
         //计算配图视图大小 (有原创的 就计算 原创的  有转发的 就计算转发的)
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
         
-        //设置被转发微博的文字
-        retweetedText = "@" + (status.retweeted_status?.user?.screen_name ?? "") + ":" + (status.retweeted_status?.text ?? "")
+        // --- 设置微博文本 ---
+        let originalFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        
+        // 微博正文的属性文本
+        statusAttrText = CZEmoticonManager.shared.emoticonsString(string: model.text ?? "", font: originalFont)
+        
+        // 设置被转发微博的属性文本
+        let rText = "@" + (status.retweeted_status?.user?.screen_name ?? "")
+            + ":"
+            + (status.retweeted_status?.text ?? "")
+        retweetedAttrText = CZEmoticonManager.shared.emoticonsString(string: rText, font: retweetedFont)
+        
+        
         
         //计算行高
         updateRowHeight()
@@ -118,7 +134,7 @@ class WBStatustViewModel:CustomStringConvertible {
         height = 2 * margin + iconHeight + margin
         
         //2.正文的高度
-        if let text = status.text {
+        if let text = statusAttrText {
             /**
              boundingRect(with: <#T##CGSize#>, options: <#T##NSStringDrawingOptions#>, attributes: <#T##[String : Any]?#>, context: <#T##NSStringDrawingContext?#>)
                 1> CGSize 预期的大小 , 宽度确定，高度尽可能的大
@@ -126,7 +142,9 @@ class WBStatustViewModel:CustomStringConvertible {
                 3> 计算label 的高度  一定要知道  字体的大小
                 4> 传为 nil
              */
-            height += (text as NSString).boundingRect(with: viewSize, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:originalFont], context: nil).height
+            
+            height += text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height
+            
         }
         
         //3. 判断是否转发微博
@@ -134,8 +152,8 @@ class WBStatustViewModel:CustomStringConvertible {
             height += 2 * margin
             
             //转发文本的高度 - 一定用 retweetedText ，拼接了 @用户名:微博文字
-            if let text = retweetedText {
-                height += (text as NSString).boundingRect(with: viewSize, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:retweetedFont], context: nil).height
+            if let text = retweetedAttrText {
+                height += text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height
             }
         }
         
