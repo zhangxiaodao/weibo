@@ -82,6 +82,7 @@ class WBMainViewController: UITabBarController {
         // 1>实例化视图
         let v = WBComposeTypeView.composeTypeView()
         // 2>显示控件
+
         v.show { [weak v] (clsName) in
             print(clsName ?? "")
             

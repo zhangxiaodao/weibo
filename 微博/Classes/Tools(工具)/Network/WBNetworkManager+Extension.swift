@@ -63,6 +63,7 @@ extension WBNetworkManager {
         //发起网络请求
         tokenRequest(URLString: urlString, parameters: parames as [String : AnyObject]) { (json, isSuccess) in
             completion((json as? [String:AnyObject]) ?? [:])
+
         }
         
     }

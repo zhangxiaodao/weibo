@@ -45,6 +45,7 @@ extension AppDelegate {
         //1.设置 SVProgressHUD  最小解除时间
         SVProgressHUD.setMinimumDismissTimeInterval(1.0)
         //2.设置网络加载指示器
+        //请求数据慢的时候，我们手机的左上角会出现菊花的效果
         AFNetworkActivityIndicatorManager.shared().isEnabled = true
         //3.设置用户授权显示通知
         //取得用户授权显示通知[上方的提示条/声音/badgeNumber]

@@ -90,7 +90,7 @@ class WBStatusListViewModel {
                 self.cacheSingleImage(list: array , finish: completion)
                 
                 //3.完成回调
-//                completion(isSuccess , true)
+                completion(isSuccess , true)
 
             }
         }

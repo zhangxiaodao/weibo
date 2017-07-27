@@ -105,6 +105,7 @@ class WBComposeTypeView: UIView {
             self.returnButton.alpha = 1
         }
         
+        
     }
     //关闭视图
     @IBAction func close(_ sender: Any) {
@@ -129,7 +130,6 @@ class WBComposeTypeView: UIView {
             // 注意： x,y 在系统中使用 CGPoint 表示，如果要转换成 id ,需要使用 'NSValue' 使用
             let scale = (selectorBtn == button) ? 2 : 0.2
             scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
-            
             scaleAnim.duration = 0.5
             
             button.pop_add(scaleAnim , forKey:nil)
@@ -273,6 +273,7 @@ fileprivate extension WBComposeTypeView {
             //3.将试图添加到 scrollView
             scrollView.addSubview(v)
         }
+        
         
         //4.设置 scrollView 
         scrollView.contentSize = CGSize(width: 2 * width, height: 0)

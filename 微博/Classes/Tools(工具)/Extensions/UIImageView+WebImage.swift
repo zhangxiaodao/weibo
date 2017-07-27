@@ -15,7 +15,7 @@ extension UIImageView {
     /// - Parameters:
     ///   - urlString: urlString
     ///   - placeholderImage: 展位图像
-    ///   - isAvatar: 是否是图像
+    ///   - isAvatar: 是否是头像
     func cz_setImage(urlString:String? , placeholderImage:UIImage? , isAvatar:Bool = false) -> () {
         guard let urlString = urlString ,
             let url = URL(string: urlString) else {
