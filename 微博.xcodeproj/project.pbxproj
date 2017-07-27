@@ -250,7 +250,6 @@
 				ED681D381F2996C000CE6EA8 /* CZEmoticonPackage.swift */,
 				ED681D391F2996C000CE6EA8 /* HMEmoticon.bundle */,
 				ED681D3A1F2996C000CE6EA8 /* Model */,
-				ED681D3C1F2996C000CE6EA8 /* 联侠 2017-07-26 12-24-08 */,
 			);
 			path = Emoticon;
 			sourceTree = "<group>";
@@ -261,13 +260,6 @@
 				ED681D3B1F2996C000CE6EA8 /* CZEmoticion.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		ED681D3C1F2996C000CE6EA8 /* 联侠 2017-07-26 12-24-08 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "联侠 2017-07-26 12-24-08";
 			sourceTree = "<group>";
 		};
 		ED7914EC1ED7C923001DE08C = {

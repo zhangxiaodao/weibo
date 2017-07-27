@@ -87,7 +87,7 @@ extension CZEmoticonManager {
             
         }
         
-        //4.统一设置一遍字符串的属性
+        //4.*****统一设置一遍字符串的属性
         attrString.addAttributes([NSFontAttributeName:font], range: NSRange(location: 0, length: attrString.length))
         
         return attrString
