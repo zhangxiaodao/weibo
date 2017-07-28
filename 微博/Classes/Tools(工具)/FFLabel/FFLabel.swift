@@ -232,15 +232,16 @@ extension FFLabel {
         }
         
         var attributes = textStorage.attributes(at: 0, effectiveRange: nil)
-        attributes[NSForegroundColorAttributeName] = UIColor.blue
+//
         
         let range = selectedRange
         
         if isSet {
             attributes[NSBackgroundColorAttributeName] = selectedBackgroudColor
-            
+            attributes[NSForegroundColorAttributeName] = UIColor.blue
         } else {
             attributes[NSBackgroundColorAttributeName] = UIColor.clear
+            attributes[NSForegroundColorAttributeName] = UIColor.gray
             selectedRange = nil
         }
         
