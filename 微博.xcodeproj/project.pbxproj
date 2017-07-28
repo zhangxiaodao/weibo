@@ -17,6 +17,7 @@
 		ED681D3E1F2996C000CE6EA8 /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED681D381F2996C000CE6EA8 /* CZEmoticonPackage.swift */; };
 		ED681D3F1F2996C000CE6EA8 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ED681D391F2996C000CE6EA8 /* HMEmoticon.bundle */; };
 		ED681D401F2996C000CE6EA8 /* CZEmoticion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED681D3B1F2996C000CE6EA8 /* CZEmoticion.swift */; };
+		ED681D821F2AE09F00CE6EA8 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED681D811F2AE09F00CE6EA8 /* FFLabel.swift */; };
 		ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7914F81ED7C923001DE08C /* AppDelegate.swift */; };
 		ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7914FF1ED7C924001DE08C /* Assets.xcassets */; };
 		ED79150E1ED7C924001DE08C /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79150D1ED7C924001DE08C /* __Tests.swift */; };
@@ -108,6 +109,7 @@
 		ED681D381F2996C000CE6EA8 /* CZEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonPackage.swift; sourceTree = "<group>"; };
 		ED681D391F2996C000CE6EA8 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		ED681D3B1F2996C000CE6EA8 /* CZEmoticion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticion.swift; sourceTree = "<group>"; };
+		ED681D811F2AE09F00CE6EA8 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		ED7914F51ED7C923001DE08C /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7914F81ED7C923001DE08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7914FF1ED7C924001DE08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -262,6 +264,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ED681D801F2AE09F00CE6EA8 /* FFLabel */ = {
+			isa = PBXGroup;
+			children = (
+				ED681D811F2AE09F00CE6EA8 /* FFLabel.swift */,
+			);
+			path = FFLabel;
+			sourceTree = "<group>";
+		};
 		ED7914EC1ED7C923001DE08C = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +350,7 @@
 		ED7915281ED7D59F001DE08C /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				ED681D801F2AE09F00CE6EA8 /* FFLabel */,
 				ED681D361F2996C000CE6EA8 /* Emoticon */,
 				EDA220801EFBAD010052A56F /* CZRefreshControll */,
 				EDBA17E61EEA865F00F3041B /* Model */,
@@ -787,6 +798,7 @@
 				ED681D401F2996C000CE6EA8 /* CZEmoticion.swift in Sources */,
 				EDCFCCA11EDE65DA00689F5D /* Bundle+Extensions.swift in Sources */,
 				EDCFCC951EDE5EAB00689F5D /* NSString+CZBase64.m in Sources */,
+				ED681D821F2AE09F00CE6EA8 /* FFLabel.swift in Sources */,
 				ED155BCE1EF376A50029DC45 /* UIImageView+WebImage.swift in Sources */,
 				EDCFCCA61EDEAB6400689F5D /* UIBarButtonItem+Extension.swift in Sources */,
 				ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */,
