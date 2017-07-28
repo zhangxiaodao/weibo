@@ -108,7 +108,6 @@ class WBStatusCell: UITableViewCell {
 
 extension WBStatusCell:FFLabelDelegate {
     func labelDidSelectedLinkText(label: FFLabel, text: String) {
-        print(text)
         
         //判断 是否是 url
         if !text.hasPrefix("http://") {

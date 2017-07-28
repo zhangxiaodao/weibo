@@ -18,6 +18,7 @@
 		ED681D3F1F2996C000CE6EA8 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ED681D391F2996C000CE6EA8 /* HMEmoticon.bundle */; };
 		ED681D401F2996C000CE6EA8 /* CZEmoticion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED681D3B1F2996C000CE6EA8 /* CZEmoticion.swift */; };
 		ED681D821F2AE09F00CE6EA8 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED681D811F2AE09F00CE6EA8 /* FFLabel.swift */; };
+		ED681D841F2B244500CE6EA8 /* WBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED681D831F2B244500CE6EA8 /* WBWebViewController.swift */; };
 		ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7914F81ED7C923001DE08C /* AppDelegate.swift */; };
 		ED7915001ED7C924001DE08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7914FF1ED7C924001DE08C /* Assets.xcassets */; };
 		ED79150E1ED7C924001DE08C /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79150D1ED7C924001DE08C /* __Tests.swift */; };
@@ -110,6 +111,7 @@
 		ED681D391F2996C000CE6EA8 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		ED681D3B1F2996C000CE6EA8 /* CZEmoticion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticion.swift; sourceTree = "<group>"; };
 		ED681D811F2AE09F00CE6EA8 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
+		ED681D831F2B244500CE6EA8 /* WBWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWebViewController.swift; sourceTree = "<group>"; };
 		ED7914F51ED7C923001DE08C /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7914F81ED7C923001DE08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7914FF1ED7C924001DE08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				EDD2C15D1EF265870021F7BE /* StatusCell */,
 				EDD2C0CF1EEF8F3F0021F7BE /* TitleButton */,
 				ED7915361ED7D6EA001DE08C /* WBHomeViewController.swift */,
+				ED681D831F2B244500CE6EA8 /* WBWebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				ED155BD21EF389AC0029DC45 /* WBStatusToolBar.swift in Sources */,
 				EDCAE5461EF7B05C00DF35EB /* WBStatusPicture.swift in Sources */,
 				EDCFCC9C1EDE5EAB00689F5D /* UIView+CZAddition.m in Sources */,
+				ED681D841F2B244500CE6EA8 /* WBWebViewController.swift in Sources */,
 				EDEDCE5B1F0248870020DC78 /* CZMeiTuanRefreshView.swift in Sources */,
 				EDE52DA41F049B2B00D1EF99 /* WBComposeViewController.swift in Sources */,
 				ED681D3E1F2996C000CE6EA8 /* CZEmoticonPackage.swift in Sources */,

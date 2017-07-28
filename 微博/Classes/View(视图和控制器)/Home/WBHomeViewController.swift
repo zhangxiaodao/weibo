@@ -63,7 +63,7 @@ extension WBHomeViewController {
         
         //2. 设置 cell
         cell.viewModel = vm
-        
+        cell.delegate = self
         //3. 返回 cell
         return cell
     }
@@ -117,5 +117,20 @@ extension WBHomeViewController {
         //设置选中状态
         btn.isSelected = !btn.isSelected
     }
+    
+}
+
+extension WBHomeViewController : WBStatusCellDelegate {
+    
+    func statusCellDidSelectedURLString(cell: WBStatusCell, urlString: String) {
+        print(urlString)
+        
+        let vc = WBWebViewController()
+        vc.urlString = urlString
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
     
 }
