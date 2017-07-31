@@ -14,7 +14,7 @@ class WBComposeViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     /// 底部工具栏
     @IBOutlet weak var toolBar: UIToolbar!
-    /// 标题标签
+    /// 标题标签 -
     @IBOutlet var titlabel: UILabel!
     /// 发布按钮
     @IBOutlet var sendButton: UIButton!
@@ -39,10 +39,10 @@ extension WBComposeViewController {
     func setupUI() -> () {
         
         view.backgroundColor = UIColor.white
-        setNavigationBar()
-        
-        
         textView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+        setNavigationBar()
+        setupToolBar()
+        
         
         
     }
@@ -56,4 +56,39 @@ extension WBComposeViewController {
         
         navigationItem.titleView = titlabel
     }
+    
+    func setupToolBar() -> () {
+        let itemSettings = [
+                            ["imageName": "compose_toolbar_picture"],
+                            ["imageName": "compose_mentionbutton_background"],
+                            ["imageName": "compose_trendbutton_background"],
+                            ["imageName": "compose_emoticonbutton_background", "actionName": "emoticonKeyboard"],
+                            ["imageName": "compose_add_background"]]
+        
+        //比爱丽数组
+        var items = [UIBarButtonItem]()
+        
+        for s in itemSettings {
+            guard let imageName = s["imageName"] else {
+                continue
+            }
+            
+            let image = UIImage(named: imageName)
+            let imageHL = UIImage(named: imageName + "_highlighted")
+            
+            let btn = UIButton()
+            
+            btn.setImage(image, for: [])
+            btn.setImage(imageHL, for: .highlighted)
+            btn.sizeToFit()
+            
+            //追加按钮
+            items.append(UIBarButtonItem(customView: btn))
+            //追加弹簧
+            items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+        }
+        items.removeLast()
+        toolBar.items = items
+    }
+    
 }
