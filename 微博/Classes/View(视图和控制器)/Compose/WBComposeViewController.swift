@@ -10,10 +10,15 @@ import UIKit
 
 class WBComposeViewController: UIViewController {
 
+    /// 文本编辑视图
     @IBOutlet weak var textView: UITextView!
+    /// 底部工具栏
     @IBOutlet weak var toolBar: UIToolbar!
-    
+    /// 标题标签
+    @IBOutlet var titlabel: UILabel!
+    /// 发布按钮
     @IBOutlet var sendButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -27,29 +32,6 @@ class WBComposeViewController: UIViewController {
     @IBAction func postStatus(_ sender: Any) {
         print("发布微博")
     }
-    
-//    lazy var sendBtn:UIButton = {
-//        
-//        let btn = UIButton()
-//        
-//        btn.setTitle("发布", for: [])
-//        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-//        
-//        //设置标题颜色
-//        btn.setTitleColor(UIColor.white, for: [])
-//        btn.setTitleColor(UIColor.gray, for: .disabled)
-//        
-//        //设置背景图片
-//        btn.setBackgroundImage(UIImage(named: "common_button_orange"), for: [])
-//        btn.setBackgroundImage(UIImage(named: "common_button_orange_highlighted"), for: .highlighted)
-//        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .disabled)
-//        
-//        //设置大小
-//        btn.frame = CGRect(x: 0, y: 0, width: 45, height: 35)
-//        
-//        return btn
-//    }()
-
 }
 
 extension WBComposeViewController {
@@ -71,5 +53,7 @@ extension WBComposeViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
         
         sendButton.isEnabled = false
+        
+        navigationItem.titleView = titlabel
     }
 }

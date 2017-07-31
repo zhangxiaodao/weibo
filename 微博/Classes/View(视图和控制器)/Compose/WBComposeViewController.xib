@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="sendButton" destination="sjE-lZ-bLY" id="Ycv-M8-xEi"/>
                 <outlet property="textView" destination="REJ-h5-GNi" id="Vux-oo-G5s"/>
+                <outlet property="titlabel" destination="7Yu-xx-Q0j" id="rxp-Mh-KGw"/>
                 <outlet property="toolBar" destination="Xmr-hX-aV7" id="IOK-o8-FW0"/>
                 <outlet property="view" destination="742-ic-8V0" id="8v8-9I-sdV"/>
             </connections>
@@ -63,8 +64,40 @@
             <connections>
                 <action selector="postStatus:" destination="-1" eventType="touchUpInside" id="lQm-8c-5ZS"/>
             </connections>
-            <point key="canvasLocation" x="-448" y="-143"/>
+            <point key="canvasLocation" x="-420" y="-293"/>
         </button>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Yu-xx-Q0j">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <attributedString key="attributedText">
+                <fragment>
+                    <string key="content">发微博
+</string>
+                    <attributes>
+                        <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment>
+                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                    <attributes>
+                        <font key="NSFont" size="4" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content="小道的微博">
+                    <attributes>
+                        <color key="NSColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <font key="NSFont" size="12" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+            </attributedString>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="-458" y="-187"/>
+        </label>
     </objects>
     <resources>
         <image name="common_button_orange" width="11" height="35"/>
