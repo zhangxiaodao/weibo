@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBComposeViewController" customModule="微博" customModuleProvider="target">
             <connections>
+                <outlet property="sendButton" destination="sjE-lZ-bLY" id="Ycv-M8-xEi"/>
                 <outlet property="textView" destination="REJ-h5-GNi" id="Vux-oo-G5s"/>
                 <outlet property="toolBar" destination="Xmr-hX-aV7" id="IOK-o8-FW0"/>
                 <outlet property="view" destination="742-ic-8V0" id="8v8-9I-sdV"/>
@@ -33,7 +34,6 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="REJ-h5-GNi">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -41,14 +41,34 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Xmr-hX-aV7" secondAttribute="bottom" id="2KK-C4-Xwe"/>
-                <constraint firstItem="REJ-h5-GNi" firstAttribute="top" secondItem="742-ic-8V0" secondAttribute="top" id="5Rf-FV-pkJ"/>
-                <constraint firstItem="REJ-h5-GNi" firstAttribute="leading" secondItem="742-ic-8V0" secondAttribute="leading" id="BHl-Ld-TOf"/>
-                <constraint firstAttribute="trailing" secondItem="REJ-h5-GNi" secondAttribute="trailing" id="HUg-r3-ilS"/>
-                <constraint firstItem="Xmr-hX-aV7" firstAttribute="top" secondItem="REJ-h5-GNi" secondAttribute="bottom" id="ciQ-XW-n67"/>
+                <constraint firstItem="REJ-h5-GNi" firstAttribute="top" secondItem="742-ic-8V0" secondAttribute="top" id="HId-v2-LyD"/>
+                <constraint firstItem="REJ-h5-GNi" firstAttribute="leading" secondItem="742-ic-8V0" secondAttribute="leading" id="Hpa-Q5-Vy5"/>
+                <constraint firstAttribute="trailing" secondItem="REJ-h5-GNi" secondAttribute="trailing" id="JPr-MM-tNb"/>
+                <constraint firstItem="Xmr-hX-aV7" firstAttribute="top" secondItem="REJ-h5-GNi" secondAttribute="bottom" id="a6x-sV-sto"/>
                 <constraint firstItem="Xmr-hX-aV7" firstAttribute="leading" secondItem="742-ic-8V0" secondAttribute="leading" id="f75-vo-Z4R"/>
                 <constraint firstAttribute="trailing" secondItem="Xmr-hX-aV7" secondAttribute="trailing" id="unf-dG-rkE"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-89.5" y="23.5"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sjE-lZ-bLY">
+            <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <state key="normal" title="发布" backgroundImage="common_button_orange"/>
+            <state key="disabled" backgroundImage="common_button_white_disable">
+                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <state key="highlighted" title="发布" backgroundImage="common_button_orange_highlighted"/>
+            <connections>
+                <action selector="postStatus:" destination="-1" eventType="touchUpInside" id="lQm-8c-5ZS"/>
+            </connections>
+            <point key="canvasLocation" x="-448" y="-143"/>
+        </button>
     </objects>
+    <resources>
+        <image name="common_button_orange" width="11" height="35"/>
+        <image name="common_button_orange_highlighted" width="11" height="35"/>
+        <image name="common_button_white_disable" width="11" height="35"/>
+    </resources>
 </document>
