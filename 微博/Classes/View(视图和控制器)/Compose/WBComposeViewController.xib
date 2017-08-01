@@ -33,8 +33,8 @@
                         <barButtonItem title="Item" id="7NE-me-Isw"/>
                     </items>
                 </toolbar>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="REJ-h5-GNi">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="REJ-h5-GNi" customClass="WBComposeTextView" customModule="微博" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -43,7 +43,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Xmr-hX-aV7" secondAttribute="bottom" id="2KK-C4-Xwe"/>
-                <constraint firstItem="REJ-h5-GNi" firstAttribute="top" secondItem="742-ic-8V0" secondAttribute="top" id="HId-v2-LyD"/>
+                <constraint firstItem="REJ-h5-GNi" firstAttribute="top" secondItem="742-ic-8V0" secondAttribute="top" constant="64" id="HId-v2-LyD"/>
                 <constraint firstItem="REJ-h5-GNi" firstAttribute="leading" secondItem="742-ic-8V0" secondAttribute="leading" id="Hpa-Q5-Vy5"/>
                 <constraint firstAttribute="trailing" secondItem="REJ-h5-GNi" secondAttribute="trailing" id="JPr-MM-tNb"/>
                 <constraint firstItem="Xmr-hX-aV7" firstAttribute="top" secondItem="REJ-h5-GNi" secondAttribute="bottom" id="a6x-sV-sto"/>

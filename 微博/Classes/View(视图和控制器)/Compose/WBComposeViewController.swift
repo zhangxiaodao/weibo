@@ -29,9 +29,18 @@ class WBComposeViewController: UIViewController {
         
     }
     
-    @objc private func keyboardChanged(n:Notification) {
-        print(n.userInfo)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
+        //关闭键盘
+        textView.resignFirstResponder()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func keyboardChanged(n:Notification) {
         //1.目标 rect
         guard let rect = (n.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ,
             let duration = (n.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else {
@@ -48,9 +57,6 @@ class WBComposeViewController: UIViewController {
         UIView.animate(withDuration: duration) { 
             self.view.layoutIfNeeded()
         }
-        
-        
-        
     }
     
     func close() -> () {
@@ -68,7 +74,7 @@ extension WBComposeViewController {
     func setupUI() -> () {
         
         view.backgroundColor = UIColor.white
-        textView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+        //textView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
         setNavigationBar()
         setupToolBar()
         
