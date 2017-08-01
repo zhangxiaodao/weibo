@@ -69,6 +69,12 @@ class WBComposeViewController: UIViewController {
     }
 }
 
+extension WBComposeViewController :UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+         sendButton.isEnabled = textView.hasText
+    }
+}
+
 extension WBComposeViewController {
     
     func setupUI() -> () {
