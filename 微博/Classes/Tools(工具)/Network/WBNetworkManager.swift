@@ -11,6 +11,11 @@ import AFNetworking  //导入文件夹的名字
 
 // Swift 的枚举支持任意数据类型
 // switch / enum 在 OC中只支持整数类型
+/**
+ - 如果日常开发中，发现网络请求返回的状态码是 405，便是不支持的网络请求方法
+ - 首先应该查找网络请求方法是否正确
+ */
+
 enum WBHTTPMethod {
     case GET
     case POST
@@ -64,7 +69,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         parameters!["access_token"] = token as AnyObject
         
         //调用  request 发起真正网络请求方法
-        request(URLString: URLString, parameters: parameters, completion: completion)
+        request(method: method, URLString: URLString, parameters: parameters, completion: completion)
     }
     
     

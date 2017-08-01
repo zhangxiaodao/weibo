@@ -50,6 +50,24 @@ extension WBNetworkManager{
     }
 }
 
+
+extension WBNetworkManager {
+    //发布微博
+    func postStatus(text:String , completion:@escaping (_ result:[String:AnyObject]? , _ isSuccess:Bool) -> ()) -> () {
+        //1.url
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        
+        //2.参数字典
+        let params = ["status":text]
+        
+        //3.发起网络请求
+        tokenRequest(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+            completion(json as? [String:AnyObject], isSuccess)
+        }
+        
+    }
+}
+
 // MARK: - 用户信息
 extension WBNetworkManager {
     /// 加载用户信息 -> 用户登录后立即执行

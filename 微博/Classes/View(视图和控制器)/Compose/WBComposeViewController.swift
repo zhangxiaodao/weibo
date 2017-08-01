@@ -66,6 +66,20 @@ class WBComposeViewController: UIViewController {
     
     @IBAction func postStatus(_ sender: Any) {
         print("发布微博")
+        
+        //1.获取微博文字
+        guard let text = textView.text else {
+            return
+        }
+        
+        //2.发布微博
+        WBNetworkManager.shared.postStatus(text: text) { (json, isSuccess) in
+            print(json ?? "")
+        }
+        
+        
+        
+        
     }
 }
 
