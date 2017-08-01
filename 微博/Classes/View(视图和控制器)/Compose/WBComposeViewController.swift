@@ -18,10 +18,39 @@ class WBComposeViewController: UIViewController {
     @IBOutlet var titlabel: UILabel!
     /// 发布按钮
     @IBOutlet var sendButton: UIButton!
+    @IBOutlet weak var toolbarBottomCons: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        //监听键盘通知 - UIWindow.h
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardChanged), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+    }
+    
+    @objc private func keyboardChanged(n:Notification) {
+        print(n.userInfo)
+        
+        //1.目标 rect
+        guard let rect = (n.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ,
+            let duration = (n.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else {
+            return
+        }
+        
+        //2.设置底部约束的高度
+        let offset = view.bounds.height - rect.origin.y
+        
+        //3.更新底部约束
+        toolbarBottomCons.constant = offset
+        
+        //4.动画更新约束
+        UIView.animate(withDuration: duration) { 
+            self.view.layoutIfNeeded()
+        }
+        
+        
+        
     }
     
     func close() -> () {
