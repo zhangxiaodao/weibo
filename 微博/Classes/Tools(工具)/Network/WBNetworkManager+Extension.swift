@@ -78,8 +78,6 @@ extension WBNetworkManager {
         var name:String?
         var data:Data?
         
-        
-        
         if image != nil {
             name = "pic"
             data = UIImagePNGRepresentation(image!)
@@ -88,10 +86,6 @@ extension WBNetworkManager {
         
         //3.发起网络请求
         tokenRequest(method: .POST, URLString: urlString, parameters: params as [String : AnyObject], name: name, data: data) { (json, isSuccess) in
-            completion(json as? [String:AnyObject], isSuccess)
-        }
-        
-        tokenRequest(method: .POST, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
             completion(json as? [String:AnyObject], isSuccess)
         }
         

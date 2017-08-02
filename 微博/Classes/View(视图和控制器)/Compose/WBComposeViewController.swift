@@ -74,7 +74,7 @@ class WBComposeViewController: UIViewController {
         }
         
         //2.发布微博
-        WBNetworkManager.shared.postStatus(text: text) { (json, isSuccess) in
+        WBNetworkManager.shared.postStatus(text: text, image: nil) { (json, isSuccess) in
             print(json ?? "")
             
             //修改指示器样式
@@ -93,6 +93,27 @@ class WBComposeViewController: UIViewController {
                 })
             }
         }
+        
+    }
+    
+    //切换表情键盘
+    @objc fileprivate func emoticonKeyboard() -> () {
+        
+        //textView.inputView 就是文本框的输入视图
+        //如果使用系统默认的键盘，输入视图为 nil
+        
+        let screenHeight = UIScreen.main.bounds.height / 2.58
+        
+        //1>测试键盘视图 - 视图的宽度可以随便写，就是屏幕的宽度
+        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: screenHeight))
+        
+        //2> 设置键盘视图
+        textView.inputView = (textView.inputView == nil) ? keyboardView : nil
+        
+        //3> 刷新键盘视图
+        textView.reloadInputViews()
+        
+        
         
     }
 }
@@ -150,6 +171,12 @@ extension WBComposeViewController {
             btn.setImage(image, for: [])
             btn.setImage(imageHL, for: .highlighted)
             btn.sizeToFit()
+            
+            //判断 actionName
+            if let actionName = s["actionName"] {
+                //给按钮添加事件
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside )
+            }
             
             //追加按钮
             items.append(UIBarButtonItem(customView: btn))
