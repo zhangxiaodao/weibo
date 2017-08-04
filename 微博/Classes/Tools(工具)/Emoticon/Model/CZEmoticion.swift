@@ -16,7 +16,25 @@ class CZEmoticion: NSObject {
     /// 表情图片名称，用于本地图文混排
     var png:String?
     /// emoji的 十六进制编码
-    var code:String?
+    var code:String? {
+        didSet {
+            guard let code = code else {
+                return
+            }
+            
+            let scanner = Scanner(string: code)
+            var result:UInt32 = 0
+            
+            scanner.scanHexInt32(&result)
+            
+            emoji = String(Character(UnicodeScalar(result)!))
+        }
+    }
+    
+    /// emoji 的字符串
+    var emoji:String?
+    
+    
     /// 表情模型所在目录
     var directory:String?
     
@@ -42,15 +60,21 @@ class CZEmoticion: NSObject {
         guard let image = image else {
             return NSAttributedString(string: "")
         }
-        let attachment = NSTextAttachment()
+        let attachment = CZEmoticonAttachment()
+        
+        attachment.chs = chs
         attachment.image = image
         
         let height = font.lineHeight
         attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
         
+        let attrStrM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
         
-        return NSAttributedString(attachment: attachment)
+        //设置字体属性
+        attrStrM.addAttributes([NSFontAttributeName:font], range: NSRange(location: 0, length: 1))
         
+        //返回属性文本
+        return attrStrM
     }
     
     

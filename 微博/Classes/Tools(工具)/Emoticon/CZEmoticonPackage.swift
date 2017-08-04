@@ -12,6 +12,9 @@ import UIKit
 class CZEmoticonPackage: NSObject {
     /// 表情包的分组名
     var groupName:String?
+    /// 背景图片名称
+    var bgImageName:String?
+    
     /// 表情目录，从目录下加载 info.plist 可以创建表情模型数组
     var directory:String? {
         didSet {
@@ -40,6 +43,32 @@ class CZEmoticonPackage: NSObject {
     /// 懒加载的表情模型的空数组
     //使用懒加载可以避免后允许的解包
     lazy var emoticons = [CZEmoticion]()
+    
+    /// 表情页面数量
+    var numbarOfPage:Int {
+        return (emoticons.count - 1) / 20 + 1
+    }
+    
+    func emoticon(page:Int) -> [CZEmoticion] {
+        
+        //每页的数量
+        let count = 20
+        let location = page * count
+        var length = count
+        
+        //判断数组是否越界
+        if location + length > emoticons.count {
+            length = emoticons.count - location
+        }
+        
+        let range = NSRange(location: location, length: length)
+        
+        //截取数组的子数组
+        let subArray = (emoticons as NSArray).subarray(with: range)
+        return subArray as! [CZEmoticion]
+        
+        
+    }
     
     override var description: String{
         return yy_modelDescription()

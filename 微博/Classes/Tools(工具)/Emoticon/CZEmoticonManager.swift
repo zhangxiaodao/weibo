@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YYModel
 
 /// 表情管理器
 class CZEmoticonManager: NSObject {
@@ -16,6 +17,13 @@ class CZEmoticonManager: NSObject {
     
     /// 表情包的懒加载数组
     lazy var packages = [CZEmoticonPackage]()
+    
+    //表情素材的懒加载数组
+    lazy var bundle:Bundle = {
+       let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
+        
+        return Bundle(path: path!)!
+    }()
     
     //构造函数 , 如果在 init 之前增加 private 修饰符，可以要求调用者，必须通过  shared 访问对象
     //OC 需要重写 allocWithZone 方法，在里面再次 dispatch_once

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="QDd-Ce-UV9" customClass="CZEmoticonInputView" customModule="_01_表情键盘" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Adm-gF-oIL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5G0-a7-wn3" customClass="CZEmoticonLayout" customModule="_01_表情键盘" customModuleProvider="target">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="QDd-Ce-UV9" id="xp5-Sg-4WH"/>
+                    </connections>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMe-2X-FQN" customClass="CZEmoticonToolbar" customModule="_01_表情键盘" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="218" width="375" height="40"/>
+                    <color key="backgroundColor" red="0.57254904510000004" green="0.0" blue="0.23137255009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="nYh-Xe-eqq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="hMe-2X-FQN" secondAttribute="bottom" id="1cK-ys-f3g"/>
+                <constraint firstItem="hMe-2X-FQN" firstAttribute="leading" secondItem="QDd-Ce-UV9" secondAttribute="leading" id="1h3-AX-6bB"/>
+                <constraint firstAttribute="trailing" secondItem="hMe-2X-FQN" secondAttribute="trailing" id="BpX-Ex-C7I"/>
+                <constraint firstItem="Adm-gF-oIL" firstAttribute="top" secondItem="QDd-Ce-UV9" secondAttribute="top" id="V7L-D4-VeK"/>
+                <constraint firstItem="hMe-2X-FQN" firstAttribute="top" secondItem="Adm-gF-oIL" secondAttribute="bottom" id="Yka-ZK-EOx"/>
+                <constraint firstAttribute="trailing" secondItem="Adm-gF-oIL" secondAttribute="trailing" id="qaW-pI-hDS"/>
+                <constraint firstItem="Adm-gF-oIL" firstAttribute="leading" secondItem="QDd-Ce-UV9" secondAttribute="leading" id="vlt-xY-uIq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="Adm-gF-oIL" id="Qge-Cu-iEd"/>
+                <outlet property="toolbar" destination="hMe-2X-FQN" id="fbY-us-ESF"/>
+            </connections>
+            <point key="canvasLocation" x="-96.5" y="116"/>
+        </view>
+    </objects>
+</document>
