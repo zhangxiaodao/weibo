@@ -29,6 +29,38 @@ class WBComposeTextView: UITextView {
 
 // MARK: - 表情键盘专属方法
 extension WBComposeTextView {
+    
+    var emoticonText:String {
+        //1.获取 textView 的属性文本
+        guard let attrStr = attributedText else {
+            return ""
+        }
+        
+        //2.需要获得属性文本中的图片 [附件 Attachment]
+        /**
+         便利属性文本
+         1>便利的区域
+         2>选项[]
+         3>闭包
+         */
+        
+        var result = String()
+        
+        attrStr.enumerateAttributes(in:NSRange(location: 0, length: attrStr.length) , options: []) { (dict, range, _) in
+            if let attachment = dict["NSAttachment"] as? CZEmoticonAttachment {
+                result += attachment.chs ?? ""
+            } else {
+                let subStr = (attrStr.string as NSString).substring(with: range)
+                result += subStr
+            }
+        }
+        
+        print(result)
+        
+        return result
+        
+    }
+    
     /// 向文本视图插入表情符号
     ///
     /// - Parameter em: 选中的表情符号,nil表示删除

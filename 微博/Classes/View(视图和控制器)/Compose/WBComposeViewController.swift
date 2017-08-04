@@ -29,7 +29,7 @@ class WBComposeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupUI() 
         
         //监听键盘通知 - UIWindow.h
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChanged), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -75,10 +75,7 @@ class WBComposeViewController: UIViewController {
         print("发布微博")
         
         //1.获取微博文字
-        guard let text = textView.text else {
-            return
-        }
-        
+        let text = textView.emoticonText
         //2.发布微博
         WBNetworkManager.shared.postStatus(text: text, image: nil) { (json, isSuccess) in
             print(json ?? "")
