@@ -12,7 +12,7 @@ import SVProgressHUD
 class WBComposeViewController: UIViewController {
 
     /// 文本编辑视图
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: WBComposeTextView!
     /// 底部工具栏
     @IBOutlet weak var toolBar: UIToolbar!
     /// 标题标签 -
@@ -20,6 +20,12 @@ class WBComposeViewController: UIViewController {
     /// 发布按钮
     @IBOutlet var sendButton: UIButton!
     @IBOutlet weak var toolbarBottomCons: NSLayoutConstraint!
+    
+    //表情输入视图
+    lazy var emoticonView:CZEmoticonInputView = CZEmoticonInputView.inputView {[weak self] (em) in
+        
+        self?.textView.insertEmoticon(em: em)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,13 +108,8 @@ class WBComposeViewController: UIViewController {
         //textView.inputView 就是文本框的输入视图
         //如果使用系统默认的键盘，输入视图为 nil
         
-        let screenHeight = UIScreen.main.bounds.height / 2.58
-        
-        //1>测试键盘视图 - 视图的宽度可以随便写，就是屏幕的宽度
-        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: screenHeight))
-        
         //2> 设置键盘视图
-        textView.inputView = (textView.inputView == nil) ? keyboardView : nil
+        textView.inputView = (textView.inputView == nil) ? emoticonView : nil
         
         //3> 刷新键盘视图
         textView.reloadInputViews()
