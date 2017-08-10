@@ -12,6 +12,8 @@
 		ED155BD01EF37ADC0029DC45 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BCF1EF37ADC0029DC45 /* UIImage+Extension.swift */; };
 		ED155BD21EF389AC0029DC45 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BD11EF389AC0029DC45 /* WBStatusToolBar.swift */; };
 		ED155BD41EF3CB130029DC45 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */; };
+		ED3EC22E1F3C4B6100D70D6D /* CZSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC22C1F3C4B6100D70D6D /* CZSQLiteManager.swift */; };
+		ED3EC22F1F3C4B6100D70D6D /* stauts.sql in Resources */ = {isa = PBXBuildFile; fileRef = ED3EC22D1F3C4B6100D70D6D /* stauts.sql */; };
 		ED4BCFE01F2EDD8F00C84CC7 /* WBComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4BCFDF1F2EDD8F00C84CC7 /* WBComposeViewController.xib */; };
 		ED544F541F30295C00F37677 /* WBComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED544F531F30295C00F37677 /* WBComposeTextView.swift */; };
 		ED626FE91F20552E00705484 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED626FE81F20552E00705484 /* WBDemoViewController.swift */; };
@@ -113,6 +115,8 @@
 		ED155BCF1EF37ADC0029DC45 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		ED155BD11EF389AC0029DC45 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
+		ED3EC22C1F3C4B6100D70D6D /* CZSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZSQLiteManager.swift; sourceTree = "<group>"; };
+		ED3EC22D1F3C4B6100D70D6D /* stauts.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stauts.sql; sourceTree = "<group>"; };
 		ED4BCFDF1F2EDD8F00C84CC7 /* WBComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeViewController.xib; sourceTree = "<group>"; };
 		ED544F531F30295C00F37677 /* WBComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTextView.swift; sourceTree = "<group>"; };
 		ED626FE81F20552E00705484 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +258,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		ED3EC22B1F3C4B6100D70D6D /* Sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				ED3EC22C1F3C4B6100D70D6D /* CZSQLiteManager.swift */,
+				ED3EC22D1F3C4B6100D70D6D /* stauts.sql */,
+			);
+			path = Sqlite;
+			sourceTree = "<group>";
+		};
 		ED544F521F30294100F37677 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +370,7 @@
 		ED7915281ED7D59F001DE08C /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				ED3EC22B1F3C4B6100D70D6D /* Sqlite */,
 				EDCCD3AE1F3420FE00229AF3 /* Emoticon */,
 				ED681D801F2AE09F00CE6EA8 /* FFLabel */,
 				EDA220801EFBAD010052A56F /* CZRefreshControll */,
@@ -753,6 +767,7 @@
 				ED4BCFE01F2EDD8F00C84CC7 /* WBComposeViewController.xib in Resources */,
 				EDD740701EF8C92A00342F9B /* WBStatusNormalCell.xib in Resources */,
 				EDE52DA01F049AF300D1EF99 /* WBComposeTypeButton.xib in Resources */,
+				ED3EC22F1F3C4B6100D70D6D /* stauts.sql in Resources */,
 				EDEDCE5F1F0248880020DC78 /* CZRefreshView.xib in Resources */,
 				EDD2C0DE1EF0E1280021F7BE /* WBNewFeature.xib in Resources */,
 				EDEDCE5A1F0248870020DC78 /* CZHumanRefreshView.xib in Resources */,
@@ -864,6 +879,7 @@
 				ED7915371ED7D6EA001DE08C /* WBHomeViewController.swift in Sources */,
 				EDF891291F0504CE00B5304D /* String+Extension.swift in Sources */,
 				EDCCD3C11F3420FE00229AF3 /* CZEmoticonInputView.swift in Sources */,
+				ED3EC22E1F3C4B6100D70D6D /* CZSQLiteManager.swift in Sources */,
 				ED626FE91F20552E00705484 /* WBDemoViewController.swift in Sources */,
 				EDCFCC941EDE5EAB00689F5D /* NSObject+CZRuntime.m in Sources */,
 				EDE52DA11F049AF300D1EF99 /* WBComposeTypeView.swift in Sources */,
