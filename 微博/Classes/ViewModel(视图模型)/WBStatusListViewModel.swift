@@ -45,8 +45,12 @@ class WBStatusListViewModel {
         let since_id = pullup ? 0 : (statusList.first?.status.id ?? 0)
         let max_id = !pullup ? 0 : (statusList.last?.status.id ?? 0)
         
-        //发起网络请求，加载微博数据 [字典的数组]
-        WBNetworkManager.shared.statusList(since_id:since_id , max_id: max_id) { (json, isSuccess) in
+        WBStatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (json, isSuccess) in
+            
+//        }
+//        
+//        //发起网络请求，加载微博数据 [字典的数组]
+//        WBNetworkManager.shared.statusList(since_id:since_id , max_id: max_id) { (json, isSuccess) in
             
             //0.如果网络请求失败，直接执行完成回调
             if !isSuccess {
@@ -70,7 +74,7 @@ class WBStatusListViewModel {
             }
             
             //视图模型创建完成
-            print("刷新了\(array.count)条数据\(array)")
+            print("刷新了\(array.count)条数据")
             
             //2.拼接数据
             if pullup {

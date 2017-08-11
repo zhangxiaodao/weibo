@@ -14,6 +14,7 @@
 		ED155BD41EF3CB130029DC45 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */; };
 		ED3EC22E1F3C4B6100D70D6D /* CZSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC22C1F3C4B6100D70D6D /* CZSQLiteManager.swift */; };
 		ED3EC22F1F3C4B6100D70D6D /* stauts.sql in Resources */ = {isa = PBXBuildFile; fileRef = ED3EC22D1F3C4B6100D70D6D /* stauts.sql */; };
+		ED3EC2311F3D4C2800D70D6D /* WBStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3EC2301F3D4C2800D70D6D /* WBStatusListDAL.swift */; };
 		ED4BCFE01F2EDD8F00C84CC7 /* WBComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4BCFDF1F2EDD8F00C84CC7 /* WBComposeViewController.xib */; };
 		ED544F541F30295C00F37677 /* WBComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED544F531F30295C00F37677 /* WBComposeTextView.swift */; };
 		ED626FE91F20552E00705484 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED626FE81F20552E00705484 /* WBDemoViewController.swift */; };
@@ -117,6 +118,7 @@
 		ED155BD31EF3CB130029DC45 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		ED3EC22C1F3C4B6100D70D6D /* CZSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZSQLiteManager.swift; sourceTree = "<group>"; };
 		ED3EC22D1F3C4B6100D70D6D /* stauts.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stauts.sql; sourceTree = "<group>"; };
+		ED3EC2301F3D4C2800D70D6D /* WBStatusListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListDAL.swift; sourceTree = "<group>"; };
 		ED4BCFDF1F2EDD8F00C84CC7 /* WBComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeViewController.xib; sourceTree = "<group>"; };
 		ED544F531F30295C00F37677 /* WBComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTextView.swift; sourceTree = "<group>"; };
 		ED626FE81F20552E00705484 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 			children = (
 				EDBA17DC1EE6A88C00F3041B /* WBStatusListViewModel.swift */,
 				EDD2C1661EF278310021F7BE /* WBStatustViewModel.swift */,
+				ED3EC2301F3D4C2800D70D6D /* WBStatusListDAL.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -843,6 +846,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3EC2311F3D4C2800D70D6D /* WBStatusListDAL.swift in Sources */,
 				ED155BD01EF37ADC0029DC45 /* UIImage+Extension.swift in Sources */,
 				EDCCD3C31F3420FE00229AF3 /* CZEmoticonLayout.swift in Sources */,
 				EDCCD3BC1F3420FE00229AF3 /* CZEmoticonPackage.swift in Sources */,
