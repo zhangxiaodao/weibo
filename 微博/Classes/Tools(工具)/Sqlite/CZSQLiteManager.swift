@@ -9,6 +9,9 @@
 import Foundation
 import FMDB
 
+/// 最大的数据缓存时间，以 秒 为单位
+private let maxDBCacheTime:TimeInterval = -1 * 24 * 60 * 60
+
 /**
  1.数据库的本质是保存在沙河中的一个文件,首先需要创建并且打开数据库
     FMDB - 队列
@@ -43,6 +46,39 @@ class CZSQLiteManager {
         
         //打开数据库
         createTable()
+        // 注册通知 - 监听程序进入后台
+        //模仿 SDWebImage
+        NotificationCenter.default.addObserver(self, selector: #selector(clearDBCache), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    
+    /// 清理缓存数据
+    /// 注意细节:
+    /// - SQLite 的数据不断的增加数据，数据库文件的大小，会不断的增加!
+    /// - 但是：如果删除了数据，数据库的大小，不会变小
+    /// - 如果要变小
+    /// - 1>将数据库文件复制一个新的副本， status.db.old
+    /// - 2>新建一个空的数据库文件
+    /// - 3>自己编写 SQL，从 old 中将所有的数据读出，写入新的数据库
+    @objc func clearDBCache() -> () {
+        
+        let dateString = Date.cz_dateString(delte: maxDBCacheTime)
+        
+        //准备 SQL
+        let sql = "DELETE FROM T_status WHERE createTime < ?"
+        
+        //执行 SQL
+        queue.inDatabase { (db) in
+            if db?.executeUpdate(sql, withArgumentsIn: [dateString]) == true {
+                print("删除了 \(String(describing: db?.changes())) 条数据")
+            }
+        }
+        
+        
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: nil, object: nil)
     }
     
 }

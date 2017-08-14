@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListViewModel.swift"
-            timestampString = "524112150.721734"
+            filePath = "&#x5fae;&#x535a;/Classes/Tools(&#x5de5;&#x5177;)/Sqlite/CZSQLiteManager.swift"
+            timestampString = "524386680.656373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "loadStatus(pullup:completion:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "clearDBCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,173 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListViewModel.swift"
-            timestampString = "524112153.186787"
+            filePath = "&#x5fae;&#x535a;/Classes/Tools(&#x5de5;&#x5177;)/Sqlite/CZSQLiteManager.swift"
+            timestampString = "524387156.355888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "loadStatus(pullup:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListDAL.swift"
-            timestampString = "524112157.897132"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "loadStatus(since_id:max_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListDAL.swift"
-            timestampString = "524112158.887208"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "loadStatus(since_id:max_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListDAL.swift"
-            timestampString = "524112161.56734"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "loadStatus(since_id:max_id:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static &#x5fae;&#x535a;.WBStatusListDAL.loadStatus (since_id : Swift.Int64, max_id : Swift.Int64, completion : (Swift.Optional&lt;Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;&gt;, Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "&#x5fae;&#x535a;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hangzhouaerfate/Desktop/%E5%BE%AE%E5%8D%9A/%E5%BE%AE%E5%8D%9A/Classes/ViewModel(%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8B)/WBStatusListDAL.swift"
-                  timestampString = "524112310.908815"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "577">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static &#x5fae;&#x535a;.WBStatusListDAL.(loadStatus (since_id : Swift.Int64, max_id : Swift.Int64, completion : (Swift.Optional&lt;Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;&gt;, Swift.Bool) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "&#x5fae;&#x535a;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hangzhouaerfate/Desktop/%E5%BE%AE%E5%8D%9A/%E5%BE%AE%E5%8D%9A/Classes/ViewModel(%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%9E%8B)/WBStatusListDAL.swift"
-                  timestampString = "524112310.911548"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "53">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListDAL.swift"
-            timestampString = "524112167.095137"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "loadStatus(since_id:max_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListViewModel.swift"
-            timestampString = "524112174.888094"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "loadStatus(pullup:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListDAL.swift"
-            timestampString = "524112322.901714"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "loadStatus(since_id:max_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/ViewModel(&#x89c6;&#x56fe;&#x6a21;&#x578b;)/WBStatusListViewModel.swift"
-            timestampString = "524112367.290702"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "loadStatus(pullup:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5fae;&#x535a;/Classes/Tools(&#x5de5;&#x5177;)/Network/WBNetworkManager+Extension.swift"
-            timestampString = "524113925.532145"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "statusList(since_id:max_id:completion:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "clearDBCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

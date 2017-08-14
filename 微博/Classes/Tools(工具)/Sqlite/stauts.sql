@@ -1,7 +1,8 @@
 -- 创建微博数据表 --
 CREATE TABLE IF NOT EXISTS "T_status" (
-"statusId" INTEGER NOT NULL,
 "userId" INTEGER NOT NULL,
+"statusId" INTEGER NOT NULL,
 "status" TEXT,
-PRIMARY KEY("statusId","userId")
+"createTime" TEXT DEFAULT (datetime('now','localtime')),
+PRIMARY KEY("userId","statusId")
 );
