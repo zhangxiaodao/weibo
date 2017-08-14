@@ -77,6 +77,11 @@ class CZEmoticonCell: UICollectionViewCell {
         delegate?.emoticionCellDidSelectedEmoticon(cell: self, em: em)
     }
     
+    /// 长按识别
+    @objc fileprivate func longGesture(gesture:UILongPressGestureRecognizer) -> () {
+        
+    }
+    
 }
 
 fileprivate extension CZEmoticonCell {
@@ -126,6 +131,14 @@ fileprivate extension CZEmoticonCell {
         let image = UIImage(named: "compose_emotion_delete_highlighted", in: CZEmoticonManager.shared.bundle, compatibleWith: nil)
         removeButton.setImage(image, for: [])
         
+        //添加长安手势
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longGesture))
         
+        longPress.minimumPressDuration = 0.2
+        addGestureRecognizer(longPress)
     }
+}
+
+extension CZEmoticion {
+    
 }
