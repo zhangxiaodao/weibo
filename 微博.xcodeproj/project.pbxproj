@@ -19,6 +19,7 @@
 		ED544F541F30295C00F37677 /* WBComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED544F531F30295C00F37677 /* WBComposeTextView.swift */; };
 		ED626FE91F20552E00705484 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED626FE81F20552E00705484 /* WBDemoViewController.swift */; };
 		ED6642851F417EF20053232C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6642841F417EF20053232C /* Date+Extension.swift */; };
+		ED6642871F418F170053232C /* CZEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6642861F418F170053232C /* CZEmoticonTipView.swift */; };
 		ED681D821F2AE09F00CE6EA8 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED681D811F2AE09F00CE6EA8 /* FFLabel.swift */; };
 		ED681D841F2B244500CE6EA8 /* WBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED681D831F2B244500CE6EA8 /* WBWebViewController.swift */; };
 		ED7914F91ED7C923001DE08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7914F81ED7C923001DE08C /* AppDelegate.swift */; };
@@ -124,6 +125,7 @@
 		ED544F531F30295C00F37677 /* WBComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTextView.swift; sourceTree = "<group>"; };
 		ED626FE81F20552E00705484 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		ED6642841F417EF20053232C /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		ED6642861F418F170053232C /* CZEmoticonTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonTipView.swift; sourceTree = "<group>"; };
 		ED681D811F2AE09F00CE6EA8 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		ED681D831F2B244500CE6EA8 /* WBWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWebViewController.swift; sourceTree = "<group>"; };
 		ED7914F51ED7C923001DE08C /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -543,6 +545,7 @@
 				EDCCD3B81F3420FE00229AF3 /* CZEmoticonInputView.xib */,
 				EDCCD3B91F3420FE00229AF3 /* CZEmoticonLayout.swift */,
 				EDCCD3BA1F3420FE00229AF3 /* CZEmoticonToolbar.swift */,
+				ED6642861F418F170053232C /* CZEmoticonTipView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -870,6 +873,7 @@
 				EDCFCC951EDE5EAB00689F5D /* NSString+CZBase64.m in Sources */,
 				ED681D821F2AE09F00CE6EA8 /* FFLabel.swift in Sources */,
 				ED155BCE1EF376A50029DC45 /* UIImageView+WebImage.swift in Sources */,
+				ED6642871F418F170053232C /* CZEmoticonTipView.swift in Sources */,
 				EDCFCCA61EDEAB6400689F5D /* UIBarButtonItem+Extension.swift in Sources */,
 				ED79153D1ED7D75B001DE08C /* WBProfileViewController.swift in Sources */,
 				EDD2C1651EF272230021F7BE /* WBUser.swift in Sources */,

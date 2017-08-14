@@ -48,6 +48,7 @@ class CZEmoticonCell: UICollectionViewCell {
         }
     }
     
+    private lazy var tipView = CZEmoticonTipView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,6 +57,17 @@ class CZEmoticonCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    /// 当视图从界面是删除，同样会调用此方法 newWindow == nil
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        guard let w = newWindow else {
+            return
+        }
+        
+        //将提示视图添加到窗口上
+        w.addSubview(tipView)
     }
     
     /// 监听方法
@@ -80,6 +92,40 @@ class CZEmoticonCell: UICollectionViewCell {
     /// 长按识别
     @objc fileprivate func longGesture(gesture:UILongPressGestureRecognizer) -> () {
         
+        //1>获取触摸位置
+        let location = gesture.location(in: self)
+        
+        //2>获取触摸位置对应对的按钮
+        guard let button = buttonWithLocation(location: location) else {
+            return
+        }
+        
+        //3.处理手势状态
+        switch gesture.state {
+        case .began , .changed:
+            tipView.isHidden = false
+            
+            //坐标系转换 -> 将按钮参照 cell 的坐标系,转换到 window 的坐标系
+            let center = self.convert(button.center, to: window)
+            //设置提示视图的位置
+            tipView.center = center
+        default:
+            break
+        }
+        
+        
+        
+    }
+    
+    fileprivate func buttonWithLocation(location:CGPoint) -> UIButton? {
+        // 便利 contentView 所有的子视图，如果可见，同时在 location 确认按钮
+        for btn in contentView.subviews as! [UIButton] {
+            //删除按钮同样需要处理
+            if btn.frame.contains(location) && !btn.isHidden && btn != contentView.subviews.last {
+                return btn
+            }
+        }
+        return nil
     }
     
 }
