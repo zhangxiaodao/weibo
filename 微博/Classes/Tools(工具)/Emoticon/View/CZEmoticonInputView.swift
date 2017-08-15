@@ -17,6 +17,7 @@ class CZEmoticonInputView: UIView {
     
     @IBOutlet weak var toolbar: CZEmoticonToolbar!
     
+    @IBOutlet weak var pageControl: UIPageControl!
     /// 选中表情回调闭包属性
     fileprivate var selectedEmoticonCallBck:((_ emoticon:CZEmoticion?)->())?
     
