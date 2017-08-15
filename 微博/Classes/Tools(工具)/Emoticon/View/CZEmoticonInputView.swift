@@ -15,7 +15,7 @@ class CZEmoticonInputView: UIView {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var toolbar: UIView!
+    @IBOutlet weak var toolbar: CZEmoticonToolbar!
     
     /// 选中表情回调闭包属性
     fileprivate var selectedEmoticonCallBck:((_ emoticon:CZEmoticion?)->())?
@@ -35,11 +35,25 @@ class CZEmoticonInputView: UIView {
     }
     
     override func awakeFromNib() {
-//        let nib = UINib(nibName: "CZEmoticonCell", bundle: nil)
-//        collectionView.register(nib, forCellWithReuseIdentifier: celled)
+
+        //注册可重用 cell
         collectionView.register(CZEmoticonCell.self, forCellWithReuseIdentifier: celled)
+        
+        //设置工具栏代理
+        toolbar.delegate = self
     }
     
+}
+
+extension CZEmoticonInputView:CZEmoticonToolbarDelegate {
+    func emoticonToolbarDidSelectedItemIndex(toolBar: CZEmoticonToolbar, index: Int) {
+        
+        let indexPath = IndexPath(item: 0, section: index)
+        
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        toolbar.selectedIndex = index
+        
+    }
 }
 
 extension CZEmoticonInputView : UICollectionViewDataSource {

@@ -8,8 +8,32 @@
 
 import UIKit
 
+@objc protocol CZEmoticonToolbarDelegate:NSObjectProtocol {
+    /// 表情工具栏选中项索引
+    ///
+    /// - Parameters:
+    ///   - toolBar: 工具栏
+    ///   - index: 索引
+    func emoticonToolbarDidSelectedItemIndex(toolBar:CZEmoticonToolbar , index:Int)
+}
+
 class CZEmoticonToolbar: UIView {
 
+    weak var delegate:CZEmoticonToolbarDelegate?
+    
+    var selectedIndex:Int = 0{
+        didSet {
+            //1.取消所有按钮的选中状态
+            for btn in subviews as! [UIButton] {
+                btn.isSelected = false
+            }
+            
+            //2.设置 index 对应的选中状态
+            (subviews[selectedIndex] as? UIButton)?.isSelected = true
+        }
+    }
+    
+    
     override func awakeFromNib() {
         setupUI()
     }
@@ -28,7 +52,8 @@ class CZEmoticonToolbar: UIView {
     }
     
     @objc fileprivate func clickItem(button:UIButton) {
-        
+        //通知代理执行协议方法
+    delegate?.emoticonToolbarDidSelectedItemIndex(toolBar: self, index: button.tag)
     }
     
 }
