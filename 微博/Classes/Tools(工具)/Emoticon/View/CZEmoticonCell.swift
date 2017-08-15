@@ -65,7 +65,7 @@ class CZEmoticonCell: UICollectionViewCell {
         guard let w = newWindow else {
             return
         }
-        
+        tipView.isHidden = true
         //将提示视图添加到窗口上
         w.addSubview(tipView)
     }

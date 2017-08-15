@@ -1,4 +1,4 @@
-    //
+//
 //  CZEmoticonInputView.swift
 //  001-表情键盘
 //
@@ -64,11 +64,33 @@ extension CZEmoticonInputView : UICollectionViewDataSource {
 }
 
 extension CZEmoticonInputView :CZEmoticionCellDelegate {
+    /// 选中表情的回调
+    ///
+    /// - Parameters:
+    ///   - cell: 分页 Cell
+    ///   - em: 选中的表情，删除键为 nil
     func emoticionCellDidSelectedEmoticon(cell: CZEmoticonCell, em: CZEmoticion?) {
         
         //执行闭包回调 选中的表情
         selectedEmoticonCallBck?(em)
         
+        //添加最近使用的表情
+        guard let em = em else {
+            return
+        }
+        
+        //如果当前 collectionView 就是最近的分组，不提那家最近使用的表情
+        let indexPath = collectionView.indexPathsForVisibleItems[0]
+        if indexPath.section == 0 {
+            return
+        }
+        
+        CZEmoticonManager.shared.recentEmotion(em: em)
+        
+        // 刷新数据 - 第 0 组
+        var indexSet = IndexSet()
+        indexSet.insert(0)
+        collectionView.reloadSections(indexSet)
     }
 }
 

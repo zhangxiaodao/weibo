@@ -31,6 +31,9 @@ class CZEmoticion: NSObject {
         }
     }
     
+    /// 表情使用次数
+    var times:Int = 0
+    
     /// emoji 的字符串
     var emoji:String?
     

@@ -25,8 +25,9 @@ class CZEmoticonToolbar: UIView {
             btn.frame = rect.offsetBy(dx: CGFloat(i) * w, dy: 0)
         }
         
-        
-        
+    }
+    
+    @objc fileprivate func clickItem(button:UIButton) {
         
     }
     
@@ -39,9 +40,10 @@ fileprivate extension CZEmoticonToolbar {
         let manager = CZEmoticonManager.shared
         
         //从表情包的分组名称 -> 设置按钮
-        for p in manager.packages {
+        for (i , p) in manager.packages.enumerated() {
             //1>实例化按钮
             let btn = UIButton()
+            btn.tag = i
             
             //2>设置按钮属性
             btn.setTitle(p.groupName, for: [])
@@ -77,9 +79,11 @@ fileprivate extension CZEmoticonToolbar {
             
             addSubview(btn)
             
+            btn.addTarget(self, action: #selector(clickItem), for: .touchUpInside)
+            
         }
         
-        
+        (subviews[0] as! UIButton).isSelected = true
         
         
     }
