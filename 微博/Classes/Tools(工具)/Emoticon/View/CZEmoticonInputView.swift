@@ -42,6 +42,18 @@ class CZEmoticonInputView: UIView {
         
         //设置工具栏代理
         toolbar.delegate = self
+        
+        
+        //2>设置分页控件的图片
+        let bundle = CZEmoticonManager.shared.bundle
+        guard let normalImage = UIImage(named: "compose_keyboard_dot_normal", in: bundle, compatibleWith: nil),
+            let selectedImage = UIImage(named: "compose_keyboard_dot_selected", in: bundle, compatibleWith: nil) else {
+                return
+        }
+        
+        //使用 KVC 设置私有成员属性
+        pageControl.setValue(normalImage, forKey: "_pageImage")
+        pageControl.setValue(selectedImage, forKey: "_currentPageImage")
     }
     
 }
@@ -93,6 +105,10 @@ extension CZEmoticonInputView:UICollectionViewDelegate {
         //1>总页数，不同的分组，页数不一样
         pageControl.numberOfPages = collectionView.numberOfItems(inSection: target.section)
         pageControl.currentPage = target.item
+        
+        
+        
+        
         
         
     }
