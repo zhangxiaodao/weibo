@@ -29,8 +29,8 @@
                         <outlet property="delegate" destination="QDd-Ce-UV9" id="Rlf-9h-nxN"/>
                     </connections>
                 </collectionView>
-                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="zzZ-zi-zf8">
-                    <rect key="frame" x="160" y="189" width="55" height="37"/>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="zzZ-zi-zf8">
+                    <rect key="frame" x="187.5" y="226" width="0.0" height="0.0"/>
                     <color key="pageIndicatorTintColor" red="0.5097460150718689" green="0.50983732938766479" blue="0.50974023342132568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.99911743402481079" green="0.23574358224868774" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>

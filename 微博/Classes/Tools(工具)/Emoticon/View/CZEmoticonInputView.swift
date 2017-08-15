@@ -88,7 +88,11 @@ extension CZEmoticonInputView:UICollectionViewDelegate {
         
         //4.判断是否找到 目标 的indexPath
         toolbar.selectedIndex = target.section
-        pageControl.currentPage = target.section
+        
+        //5.设置分页控件
+        //1>总页数，不同的分组，页数不一样
+        pageControl.numberOfPages = collectionView.numberOfItems(inSection: target.section)
+        pageControl.currentPage = target.item
         
         
     }
