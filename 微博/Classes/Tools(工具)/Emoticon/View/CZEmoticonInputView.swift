@@ -57,6 +57,43 @@ extension CZEmoticonInputView:CZEmoticonToolbarDelegate {
     }
 }
 
+extension CZEmoticonInputView:UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //1.获取中心点
+        var center = scrollView.center
+        center.x += scrollView.contentOffset.x
+        
+        //2.获取当前显示的 cell 的 indexPath
+        let pathes = collectionView.indexPathsForVisibleItems
+        
+        //3.判断中心点在哪一个 indexPath 上，在那个页面上
+        var targetIndexpath:IndexPath?
+        
+        for indexPath in pathes {
+            //1>根据 indexPath 获得 cell
+            let cell = collectionView.cellForItem(at: indexPath)
+            
+            //2>判断中心点位置
+            if cell?.frame.contains(center) == true {
+                targetIndexpath = indexPath
+                
+                break
+            }
+            
+        }
+        
+        guard let target = targetIndexpath else {
+            return
+        }
+        
+        //4.判断是否找到 目标 的indexPath
+        toolbar.selectedIndex = target.section
+        pageControl.currentPage = target.section
+        
+        
+    }
+}
+
 extension CZEmoticonInputView : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return CZEmoticonManager.shared.packages.count
