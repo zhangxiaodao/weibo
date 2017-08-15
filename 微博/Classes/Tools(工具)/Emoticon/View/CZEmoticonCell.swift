@@ -97,6 +97,8 @@ class CZEmoticonCell: UICollectionViewCell {
         
         //2>获取触摸位置对应对的按钮
         guard let button = buttonWithLocation(location: location) else {
+            
+            tipView.isHidden = true
             return
         }
         
@@ -115,6 +117,13 @@ class CZEmoticonCell: UICollectionViewCell {
                 tipView.emoticon = emoticons?[button.tag]
             }
             
+        case .ended:
+            tipView.isHidden = true
+            
+            //执行选中 方法
+            selectedEmoticonButton(button: button)
+        case .cancelled , .failed:
+            tipView.isHidden = true
         default:
             break
         }
