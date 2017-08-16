@@ -22,4 +22,19 @@ extension Date {
         
         return dateFormatter.string(from: date)
     }
+    
+    /// 将新浪格式的字符串转换成日期
+    ///
+    /// - Parameter string: Tue Sep 15 12:12:00 +0000 2015
+    /// - Returns: 日期
+    static func cz_sinaDate(string:String) -> Date? {
+        //1.设置日期格式
+        dateFormatter.dateFormat = "EEE MM dd HH:mm:ss zzz yyyy"
+        
+        //2.转换并且返回日期
+        return dateFormatter.date(from:string)
+        
+    }
+    
+    
 }
