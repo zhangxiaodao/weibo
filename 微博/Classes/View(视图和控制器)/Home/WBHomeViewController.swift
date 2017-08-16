@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 //定义全局常量，尽量使用 private 修饰，否则到处都可以使用
 //原创 微博 可重用 cell ID
 private let originalCellId = "originalCellId"
@@ -18,6 +19,39 @@ class WBHomeViewController: WBBaseController {
 
     /// 列表视图模型
     fileprivate lazy var listViewModel = WBStatusListViewModel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(browsPhoto),
+            name: NSNotification.Name(rawValue: WBStatusCellBrowserPhotoNotification),
+            object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc fileprivate func browsPhoto(n:Notification) {
+        
+        guard let selectedIndex = n.userInfo?[WBStatusCellBrowserPhotoSelectedIndexKey] as? Int,
+            let urls = n.userInfo?[WBStatusCellBrowserPhotoURLsKey] as? [String],
+            let imageViewList = n.userInfo?[WBStatusCellBrowserPhotoImageViewKey] as? [UIImageView]
+            else { return
+        }
+        
+        let vc = HMPhotoBrowserController.photoBrowser(
+            withSelectedIndex:
+            selectedIndex,
+            urls: urls,
+            parentImageViews: imageViewList)
+        present(vc, animated: true, completion: nil)
+        
+        
+        
+    }
     
     override func loadData() {
 

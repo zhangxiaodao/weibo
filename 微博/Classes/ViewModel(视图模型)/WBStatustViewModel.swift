@@ -176,7 +176,7 @@ class WBStatustViewModel:CustomStringConvertible {
         var size = image.size
         
         //过宽图像处理
-        let maxWidth:CGFloat = 300
+        let maxWidth:CGFloat = 200
         let minWidth:CGFloat = 40
         
         ////过宽处理
@@ -194,6 +194,10 @@ class WBStatustViewModel:CustomStringConvertible {
             size.height = size.width * image.size.height / image.size.width / 4
         }
         
+        // 过高处理，图片填充模式就是 scaleToFill ，高度减小，会自动裁切
+        if size.height > 200 {
+            size.height = 200
+        }
         
         //注意：尺寸需要增加 顶部 12 个点，方便布局
         size.height += WBStatusPictureViewOutterMargin

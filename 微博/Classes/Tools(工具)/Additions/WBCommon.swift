@@ -32,4 +32,18 @@ let WBStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * WBStatusPictureVi
 let WBStatusPictureItemWidth = (WBStatusPictureViewWidth - 2 * WBStatusPictureViewInnerMargin) / 3
 
 
+//MARK : - 照片浏览通知定义
+/// 微博 Cell 浏览照片通知
+let WBStatusCellBrowserPhotoNotification = "WBStatusCellBrowserPhotoNotification"
+/// 选中索引 Key
+let WBStatusCellBrowserPhotoSelectedIndexKey = "WBStatusCellBrowserPhotoSelectedIndexKey"
+/// 浏览照片 URL 字符串 Key
+let WBStatusCellBrowserPhotoURLsKey = "WBStatusCellBrowserPhotoURLsKey"
+/// 父视图的图形视图数组
+let WBStatusCellBrowserPhotoImageViewKey = "WBStatusCellBrowserPhotoImageViewKey"
+
+
+
+
+
 

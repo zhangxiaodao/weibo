@@ -79,6 +79,37 @@ class WBStatusPictureView: UIView {
     override func awakeFromNib() {
         setupUI()
     }
+    
+    /// MARK: - 监听方法
+    @objc fileprivate func tapImageView(tap:UITapGestureRecognizer) {
+        guard let iv = tap.view,
+            let picURLs = viewModel?.picURLs else{
+            return
+        }
+        
+        var selectedIndex = iv.tag
+        
+        //针对 四张图片进行处理
+        if picURLs.count == 4 && selectedIndex > 1 {
+            selectedIndex -= 1
+        }
+        
+        
+        let urls = (picURLs as NSArray).value(forKey: "largePic") as! [String]
+        
+        //处理可见的图像视图数组
+        var imageViewList = [UIImageView]()
+        
+        for iv in subviews as! [UIImageView] {
+            if !iv.isHidden {
+                imageViewList.append(iv)
+            }
+        }
+        //发送通知
+        NotificationCenter.default.post(NSNotification(name: NSNotification.Name(rawValue: WBStatusCellBrowserPhotoNotification), object: self, userInfo: [WBStatusCellBrowserPhotoURLsKey:urls , WBStatusCellBrowserPhotoSelectedIndexKey:selectedIndex , WBStatusCellBrowserPhotoImageViewKey:imageViewList]) as Notification)
+        
+    
+    }
 }
 
 extension WBStatusPictureView {
@@ -112,7 +143,44 @@ extension WBStatusPictureView {
             let yOffset = row * (WBStatusPictureItemWidth + WBStatusPictureViewInnerMargin)
             iv.frame = rect.offsetBy(dx: xOffset, dy: yOffset)
             addSubview(iv)
+            
+            //让 iv 能够接受用户交互
+            iv.isUserInteractionEnabled = true
+            
+            //添加手势识别
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView))
+            iv.addGestureRecognizer(tap)
+            
+            //设置 imageView 的 tag
+            iv.tag = i
+            
+            addGifView(iv: iv)
         }
+    }
+    
+    private func addGifView(iv:UIImageView) {
+        let gifImageView = UIImageView(image: UIImage(named: "timeline_image_gif"))
+        iv.addSubview(gifImageView)
+        
+        //自动布局
+        gifImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        iv.addConstraint(NSLayoutConstraint(
+            item: gifImageView,
+            attribute: .right,
+            relatedBy: .equal,
+            toItem: iv,
+            attribute: .right,
+            multiplier: 1.0,
+            constant: 0))
+        iv.addConstraint(NSLayoutConstraint(
+            item: gifImageView,
+            attribute: .bottom,
+            relatedBy: .equal,
+            toItem: iv,
+            attribute: .bottom,
+            multiplier: 1.0,
+            constant: 0))
         
     }
 }
